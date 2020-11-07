@@ -102,6 +102,18 @@ Formuła zwracająca wartość pojedynczej zmiennej typu zmiennoprzecinkowego.
 
 Szczególne przypadki: 
 
+### Literały liczbowe
+
+Np. ``123``, ``123.123``, ``.123``, ``123.123e-123``.
+
+### Indeksy
+
+Np. ``i`` w ``a[i]``.
+
+### Parametry
+
+Np. ``alpha``, ``time_start``, ``x``, ``a[i]``.
+
 ### Wyrażenia warunkowe (_conditional expressions_)
 
 Kod: 
@@ -225,6 +237,138 @@ a.Where(date = "maj 2003" && index = j+1);
 a["maj 2008"][j+1]; //z przeciążeniem indeksatora
 ```
 
+## Wyrażenia symboliczne 
+
+Wyrażenia zwracające ciągi znaków. 
+
+Przypadki szczególne: 
+
+### Literały
+
+Np. ``abc``, ``1 maja 2020``.
+
+### Indeksy
+
+Np. ``i`` w ``nazwy[i]``.
+
+### Parametry
+
+Np. ``x``, ``nazwy``, ``nazwy['a']``, ``nazwy[3]``.
+
+### Wyrażenia warunkowe
+
+Jak wyżej. 
+
+### Wywołania funkcji
+
+| Składnia | Funkcja |
+| --- | --- | 
+| ``substr(s, x)`` | Fragment napisu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s"> zaczynający się od znaku <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x"> |
+| ``substr(s, x, y)`` | Jw., ale o długości <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y"> |
+| ``time2str(t, f)`` | Konwersja czasu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=t"> na napis w formacie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> |
+
+## Wyrażenia indeksujące (_indexing expressions_) i wskaźniki nieme (_dummy indices_)
+
+Przeliczalne (enumerowalne) kolekcje elementów. 
+
+| Składnia | Zawartość | 
+| --- | --- |
+| ``i in S`` | zbiór jednoelementowych krotek z indeksem niemym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i"> |
+| ``(i_1, i_2, ..., i_n) in S`` | zbiór n-elementowych krotek z ideksami niemymi <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i_1">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i_2"> do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i_n"> |
+| ``S`` | zbiór o nazwie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=S"> |
+| ``{ a, b, c }`` | zbiór bez nazwy |
+| ``{ a, b, c : >= 0 }`` | zbiór bez nazwy z ograniczeniem |
+| ``{ i in I, (i, j) in B}`` | zbiór składający się ze zbioru jednoelementowych krotek (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=I">) i zbioru dwuelementowych krotek (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B">) |
+
+### Indeksy nieme
+
+Nie są stosowane do wskazania elementu kolekcji, ale tylko wskazują, że mamy do czynienia ze zbiorem. Można jednak stosować je jako zmienną w operacjach. 
+
+| Operator niemy w GNU MathProg | operator niemy w językach programowania |
+| --- | --- |
+| ``i in I`` |``I.select(i => i); //C#`` |
+| ``action{ i in A, (j, k) in B, l in C } x(i, j, k, l)`` | ``for i in A: #Python``<br/>&nbsp;&nbsp;&nbsp;``for (j, k) in B:``<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``for l in C:``<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``x = (i, j, k, l)``<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``action(x)`` |
+
+Widoczność indeksu niemego ogranicza się do wyrażenia, np. 
+
+``i in I i ^^ 2; # OK``
+
+``i in I; i ^^ 2; # błąd: i jest niezdefiniowane``
+
+Przykłady: 
+
+- Suma wyrażeń
+
+Kod: 
+
+``sum{i in A, (j, k) in B, l in C} p[i, j, k, l]``
+
+Zapis matematyczny: 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\sum_{i \in A, (j, k) \in B, l \in C} p_{ijkl}">
+
+* Iloczyn kartezjański
+
+Kod:
+
+``{A, B, C}``
+
+Zapis matematyczny: 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=A \times B \times C = \{  (i, j, k, l) : i \in A, (j, k) \in B, l \in C \}">
+
+Przykładowe wartości zbiorów: 
+
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = { 1, 2 }">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B = { (a, 1), (b, 2) }">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=C = { x, y, z }">
+
+Wartości iloczynu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A \times B \times C">: 
+
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, a, 1, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, a, 1, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, a, 1, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, a, 2, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, a, 2, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, a, 2, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, b, 1, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, b, 1, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, b, 1, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, b, 2, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, b, 2, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, b, 2, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, a, 1, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, a, 1, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, a, 1, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, a, 2, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, a, 2, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, a, 2, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 1, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 1, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 1, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 2, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 2, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 2, z}">
+
+---
+
+* Parametr zawierający zbiory
+
+Kod: 
+
+``param p{i in A, (j, k) in B, l in C};``
+
+Analogiczny obiekt w języku ``C#``:
+
+```csharp
+var p = new
+{
+	A = new int[2],
+	B = new (int, string)[2],
+	C = new string[3]
+};
+```
+
 
 
 # Operatory
@@ -252,7 +396,7 @@ a["maj 2008"][j+1]; //z przeciążeniem indeksatora
 ``3 less 4`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0">
 ``3 less 5`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0"> 
 
-## Hierarchia operatorów 
+## Hierarchia operatorów arytmetycznych
 
 1. Funkcje, np. ``abs``, ``ceil``.
 2. Potęgowanie: ``x ** y``, ``x ^ y``.
@@ -261,6 +405,19 @@ a["maj 2008"][j+1]; //z przeciążeniem indeksatora
 5. Operatory iteracyjne: ``sum``, ``prod``, ``min``, ``max``.
 6. Dodawanie i odejmowanie: ``x + y``, ``x - y``, ``x less y``.
 7. Wyrażenia warunkowe: ``if x then y``, ``if x then y else z``.
+
+## Operatory symboliczne (znakowe)
+
+| Składnia | Liczba argumentów | Funkcja |
+| --- | --- | --- |
+| ``a & b`` | 2 | Konkatenacja (złączenie) napisów <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> |
+
+## Hierarchia operatorów symbolicznych
+
+1. Funkcje. 
+2. Konkatenacja. 
+3. Wyrażenia warunkowe. 
+
 
 
 
