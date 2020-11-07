@@ -12,7 +12,7 @@ hello test (should be changed to hi)
 # Struktura zadań programowania liniowego[^](#Spis-treści)
 
 Funkcja celu -- do zmaksymalizowania lub zminimalizowania:
-$z = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0$
+aaaz = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0$
  
 Ograniczenia liniowe (s.t. -- subject to):
 $L_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1$
