@@ -12,25 +12,25 @@ hello test (should be changed to hi)
 # Struktura zadań programowania liniowego[^](#Spis-treści)
 
 Funkcja celu -- do zmaksymalizowania lub zminimalizowania:
-aaaz = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0aaa
+xxxz = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0xxx
  
 Ograniczenia liniowe (s.t. -- subject to):
-aaaL_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1$
-$L_2 <= a_21 x_1 + a_22 x_2 + ... + a_2n x_n <= U_2$
-$...$
-$L_m <= a_m1 x_1 + a_m2 x_2 + ... + a_mn x_n <= U_m$  
+xxxL_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1xxx
+xxxL_2 <= a_21 x_1 + a_22 x_2 + ... + a_2n x_n <= U_2xxx
+xxx...xxx
+xxxL_m <= a_m1 x_1 + a_m2 x_2 + ... + a_mn x_n <= U_mxxx  
 
 Ograniczenia zmiennych:
-$l_1 <= x_1 <= u_1$
-$l_2 <= x_2 <= u_2$
-$...$
-$l_n <= x_n <= u_n$
+xxxl_1 <= x_1 <= u_1xxx
+xxxl_2 <= x_2 <= u_2xxx
+xxx...xxx
+xxxl_n <= x_n <= u_nxxx
 
 gdzie:
--   $x_1, x_2, ..., x_n$ -- zmienne    
--   $z$ -- warto
+-   xxxx_1, x_2, ..., x_nxxx -- zmienne    
+-   xxxzxxx -- warto
 
-$e^{i \pi} = -1$
+xxxe^{i \pi} = -1xxx
 
 
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
