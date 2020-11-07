@@ -33,6 +33,7 @@
 <li><a href="#Struktura-zada%C5%84-programowania-liniowego">Struktura zadań programowania liniowego</a></li>
 <li><a href="#Co%C5%9B-tam">Coś tam</a></li>
 </ul>
+<p>hello test (should be changed to hi)</p>
 <h1 id="dokumentacja">Dokumentacja<a href="#Spis-tre%C5%9Bci">^</a></h1>
 <p><a href="http://gusek.sourceforge.net/gmpl.pdf">http://gusek.sourceforge.net/gmpl.pdf</a></p>
 <h1 id="struktura-zadań-programowania-liniowego">Struktura zadań programowania liniowego<a href="#Spis-tre%C5%9Bci">^</a></h1>
