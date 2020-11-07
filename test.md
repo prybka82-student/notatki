@@ -43,3 +43,5 @@ sdf
 
 $x_1 + 2 + \frac{1}{2}$
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
