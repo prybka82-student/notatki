@@ -70,9 +70,9 @@ sdf</p>
 
   <script type="text/javascript">
 
-  window.onload = replace();
+  window.onload = foo();
 
-  function replace() {
+  function foo() {
   
 	document.body.innerHTML = files.0.content.text.replace(/hello/g, 'hi');
   
