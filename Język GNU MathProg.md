@@ -45,7 +45,7 @@ gdzie:
 
 double dollar formula:
 
-<img style="min-width: 300px; display: block; margin-left: auto" margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a = x^2 - \frac{1}{2}">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a = x^2 - \frac{1}{2}">
 
 # Coś tam[^](#Spis-treści)
 
