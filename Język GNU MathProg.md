@@ -76,7 +76,7 @@ sdf</p>
 </blockquote>
 </div> -->
 
-	<div class="stackedit__html">document.body.innerHTML</div>
+	<div class="stackedit__html"></div>
 
 </body>
 
