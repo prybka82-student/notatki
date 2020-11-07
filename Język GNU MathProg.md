@@ -70,7 +70,7 @@ sdf</p>
 
 	<script type="text/javascript">
 	
-	window.onload = foo();
+	document.onload = foo();
 	
 	function foo() {
 	  
