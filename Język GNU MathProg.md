@@ -236,9 +236,29 @@ a["maj 2008"][j+1]; //z przeciążeniem indeksatora
 | | | |
 | ``x + y`` | 2 | dodawanie |
 | ``x - y`` | 2 | odejmowanie | 
-| ``x less y`` | 2 | odejmowanie dodatnie[^](abc)
+| ``x less y`` | 2 | odejmowanie dodatnie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">, jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x - y < 0">, w przeciwnym razie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x - y">[^a] |
 | ``x * y`` | 2 | mnożenie | 
 | ``x / y`` | 2 | dzielenie rzeczywiste |
+| ``x div y`` | 2 | dzielenie całkowite |
+| ``x mod y`` | 2 | reszta z dzielenia |
+| ``x ** y``, ``x ^ y`` | 2 | potęgowanie (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x^y">) |
+
+[^a]: Przykłady:
+``3 less 1`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==2"> 
+``3 less 2`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==1">
+``3 less 3`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0"> 
+``3 less 4`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0">
+``3 less 5`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0"> 
+
+## Hierarchia operatorów 
+
+1. Funkcje, np. ``abs``, ``ceil``.
+2. Potęgowanie: ``x ** y``, ``x ^ y``.
+3. Zmiana znaku: ``-x``, ``+x``.
+4. Mnożenie, dzielenie, reszta z dzielenia: ``x * y``, ``x / y``, ``x div y``, ``x mod y``.
+5. Operatory iteracyjne: ``sum``, ``prod``, ``min``, ``max``.
+6. Dodawanie i odejmowanie: ``x + y``, ``x - y``, ``x less y``.
+7. Wyrażenia warunkowe: ``if x then y``, ``if x then y else z``.
 
 
 
