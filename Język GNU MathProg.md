@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Język GNU MathProg</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
-
-<body class="stackedit">
-  <div class="stackedit__left">
-    <div class="stackedit__toc">
-      
-<ul>
-<li><a href="#dokumentacja">Dokumentacja</a></li>
-<li><a href="#struktura-zadań-programowania-liniowego">Struktura zadań programowania liniowego</a></li>
-</ul>
-
-    </div>
-  </div>
-  <div class="stackedit__right">
-    <div class="stackedit__html">
-      <h1 id="dokumentacja">Dokumentacja</h1>
+<h1 id="dokumentacja">Dokumentacja</h1>
 <p><a href="http://gusek.sourceforge.net/gmpl.pdf">http://gusek.sourceforge.net/gmpl.pdf</a></p>
 <h1 id="struktura-zadań-programowania-liniowego">Struktura zadań programowania liniowego</h1>
 <p>Funkcja celu – do zmaksymalizowania lub zminimalizowania:<br>
@@ -45,8 +22,3 @@
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
 
-    </div>
-  </div>
-</body>
-
-</html>
