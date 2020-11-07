@@ -9,25 +9,7 @@
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__left">
-    <div class="stackedit__toc">
-      
-<ul>
-<li>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><a href="#dokumentacja">Dokumentacja</a></li>
-<li><a href="#struktura-zadań-programowania-liniowego">Struktura zadań programowania liniowego</a></li>
-<li><a href="#coś-tam">Coś tam</a></li>
-</ul>
-
-    </div>
-  </div>
-  <div class="stackedit__right">
-    <div class="stackedit__html">
-      <h3 id="spis-treści">Spis treści</h3>
+  <div class="stackedit__html"><h3 id="spis-treści">Spis treści</h3>
 <ul>
 <li><a href="#Dokumentacja">Dokumentacja</a></li>
 <li><a href="#Struktura">Struktura zadań programowania liniowego</a></li>
@@ -57,9 +39,7 @@
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
-
-    </div>
-  </div>
+</div>
 </body>
 
 </html>
