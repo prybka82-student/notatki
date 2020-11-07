@@ -14,7 +14,7 @@ sdf
 sd
 
 sdf
-
+sdsdfs
 
 sdf
 sdf
@@ -41,5 +41,5 @@ sdf
 
 # The header
 
-$x_1 + 2$
+$x_1 + 2 + \frac{1}{2}$
 
