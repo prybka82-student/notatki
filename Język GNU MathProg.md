@@ -1,33 +1,9 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Język GNU MathProg</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-  
-  <script type="text/javascript">
-	
-	window.onload = replace();
-	
-	function replace() {
-	  
-	  document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
-
-	  <!-- document.getElementById("demo").innerHTML = "Paragraph changed."; -->
-	}
-  </script>
-  
-</head>
+---
 
 
-<body class="stackedit">
+---
 
-
-  <h1>Język GNU MathProg</h1>
-
-  <div class="stackedit__html"><h3 id="spis-treści">Spis treści</h3>
+<h3 id="spis-treści">Spis treści</h3>
 <ul>
 <li><a href="#Dokumentacja">Dokumentacja</a></li>
 <li><a href="#Struktura-zada%C5%84-programowania-liniowego">Struktura zadań programowania liniowego</a></li>
@@ -78,8 +54,4 @@ sdf</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
-</div>
 
-</body>
-
-</html>
