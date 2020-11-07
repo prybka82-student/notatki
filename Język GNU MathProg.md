@@ -12,25 +12,33 @@ hello test (should be changed to hi)
 # Struktura zadań programowania liniowego[^](#Spis-treści)
 
 Funkcja celu -- do zmaksymalizowania lub zminimalizowania:
-<img src="https://render.githubusercontent.com/render/math?math=z = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=z = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0">
  
 Ograniczenia liniowe (s.t. -- subject to):
-<img src="https://render.githubusercontent.com/render/math?math=L_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1<img src="https://render.githubusercontent.com/render/math?math=
-<img src="https://render.githubusercontent.com/render/math?math=L_2 <= a_21 x_1 + a_22 x_2 + ... + a_2n x_n <= U_2<img src="https://render.githubusercontent.com/render/math?math=
-<img src="https://render.githubusercontent.com/render/math?math=...<img src="https://render.githubusercontent.com/render/math?math=
-<img src="https://render.githubusercontent.com/render/math?math=L_m <= a_m1 x_1 + a_m2 x_2 + ... + a_mn x_n <= U_m<img src="https://render.githubusercontent.com/render/math?math=  
+
+<img src="https://render.githubusercontent.com/render/math?math=L_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1">
+
+<img src="https://render.githubusercontent.com/render/math?math=L_2 <= a_21 x_1 + a_22 x_2 + ... + a_2n x_n <= U_2">
+
+<img src="https://render.githubusercontent.com/render/math?math=...">
+
+<img src="https://render.githubusercontent.com/render/math?math=L_m <= a_m1 x_1 + a_m2 x_2 + ... + a_mn x_n <= U_m">  
 
 Ograniczenia zmiennych:
-<img src="https://render.githubusercontent.com/render/math?math=l_1 <= x_1 <= u_1<img src="https://render.githubusercontent.com/render/math?math=
-<img src="https://render.githubusercontent.com/render/math?math=l_2 <= x_2 <= u_2<img src="https://render.githubusercontent.com/render/math?math=
-<img src="https://render.githubusercontent.com/render/math?math=...<img src="https://render.githubusercontent.com/render/math?math=
-<img src="https://render.githubusercontent.com/render/math?math=l_n <= x_n <= u_n<img src="https://render.githubusercontent.com/render/math?math=
+
+<img src="https://render.githubusercontent.com/render/math?math=l_1 <= x_1 <= u_1">
+
+<img src="https://render.githubusercontent.com/render/math?math=l_2 <= x_2 <= u_2">
+
+<img src="https://render.githubusercontent.com/render/math?math=...">
+
+<img src="https://render.githubusercontent.com/render/math?math=l_n <= x_n <= u_n">
 
 gdzie:
--   <img src="https://render.githubusercontent.com/render/math?math=x_1, x_2, ..., x_n<img src="https://render.githubusercontent.com/render/math?math= -- zmienne    
--   <img src="https://render.githubusercontent.com/render/math?math=z<img src="https://render.githubusercontent.com/render/math?math= -- warto
+-   <img src="https://render.githubusercontent.com/render/math?math=x_1, x_2, ..., x_n"> -- zmienne    
+-   <img src="https://render.githubusercontent.com/render/math?math=z"> -- warto
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
