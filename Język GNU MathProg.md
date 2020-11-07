@@ -104,7 +104,7 @@ sdf
 
 	<script type="text/javascript">
 
-  window.onload = foo2();
+  document.onload = foo2();
   
   function foo2() {
   
