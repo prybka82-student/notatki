@@ -12,8 +12,8 @@
   <div class="stackedit__html"><h3 id="spis-treści">Spis treści</h3>
 <ul>
 <li><a href="#Dokumentacja">Dokumentacja</a></li>
-<li>[Struktura zadań programowania liniowego](#Struktura Struktura zadań programowania liniowego)</li>
-<li>[Coś tam](#Coś tam)</li>
+<li><a href="#Struktura">Struktura zadań programowania liniowego</a></li>
+<li><a href="#Cos">Coś tam</a></li>
 </ul>
 <h1 id="dokumentacja">Dokumentacja</h1>
 <p><a href="http://gusek.sourceforge.net/gmpl.pdf">http://gusek.sourceforge.net/gmpl.pdf</a></p>
