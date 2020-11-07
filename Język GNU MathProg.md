@@ -43,6 +43,11 @@ gdzie:
 
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
+double dollar formula:
+
+<img src="https://render.githubusercontent.com/render/math?math=">
+a = x^2 - \frac{1}{2}
+<img src="https://render.githubusercontent.com/render/math?math=">
 
 # Coś tam[^](#Spis-treści)
 
