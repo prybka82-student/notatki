@@ -3,7 +3,7 @@
 * [Struktura zadań programowania liniowego](#Struktura-zadań-programowania-liniowego)
 * [Coś tam](#Coś-tam)
 
-hi test (should be changed to hi)
+hello test (should be changed to hi)
 
 # Dokumentacja[^](#Spis-treści)
 
