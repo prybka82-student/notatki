@@ -12,25 +12,25 @@ hello test (should be changed to hi)
 # Struktura zadań programowania liniowego[^](#Spis-treści)
 
 Funkcja celu -- do zmaksymalizowania lub zminimalizowania:
-xxxz = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0xxx
+<img src="https://render.githubusercontent.com/render/math?math=z = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0<img src="https://render.githubusercontent.com/render/math?math=
  
 Ograniczenia liniowe (s.t. -- subject to):
-xxxL_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1xxx
-xxxL_2 <= a_21 x_1 + a_22 x_2 + ... + a_2n x_n <= U_2xxx
-xxx...xxx
-xxxL_m <= a_m1 x_1 + a_m2 x_2 + ... + a_mn x_n <= U_mxxx  
+<img src="https://render.githubusercontent.com/render/math?math=L_1 <= a_11 x_1 + a_12 x_2 + ... + a_1n x_n <= U_1<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=L_2 <= a_21 x_1 + a_22 x_2 + ... + a_2n x_n <= U_2<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=...<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=L_m <= a_m1 x_1 + a_m2 x_2 + ... + a_mn x_n <= U_m<img src="https://render.githubusercontent.com/render/math?math=  
 
 Ograniczenia zmiennych:
-xxxl_1 <= x_1 <= u_1xxx
-xxxl_2 <= x_2 <= u_2xxx
-xxx...xxx
-xxxl_n <= x_n <= u_nxxx
+<img src="https://render.githubusercontent.com/render/math?math=l_1 <= x_1 <= u_1<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=l_2 <= x_2 <= u_2<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=...<img src="https://render.githubusercontent.com/render/math?math=
+<img src="https://render.githubusercontent.com/render/math?math=l_n <= x_n <= u_n<img src="https://render.githubusercontent.com/render/math?math=
 
 gdzie:
--   xxxx_1, x_2, ..., x_nxxx -- zmienne    
--   xxxzxxx -- warto
+-   <img src="https://render.githubusercontent.com/render/math?math=x_1, x_2, ..., x_n<img src="https://render.githubusercontent.com/render/math?math= -- zmienne    
+-   <img src="https://render.githubusercontent.com/render/math?math=z<img src="https://render.githubusercontent.com/render/math?math= -- warto
 
-xxxe^{i \pi} = -1xxx
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1<img src="https://render.githubusercontent.com/render/math?math=
 
 
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
