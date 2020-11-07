@@ -1,8 +1,3 @@
----
-
-
----
-
 <h3 id="spis-treści">Spis treści</h3>
 <ul>
 <li><a href="#Dokumentacja">Dokumentacja</a></li>
