@@ -67,7 +67,11 @@ sdf</p>
 </blockquote>
 </div>
 
-	<script type="text/javascript">
+	
+
+</body>
+
+<script type="text/javascript">
 	
 	document.onload = foo();
 	
@@ -75,7 +79,5 @@ sdf</p>
 		document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
 	}
   </script>
-
-</body>
 
 </html>
