@@ -39,7 +39,7 @@
   
   function foo2() {
   
-	document.body.innerHTML = content;
+	<!-- document.body.innerHTML = content; -->
 	
     <!-- document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi'); -->
 
