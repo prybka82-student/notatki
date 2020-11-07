@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="dokumentacja">Dokumentacja</h1>
 <p><a href="http://gusek.sourceforge.net/gmpl.pdf">http://gusek.sourceforge.net/gmpl.pdf</a></p>
 <h1 id="struktura-zadań-programowania-liniowego">Struktura zadań programowania liniowego</h1>
