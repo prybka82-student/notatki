@@ -47,6 +47,18 @@ double dollar formula:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a = x^2 - \frac{1}{2}">
 
+in github
+
+single dollar
+
+$e^{i \pi} = -1$
+
+double dollar
+
+$$
+e^{i \pi} = -1
+$$
+
 # Coś tam[^](#Spis-treści)
 
 ssdf
