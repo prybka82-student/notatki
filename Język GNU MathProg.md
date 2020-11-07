@@ -12,7 +12,7 @@
 <body class="stackedit">
 
 
-  <h1>Język GNU MathProg</h1>
+  <title>Język GNU MathProg</title>
 
   <div class="stackedit__html"><h3 id="spis-treści">Spis treści</h3>
 <ul>
