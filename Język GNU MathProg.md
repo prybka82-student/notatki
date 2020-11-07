@@ -155,7 +155,9 @@ Kod:
 | ``Uniform01()`` | liczba pseudolosowa z przedziału <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 1)"> |
 | ``Uniform(a, b)`` | liczba pseudolosowa z przedziału <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[a, b)"> |
 | ``Normal01()`` | generate Gaussian pseudo-random variate with <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mu = 0"> and <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sigma = 1"> |
-| ``Normal(<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mu">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sigma">)`` | generate Gaussian pseudo-random variate with given <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mu"> and <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sigma"> |
+| ``Normal(u, s)`` | generate Gaussian pseudo-random variate with given <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=u"> and <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s"> |
+
+
 
 ### Wyrażenia iterowane (_iterated expressions_)
 
