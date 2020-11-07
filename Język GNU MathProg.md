@@ -9,7 +9,7 @@
 </head>
 
 
-<body class="stackedit">
+<body class="stackedit stackedit--pdf">
 
 
   <h1>Język GNU MathProg</h1>
@@ -69,13 +69,10 @@ sdf</p>
 
 	<script type="text/javascript">
 	
-	document.onload = alert("a");
+	document.onload = foo();
 	
-	function foo() {
-	  
-	  document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
-
-	  <!-- document.getElementById("demo").innerHTML = "Paragraph changed."; -->
+	function foo() { 
+		document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
 	}
   </script>
 
