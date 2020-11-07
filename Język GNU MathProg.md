@@ -1,9 +1,6 @@
 ### Spis treści
 * [Dokumentacja](#Dokumentacja)
 * [Struktura zadań programowania liniowego](#Struktura-zadań-programowania-liniowego)
-* [Coś tam](#Coś-tam)
-
-hello test (should be changed to hi)
 
 # Dokumentacja[^](#Spis-treści)
 
@@ -12,6 +9,7 @@ hello test (should be changed to hi)
 # Struktura zadań programowania liniowego[^](#Spis-treści)
 
 Funkcja celu -- do zmaksymalizowania lub zminimalizowania:
+
 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z = c_1 x_1 + c_2 x_2 + ... c_n x_n + c_0">
  
 Ograniczenia liniowe (s.t. -- subject to):
@@ -38,55 +36,68 @@ gdzie:
 -   <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x_1, x_2, ..., x_n"> -- zmienne    
 -   <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z"> -- warto
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+# Dopuszczalne znaki w kodzie
 
+- wielkie litery ASCII: ``A B C D E F G H I J K L M N O P Q R S T U V W X Y Z``;
+- małe litery ASCII: ``a b c d e f g h i j k l m n o p q r s t u v w x y z``;
+- cyfry: ``0 1 2 3 4 5 6 7 8 9 ``;
+- znaki specjalne ASCII: ``~ ! # ^ & * ( ) _ + - = [ ] { } | ; : ' " , . / < >``.
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+# Identyfikatory (_symbolic names_)
 
-double dollar formula:
+Pierwszy znak: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a = x^2 - \frac{1}{2}">
+- mała litera, np. ``alpha123``;
+- wielka litera, np. ``Alpha123``;
+- podkreślnik, np. ``_alpha123``.
 
-in github
+# Literały
 
-single dollar
+## Literały napisowe
 
-$e^{i \pi} = -1$
+- Pojedynczy cudzysłów, np. ``'abc'``
+- Podwójny cudzysłów, np. ``"abc"``
+- Sekwencja ucieczki dla apostrofu, np. ``'that''s all'``
+- Sekwencja ucieczki dla cudzysłowu, np. ``"he said ""hello"""``
 
-double dollar
+## Literały liczbowe
 
-$$
-e^{i \pi} = -1
-$$
+- ``123``
+- ``123.123``
+- ``.123``
+- ``123.E+123``
+- ``123.123e-123``
 
-# Coś tam[^](#Spis-treści)
+# Słowa kluczowe
 
-ssdf
+Zarezerwowane słowa kluczowe (nie mogą być identyfikatorami): 
 
-sdf
-sdf
-s
-sdfs
-sdf
-s
+``and   or   if   else   by   cross   diff   div   in   inter   less   mod   not   symdiff   then   union   within``
 
-sdfsdfsdf
-sdfs
-df
+# Ograniczniki wyrażeń (_expression delimiters_)
 
+``+   -  *   **   &   &&   =   ==   /   <   <=   <>   >>   <-   >   >=   !=   !   |   ||   ^   .   ..   ,   :   :   ;=   ~   (   )   [   ]   {   }``
 
-sdfs
-fsdfsd
+Wieloznakowe ograniczniki nie mogą zawierać spacji.
 
+Niektóre ograniczniki nie mają znaczenia: ułatwiają tylko czytanie kodu i można je pominąć. 
 
-sdfsdf
+# Komentarze
 
-sdfs
-dfsdfsdf
+- Jednowierszowe, np. ``# abc``
+- Wielowierszowe, np. ``/* abc */``
 
-sdfsdf
-sdf
-sdf
+# Wyrażenia
+
+- Numeryczne (_numeric expressions_)
+- Symboliczne (_symbolic expressions_)
+- Indeksujące (_indexing expressions_)
+- Zbiorowe (_set expressions_)
+- Logiczne (_logical expressions_)
+- Liniowe (_linear expressions_)
+
+## Wyrażenia numeryczne
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
