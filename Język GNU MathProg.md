@@ -5,6 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
+
+	<script type="text/javascript">
+	
+	document.onload = foo();
+	
+	function foo() { 
+		document.body.innerHTML = files.0.content.html.replace(/hello/g, 'hi');
+	}
+  </script>
   
 </head>
 
@@ -14,7 +23,7 @@
 
   <h1>Język GNU MathProg</h1>
 
-  <div class="stackedit__html"><h3 id="spis-treści">Spis treści</h3>
+  <!-- <div class="stackedit__html"><h3 id="spis-treści">Spis treści</h3>
 <ul>
 <li><a href="#Dokumentacja">Dokumentacja</a></li>
 <li><a href="#Struktura-zada%C5%84-programowania-liniowego">Struktura zadań programowania liniowego</a></li>
@@ -65,19 +74,12 @@ sdf</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
-</div>
+</div> -->
 
-	
+	<div class="stackedit__html">document.body.innerHTML</div>
 
 </body>
 
-<script type="text/javascript">
-	
-	document.onload = foo();
-	
-	function foo() { 
-		document.body.innerHTML = document.body.innerHTML.replace(/hello/g, 'hi');
-	}
-  </script>
+
 
 </html>
