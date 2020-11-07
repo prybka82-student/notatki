@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Język GNU MathProg</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
   
 </head>
@@ -70,7 +69,7 @@ sdf</p>
 
 	<script type="text/javascript">
 	
-	document.onload = foo();
+	document.onload = alert("a");
 	
 	function foo() {
 	  
