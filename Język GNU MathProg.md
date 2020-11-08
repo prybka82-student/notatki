@@ -1421,7 +1421,90 @@ Jw. oraz dodatkowe:
 
 | Sufiks | Wartość |
 | - | - |
-| ``.val`` | _primal value of the linea
+| ``.val`` | _primal value of the linear form in the solution_ |
+| ``.dual`` | _dual value (reduced cost) of the linear form in the solution_ |
+
+Przyrostki ``.status``, ``.val``, ``.dual`` mogą się znaleźć tylo poniżej instrukcji ``solve;``
+
+# Funkcje związane z datą i czasem[^](#Spis-treści)
+
+## gmtime()
+
+*  ``param utc := gmtime();``  
+	* aktualna data i czas UTC
+* ``param Berlin := gmtime() + 3600;`` 
+	* jw., ale z przesunięciem do strefy czasowej Berlina
+* ``param Chicago := gmtime() - 5 * 3600;`` 
+	* jw., ale dla Chicago
+
+## str2time
+
+* ``param s, symbolic, := "07/14/98 13:34";``<br/>``param t := str2time(s, "%m/%d/%y %H:%M");``<br/>``display t; #900424020``
+	* konwersja daty i czasu w postaci napisu ``s`` do typu liczbowego 
+
+Oznaczenia formatu daty i czasu
+
+| Element | Oznaczenie | Przedział/zapis |
+| - | - | - |
+| rok | ``%y`` | rok bez wieku |
+| miesiąc | ``%m`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1, 12]"> |
+| miesiąc | ``%b``, ``%h`` | zapis skrócony |
+| dzień | ``%d`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1, 31]"> |
+| godzina | ``%H`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 23]"> | 
+| minuta | ``%M`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 59]"> |
+| sekunda | ``%S`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 60]">(!) |
+| przesunięcie względem GMT | ``%z`` | |
+| sekwencja ucieczki dla ``%`` | ``%%`` | |
+
+## time2str
+
+* ``param s, symbolic, := time2str(gmtime(), "%FT%TZ");``<br/>``display s; # s = '2008-12-04T00:23:45Z'``
+	* konwersja daty w postaci liczbowej na napis wg formatu
+
+Oznaczenia formatu daty i czasu
+
+| Element | Oznaczenie | Przedział/zapis |
+| - | - | - |
+| wiek | ``%C`` | | 
+| rok | ``%g``, ``%y`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[00, 99]"> |
+| rok | ``%G`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1900, 2099]">(?) |
+| miesiąc | ``%b``, ``%h`` | postać skrócona (3 znaki) |
+| miesiąc | ``%B`` | postać pełna |
+| miesiąc | ``%m`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[01, 12]"> |
+| tydzień | ``%U`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[00, 53]">[^tydz] |
+| tydzień | ``%V`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[01, 53]">[^tydzISO] |
+| tydzień | ``%W`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[00, 53]">[^tydz2] |
+| dzień roku | ``%j`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[001, 366]"> |
+| dzień miesiąca | ``%d`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[01, 31]"> |
+| dzień miesiąca | ``%e`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1, 31]"> |
+| dzień tygodnia | ``%a`` | postać skrócona (2 znaki) |
+| dzień tygodnia | ``%A`` | postać pełna |
+| dzień tygodnia | ``%u`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1, 7]"> |
+| dzień tygodnia | ``%w`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 6]">[^dtyg] |
+| pełna data | ``%D`` | format ``mm/dd/yy`` |
+| pełna data | ``%F`` | format ``yyyy-mm-dd`` |
+| | 
+| ``AM``, ``PM`` | ``%p`` ||
+| godzina | ``%H`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[00, 23]"> |
+| godzina | ``%k`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 23]"> |
+| godzina | ``%I`` | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[01, 12]"> |
+| godzina | ``<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=l`` | ">[1, 12]<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| minuta | ``%M`` | ">[00, 59]<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| sekunda | ``%S`` | ">[00, 59]$ |
+| godzina i minuta | ``%R`` | format ``gg:mm`` |
+| godzina, minuta, sekunda | ``%T`` | format ``gg:mm:ss`` |
+
+[^tydz]: Tydzień ``01`` rozpoczyna się od pierwszej niedzieli roku. Tydzień poprzedni ma numer ``00``. 
+
+[^tydzISO]: Tydzień ``01`` to tydzień mający przynajmniej 4 dni nowego roku, a więc zawierający przynajmniej 4 stycznia. Pierwszy tydzień może zawierać dni z poprzedniego roku. Ostatni tydzień roku może mieć numer ''52'' lub ''53''.  Ostatni tydzień roku może pokrywać się z pierwszym tygodniem nowego roku. 
+
+[^dtyg]: Niedziela ma numer ``0``. 
+
+[^tydz2]: Tydzień ``01`` to tydzień zaczynający się od poniedziałku w nowym roku. Dni nowego roku poprzedzające ten poniedziałek są w tygodniu ``00``. 
+
+Zakres wartości zmiennej liczbowej przechowującej datę i czas: 
+
+* minimum: ``-62135596800``
 
 
 
