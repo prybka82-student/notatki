@@ -935,7 +935,7 @@ Składnia:
 * ``ogranicz2`` -- dodatkowe, opcjonalne ograniczenie: 
 	* ``<= wyrażenie`` -- górne ograniczenie
 	* ``>= wyrażenie`` -- dolne ograniczenie
-	* <mark>``ogranicz2`` musi mieć ten sam operator porównania co ``ogranicz1``, możliwe są zatem następujące kombinacje:</mark>
+	* **``ogranicz2`` musi mieć ten sam operator porównania co ``ogranicz1``, możliwe są zatem następujące kombinacje:**
 		* ``s.t. nazwa : wyrażenie, <= ogranicz1, <= ogranicz2;``
 		* ``s.t. nazwa : wyrażenie, >= ogranicz1, >= ogranicz2;``
 
