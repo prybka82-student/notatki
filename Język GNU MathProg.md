@@ -897,9 +897,9 @@ Składnia: ``var nazwa alias dziedzina, atrybut1, atrybut2...;``
 	* ``integer`` -- jw.
 	* ``binary`` -- jw.
 	* ograniczenia: 
-		* ``>= wyrażenie``
-		* ``<= wyrażenie``
-		* ``= wyrażenie``
+		* ``>= wyrażenie`` -- dolne ograniczenie
+		* ``<= wyrażenie`` -- górne ograniczenie 
+		* ``= wyrażenie`` -- wartość stała 
 
 Przykłady:
 
@@ -914,9 +914,36 @@ Przykłady:
 * ``var z{i in I, j in J} >= i+j;``
 	* zmienna ``z`` zawierające kolejne liczby ze zbiorów ``I`` oraz ``J`` pod warunkiem, że są nie mniejsza niż suma indeksów tych liczb
 
+## Deklaracje ograniczeń (_constraing statement_)
 
+Składnia: 
 
+``s.t. nazwa alias dziedzina: wyrażenie, ogranicz1, ogranicz2;``
 
+(przecinki można pominąć)
+
+* ``s.t.`` -- skrót od słów kluczowych ``subject to`` lub ``subj to``, które można używać zamiennie z ``s.t.``
+* ``alias`` -- jw.
+* ``dziedzina`` -- jw.; 
+	* jeśli pominięta, ograniczenie dotyczy liczb rzeczywistych; 
+	* jeśli wskazana, ograniczenie dotyczy tablic (wektorów lub macierzy) -- zbiorów _n_-elementowych krotek
+* ``wyrażenie`` -- wyrażenie liniowe (_linear expression_) do obliczenia, czy warunek ograniczający został spełniony
+* ``ogranicz1``:
+	* ``= wyrażenie`` -- ścisłe ogranicznie
+	* ``<= wyrażenie`` -- górne ograniczenie
+	* ``>= wyrażenie`` -- dolne ograniczenie
+* ``ogranicz2`` -- dodatkowe, opcjonalne ograniczenie: 
+	* ``<= wyrażenie`` -- górne ograniczenie
+	* ``>= wyrażenie`` -- dolne ograniczenie
+	* <mark>``ogranicz2`` musi mieć ten sam operator porównania co ``ogranicz1``, możliwe są zatem następujące kombinacje:</mark>
+		* ``s.t. nazwa : wyrażenie, <= ogranicz1, <= ogranicz2;``
+		* ``s.t. nazwa : wyrażenie, >= ogranicz1, >= ogranicz2;``
+
+Przykłady
+
+* ``.s.t. r: x + y + z, >= 0, <= 1;``
+	* ograniczenie o nazwie ``r`` takie, że suma zmiennych/parametrów ``x``, ``y``, ``z`` musi się mieścić w przedziale <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 1]">
+* ``
 
 > Written with [StackEdit](https://stackedit.io/).
 
