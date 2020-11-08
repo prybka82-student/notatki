@@ -1,6 +1,39 @@
-### Spis treści
+# Spis treści
 * [Dokumentacja](#Dokumentacja)
 * [Struktura zadań programowania liniowego](#Struktura-zadań-programowania-liniowego)
+* [Dopuszczalne znaki w kodzie](#Dopuszczalne-znaki-w-kodzie)
+* [Identyfikatory (_symbolic names_)](#Identyfikatory-(_symbolic-names_))
+* [Literały](#Literały)
+	* [Literały napisowe](#Literały-napisowe)
+	* [Literały liczbowe](#Literały-liczbowe)
+* [Słowa kluczowe](#Słowa-kluczowe)
+* [Ograniczniki wyrażeń (_expression delimiters_)](#Ograniczniki-wyrażeń-(_expression-delimiters_))
+* [Komentarze](#Komentarze)
+* [Wyrażenia](#Wyrażenia)
+	* [Wyrażenia numeryczne](#Wyrażenia-numeryczne)
+	* [Parametr indeksowany (_subscripted parameter_)](#Parametr-indeksowany-(_subscripted-parameter_))
+	* [Wyrażenia symboliczne](#Wyrażenia-symboliczne)
+	* [Wyrażenia indeksujące (_indexing expressions_) i indeksy nieme (_dummy indices_)](#Wyrażenia-indeksujące-(_indexing-expressions_)-i-indeksy-nieme-(_dummy-indices_))
+	* [Wyrażenia zbiorowe (_set expressions_)](#Wyrażenia-zbiorowe-(_set-expressions_))
+	* [Wyrażenia logiczne (_logical expressions_)](#Wyrażenia-logiczne-(_logical-expressions_))
+	* [Wyrażenia liniowe (_linear expressions_)](#Wyrażenia-liniowe-(_linear-expressions_))
+* [Operatory](#Operatory)
+	* [Operatory arytmetyczne (_arithmetic operators_)](#Operatory-arytmetyczne-(_arithmetic-operators_))
+	* [Hierarchia operatorów arytmetycznych](#Hierarchia-operatorów-arytmetycznych)
+	* [Operatory symboliczne (znakowe)](#Operatory-symboliczne-(znakowe))
+	* [Hierarchia operatorów symbolicznych](#Hierarchia-operatorów-symbolicznych)
+	* [Operatory zbiorów](#Operatory-zbiorów)
+	* [Hierarchia operatorów symbolicznych](#Hierarchia-operatorów-symbolicznych) 
+	* [Operatory logiczne](#Operatory-logiczne)
+	* [Hierarchia operatorów logicznych](#Hierarchia-operatorów-logicznych)
+	* [Operatory wyrażeń liniowych](#Operatory-wyrażeń-liniowych)
+	* [Hierarchia operatorów wyrażeń liczbowych](#Hierarchia-operatorów-wyrażeń-liczbowych)
+* [Instrukcje (_statements_)](#Instrukcje-(_statements_))
+	* [Deklaracje zbiorów](#Deklaracje-zbiorów)
+	* [Deklaracja parametrów](#Deklaracja-parametrów)
+	* [Deklaracja zmiennych (_variable statements_)](#Deklaracja-zmiennych-(_variable-statements_))
+	* [Deklaracje ograniczeń (_constraing statement_)](#Deklaracje-ograniczeń-(_constraing-statement_))
+
 
 # Dokumentacja[^](#Spis-treści)
 
@@ -36,14 +69,14 @@ gdzie:
 -   <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x_1, x_2, ..., x_n"> -- zmienne    
 -   <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z"> -- warto
 
-# Dopuszczalne znaki w kodzie
+# Dopuszczalne znaki w kodzie[^](#Spis-treści)
 
 - wielkie litery ASCII: ``A B C D E F G H I J K L M N O P Q R S T U V W X Y Z``;
 - małe litery ASCII: ``a b c d e f g h i j k l m n o p q r s t u v w x y z``;
 - cyfry: ``0 1 2 3 4 5 6 7 8 9 ``;
 - znaki specjalne ASCII: ``~ ! # ^ & * ( ) _ + - = [ ] { } | ; : ' " , . / < >``.
 
-# Identyfikatory (_symbolic names_)
+# Identyfikatory (_symbolic names_)[^](#Spis-treści)
 
 Pierwszy znak: 
 
@@ -51,7 +84,7 @@ Pierwszy znak:
 - wielka litera, np. ``Alpha123``;
 - podkreślnik, np. ``_alpha123``.
 
-# Literały
+# Literały[^](#Spis-treści)
 
 ## Literały napisowe
 
@@ -68,13 +101,13 @@ Pierwszy znak:
 - ``123.E+123``
 - ``123.123e-123``
 
-# Słowa kluczowe
+# Słowa kluczowe[^](#Spis-treści)
 
 Zarezerwowane słowa kluczowe (nie mogą być identyfikatorami): 
 
 ``and   or   if   else   by   cross   diff   div   in   inter   less   mod   not   symdiff   then   union   within``
 
-# Ograniczniki wyrażeń (_expression delimiters_)
+# Ograniczniki wyrażeń (_expression delimiters_)[^](#Spis-treści)
 
 ``+   -  *   **   &   &&   =   ==   /   <   <=   <>   >>   <-   >   >=   !=   !   |   ||   ^   .   ..   ,   :   :   ;=   ~   (   )   [   ]   {   }``
 
@@ -82,12 +115,12 @@ Wieloznakowe ograniczniki nie mogą zawierać spacji.
 
 Niektóre ograniczniki nie mają znaczenia: ułatwiają tylko czytanie kodu i można je pominąć. 
 
-# Komentarze
+# Komentarze[^](#Spis-treści)
 
 - Jednowierszowe, np. ``# abc``
 - Wielowierszowe, np. ``/* abc */``
 
-# Wyrażenia
+# Wyrażenia[^](#Spis-treści)
 
 - Numeryczne (_numeric expressions_)
 - Symboliczne (_symbolic expressions_)
@@ -96,7 +129,7 @@ Niektóre ograniczniki nie mają znaczenia: ułatwiają tylko czytanie kodu i mo
 - Logiczne (_logical expressions_)
 - Liniowe (_linear expressions_)
 
-## Wyrażenia numeryczne
+## Wyrażenia numeryczne[^](#Spis-treści)
 
 Formuła zwracająca wartość pojedynczej zmiennej typu zmiennoprzecinkowego. 
 
@@ -205,7 +238,7 @@ Zapis matematyczny:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=max_{i_1, ..., i_n \in I} f(i)">
 
-## Parametr indeksowany (_subscripted parameter_)
+## Parametr indeksowany (_subscripted parameter_)[^](#Spis-treści)
 
 Kod: 
 
@@ -227,7 +260,7 @@ a.Where(date = "maj 2003" && index = j+1);
 a["maj 2008"][j+1]; //z przeciążeniem indeksatora
 ```
 
-## Wyrażenia symboliczne 
+## Wyrażenia symboliczne[^](#Spis-treści)
 
 Wyrażenia zwracające ciągi znaków. 
 
@@ -257,7 +290,7 @@ Jak wyżej.
 | ``substr(s, x, y)`` | Jw., ale o długości <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y"> |
 | ``time2str(t, f)`` | Konwersja czasu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=t"> na napis w formacie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> |
 
-## Wyrażenia indeksujące (_indexing expressions_) i wskaźniki nieme (_dummy indices_)
+## Wyrażenia indeksujące (_indexing expressions_) i indeksy nieme (_dummy indices_)[^](#Spis-treści)
 
 Przeliczalne (enumerowalne) kolekcje elementów. 
 
@@ -425,7 +458,7 @@ for i in A:
 				action()
 ```
 
-## Wyrażenia zbiorowe (_set expressions_)
+## Wyrażenia zbiorowe (_set expressions_)[^](#Spis-treści)
 
 Wyrażenia przetwarzające zbiory.
 
@@ -510,7 +543,7 @@ gdzie:
 
 Jw.
 
-## Wyrażenia logiczne (_logical expressions_)
+## Wyrażenia logiczne (_logical expressions_)[^](#Spis-treści)
 
 Mają wartość logiczną -- prawda lub fałsz. 
 
@@ -611,7 +644,7 @@ foreach (int i in I)
 			//jakaś funkcja
 ```
 
-## Wyrażenia liniowe (_linear expressions_)
+## Wyrażenia liniowe (_linear expressions_)[^](#Spis-treści)
 
 Wyrażenia działające jak funkcja liniowa. 
 
@@ -697,9 +730,9 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 
 
 
-# Operatory
+# Operatory[^](#Spis-treści)
 
-## Operatory arytmetyczne (_arithmetic operators_)
+## Operatory arytmetyczne (_arithmetic operators_)[^](#Spis-treści)
 
 | Składnia | Liczba argumentów | Funkcja |
 | --- | --- | --- |
@@ -722,7 +755,7 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 ``3 less 4`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0">
 ``3 less 5`` <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==0"> 
 
-## Hierarchia operatorów arytmetycznych
+## Hierarchia operatorów arytmetycznych[^](#Spis-treści)
 
 1. Funkcje, np. ``abs``, ``ceil``.
 2. Potęgowanie: ``x ** y``, ``x ^ y``.
@@ -732,19 +765,19 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 6. Dodawanie i odejmowanie: ``x + y``, ``x - y``, ``x less y``.
 7. Wyrażenia warunkowe: ``if x then y``, ``if x then y else z``.
 
-## Operatory symboliczne (znakowe)
+## Operatory symboliczne (znakowe)[^](#Spis-treści)
 
 | Składnia | Liczba argumentów | Funkcja |
 | --- | --- | --- |
 | ``a & b`` | 2 | Konkatenacja (złączenie) napisów <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> |
 
-## Hierarchia operatorów symbolicznych
+## Hierarchia operatorów symbolicznych[^](#Spis-treści)
 
 1. Funkcje. 
 2. Konkatenacja. 
 3. Wyrażenia warunkowe. 
 
-## Operatory zbiorów
+## Operatory zbiorów[^](#Spis-treści)
 
 | Składnia | Liczba argumentów | Funkcja |
 | --- | --- | --- |
@@ -760,7 +793,7 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 
 [^iloczyn_kartezjanski]: Dopasowanie każdy z każdym. 
 
-## Hierarchia operatorów symbolicznych 
+## Hierarchia operatorów symbolicznych[^](#Spis-treści) 
 
 1. Ustalenie wartości wyrażeń z operatorami numerycznymi. 
 2. Ustalenie wartości wyrażeń z operatorami symbolicznymi.
@@ -770,7 +803,7 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 6. Suma i różnice zbiorów ``union``, ``diff``, ``symdiff``
 7. Wyrażenia warunkowe ``if then``, ``if then else``
 
-## Operatory logiczne
+## Operatory logiczne[^](#Spis-treści)
 
 | Składnia | Liczba argumentów | Funkcja |
 | --- | --- | --- |
@@ -781,7 +814,7 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 | ``x or y`` | 2 | lobiczne "lub": ``x || y`` |
 | ``x || y`` | 2 | jw. |
 
-## Hierarchia operatorów logicznych
+## Hierarchia operatorów logicznych[^](#Spis-treści)
 
 1. Ustalenie wartości działań na liczbach
 2. Ustalenie wartości działań na symbolach (napisach)
@@ -792,15 +825,15 @@ I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
 7. Kwantyfikatory ``forall`` i ``exists``
 8. Iloczyn logiczny ``or``, ``||``
 
-## Operatory wyrażeń liniowych
+## Operatory wyrażeń liniowych[^](#Spis-treści)
 
 Takie same jak w przypadku wyrażeń liczbowych. 
 
-## Hierarchia operatorów wyrażeń liczbowych
+## Hierarchia operatorów wyrażeń liczbowych[^](#Spis-treści)
 
 Taka sama jak w przypadku operatorów wyrażeń liczbowych. 
 
-# Instrukcje (_statements_)
+# Instrukcje (_statements_)[^](#Spis-treści)
 
 Podstawowe jednostki operacji. 
 
@@ -819,7 +852,7 @@ Rodzaje:
 	* wykonuj w pętli ``loop``
 	* tabela (_table_) 
 
-## Deklaracje zbiorów
+## Deklaracje zbiorów[^](#Spis-treści)
 
 Składnia: ``set nazwa alias dziedzina, atrybut1, atrybut2...;``
 
@@ -845,7 +878,7 @@ Przykłady
 	* oraz elementy zbioru ``D`` różne od elementów zbioru ``D``
 	* domyślnie zbiór zawiera 2 krotki: ``('abc',123)`` i ``(321,'cba')`` |
 
-## Deklaracja parametrów 
+## Deklaracja parametrów[^](#Spis-treści)
 
 Składnia: ``param nazwa alias dziedzina, atrybut1, atrybut2...;``
 
@@ -887,7 +920,7 @@ Przykłady:
 * ``param miesiac symbolic default 'maj' in {'luty', 'maj', 'lipiec'};``
 	* parametr napisowy o nazwie ``miesiac`` o wartości domyślnej ``'maj'`` i przyjmujący jedną z 3 wartości: ``'luty'``, ``'maj'`` lub ``'lipiec'``
 
-## Deklaracja zmiennych (_variable statements_)
+## Deklaracja zmiennych (_variable statements_)[^](#Spis-treści)
 
 Składnia: ``var nazwa alias dziedzina, atrybut1, atrybut2...;``
 
@@ -914,7 +947,7 @@ Przykłady:
 * ``var z{i in I, j in J} >= i+j;``
 	* zmienna ``z`` zawierające kolejne liczby ze zbiorów ``I`` oraz ``J`` pod warunkiem, że są nie mniejsza niż suma indeksów tych liczb
 
-## Deklaracje ograniczeń (_constraing statement_)
+## Deklaracje ograniczeń (_constraing statement_)[^](#Spis-treści)
 
 Składnia: 
 
