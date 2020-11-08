@@ -38,6 +38,12 @@
 	* [Instrukcja ``check`` (_check statement_)](#Instrukcja-check-(check-statement))
 	* [Instrukcja ``display`` (_display statement_)](#Instrukcja-``display``-(_display-statement_))
 	* [Instrukcja ``printf`` (_printf statement_)](#Instrukcja-``printf``-(_printf-statement_))
+	* [Instrukcja ``for`` (_for statement_)](#Instrukcja-``for``-(_for-statement_))
+	* [Instrukcja ``table`` (_table statement_)](#Instrukcja-``table``-(_table-statement_))
+* [Model danych](#Model-danych)
+	* [Sposoby definiowania modelu i danych](#Sposoby-definiowania-modelu-i-danych)
+	* [Wczytywanie modelu i danych z osobnych plików](#Wczytywanie-modelu-i-danych-z-osobnych-plików)
+	* [Blok danych](#Blok-danych)
 
 # Dokumentacja[^](#Spis-treści)
 
@@ -1062,6 +1068,333 @@ Przykłady:
 * ``display {i in I, j in J}: i, j, a[i, j], b[i, j];``
 
 ## Instrukcja ``printf`` (_printf statement_)[^](#Spis-treści)
+
+Instrukcja podobna do ``display``, ale umożliwia formatowanie danych.
+
+Składnie: 
+
+``printf dziedzina : format, wyrażenie, ..., wyrażenie;``
+
+``printf dziedzina : format, wyrażenie, ..., wyrażenie > plik;``
+
+``printf dziedzina : format, wyrażenie, ..., wyrażenie >> plik;``
+
+* ``dziedzina`` -- jw.
+* ``format`` -- wyrażenie napisowe określające sposób wyświetlenia wartości; 
+* ``wyrażenie`` 
+	* wyrażenia, których wartości mają być wyświetlone w podanym formacie; 
+	* dopuszczalne typy: numeryczny, napisowy, logiczny; 
+* ``plik`` -- nazwa pliku, w którym ma zostać zapisany wynik; 
+* ``>`` -- flaga utworzenia nowego, pustego pliku; 
+* ``>>`` -- dodanie wartości na końcu istniejącego pliku; 
+
+Przykłady: 
+
+* ``printf 'Hello, world!\n';``
+* ``printf: "x = %.3f; y = %.3f; z = %.3f\n", x, y, z > "wynik.txt";``
+* ``printf {i in I, j in J}: "przepływa z %s do %s wynosi %d\n",``<br/>``i, j, x[i, j]``<br/>``>> plik_wynikowy & ".txt";``
+* ``printf{i in I} 'calkowity przeplyw z %s wynosi %g\n',``<br/>``i, sum{j in J} x[i, j];``
+* ``printf{k in K} "x[%s] = " & (if x[k] < = then "?" else "%g"),``<br/>``k, x[k];``
+
+Modyfikatory formatu: 
+
+| Znak kontrolny | Formta |
+| --- | --- |
+| ``%d``, ``%i`` | liczba całkowita |
+| ``%f``, ``%F`` | liczba typu ``double`` |
+| ``%e``, ``%E`` | zapis naukowy typu ``0.3e-4`` |
+| ``%g``, ``%G`` | liczba rzeczywista zapisana tradycyjnie lub w formacie naukowym[^g] |
+| ``%s`` | napis |
+
+[^g]: Program automatycznie wybiera lepszy zapis. 
+
+## Instrukcja ``for`` (_for statement_)[^](#Spis-treści)
+
+Składnie:
+
+``for dziedzina : instrukcja;``
+
+``for dziedzina : { instrukcja; instrukcja; ... instrukcja; }``
+
+* ``dziedzina`` -- wyrażenie indeksujące (dwukropek można pominąć); 
+* ``instrukcja`` 
+	* pojedyncze lub wielokrotne instrukcje; 
+	* w przypadku wielu instrukcji należy ująć je w klamry ``{ }``
+	* dopuszczalne instrukcje: 
+		* ``check``
+		* ``display``
+		* ``printf``
+		* ``for``
+
+Przykłady: 
+
+```for {(i, j) in E: i != j}
+{ 	printf "przeplyw z %s do %s w %g\n", i, j, x[i, j];
+	check x[i, j] >= 0;
+}
+```
+
+```
+for {i in 1..n}
+{	for {j in 1..n} printf " %s", if x[i, j] then "Q" else ".";
+	printf("\n");
+}
+```
+
+```
+for {1..72} printf("*");
+```
+-- wyświetla 72 gwiazdki.
+
+## Instrukcja ``table`` (_table statement_)[^](#Spis-treści)
+
+Składnie: 
+
+```
+table nazwa alias IN sterownik arg1, arg1... argN :  
+	set <- [ fld, ..., fld ], par ~ fld, ..., par ~fld;
+```
+
+```
+table nazwa alias dziedzina OUT sterownik arg1, arg1... argN :  
+	wyrażenie ~ fld, ..., wyrażenie ~ fld;
+```
+
+* ``alias`` -- jw.
+* ``dziedzina`` -- wyrażenie indeksujące;
+* ``IN`` -- odczyt danych z tabeli wejściowej; 
+* ``OUT`` -- zapis danych do tabeli wyjściowej;
+* ``sterownik`` -- wyrażenie napisowe; określa sposób dostępu do tabeli; 
+* ``arg`` -- opcjonalne wyrażenia napisowe przekazywane do tabeli;
+* ``set <-`` -- nazwa opcjonalnego zbioru kontrolnego; 
+* ``~ fld`` -- opcjonalna nazwa pola: 
+	* w nawiasach kwadratowych musi się znaleźć przynajmniej 1 nazwa; 
+	* jeśli pominięta, wówczas pole otrzymuje nazwę modelu; 
+* ``par`` -- napis; nazwa parametru zawierającego model danych;
+* ``wyrażenie`` -- wyrażenie liczbowe lub napisowe.
+
+Przykłady: 
+
+* ``table dane IN "CSV" "dane.csv": S <- [Z,DO], d~ODL, c~KOSZT;`` 
+	* zapis do pliku ``.csv`` o nazwie ``dane.csv``
+	* zapisywane kolumny: ``Z``, ``DO``, ``ODL``, ``KOSZT``
+	* kolumny ``Z``, ``DO`` wchodzą do zbioru kontrolnego ``S``
+	* wartości z kolumny ``ODL`` są przypisane do parametru ``d``
+	* wartości z kolumny ``KOSZT`` są przypisane do parametru ``c``
+	* przykładowa tabela: 
+
+| Z | DO | ODL | KOSZT |
+| - | - | - | - |
+| Seattle | New-York | 2.5 | 0.12 |
+| Seattle | Chicago | 1.7 | 0.08 |
+| Seattle | Topeka | 1.8 | 0.09 |
+| San Diego | New-York | 2.5 | 0.15 |
+
+* ``table wyniki{(f, t) in S} OUT "CSV" "wyniki.csv":``<br/>``f~Z, t~DO, x[f,t]~PRZEPLYW;``
+	* zapis do pliku ``.csv`` o nazwie ``wyniki.csv``
+	* zapis każdego rekordu dla krotki ``(f, t)`` ze zbioru ``S``
+	* tabela wyjściowa składa się z 3 kolumn: 
+		* ``Z`` -- wartości indeksu ``f``
+		* ``DO`` -- wartości indeksu ``t`` 
+		* ``PRZEPLYW`` -- wartości parametru lub zmiennej ``x`` zawierającej ciąg 2-elementowych krotek 
+
+# Model danych[^](#Spis-treści)
+
+## Sposoby definiowania modelu i danych[^](#Spis-treści)
+
+1. W pojedynczym pliku: 
+
+```
+# model -------------------------
+instrukcja;
+instrukcja;
+...
+instrukcja;
+
+# dane  -------------------------
+data;
+
+dane;
+dane;
+...
+dane;
+
+end;
+```
+
+2. W osobnych plikach: 
+
+* plik ``.mod``
+
+```
+instrukcja;
+instrukcja;
+...
+instrukcja;
+
+end;
+```
+
+* plik ``.dat``
+
+```
+data;
+
+dane;
+dane;
+...
+dane;
+
+end;
+```
+
+## Wczytywanie modelu i danych z osobnych plików[^](#Spis-treści)
+
+```
+glpsol.exe --model plik_z_modelem.mod --data plik_z_danymi.dat
+```
+
+## Blok danych[^](#Spis-treści)
+
+Sekcja lub plik z danymi nie może zawierać instrukcji (_statements_). 
+
+### Zbiory
+
+Składnie: 
+
+``set nazwa := rekord1, rekord2, ..., rekordn;``
+
+``set nazwa [symbol1, ..., symboln ] := rekord1, ..., rekordn;``
+
+* ``symbol`` -- indeksy wskazujące element zbioru (jeśli dane wejściowe są zbiorem); 
+* ``rekord`` -- właśnie dane:  
+	* ``:=`` -- opcjonalnie (dla zwiększenia czytelności kodu)
+	* ``(przekrój)``
+		* rekord kontrolny o składni: ``(el1, el2, ..., eln)``
+		* elementy ``el`` mogą być:
+			* liczbami
+			* napisami
+			* gwiazdką ``*``
+		* liczba elementów musi odpowiadać liczbie elementów w każdej krotce
+		* gwiazdka jest _placeholderem_ dla elementów podanych dalej, np. zapis ``(a, *, b) 1, 2, 3`` pozwoli utworzyć zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{(a, 1, b), (a, 2, b), (a, 3, b)\}">
+		* przekrój bez gwiazdki zostanie dodany do zbioru, np. ``(a, b, c) 1, 2, 3`` --> <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{(a, b, c), (1, 2, 3)\}">
+	* ``proste_dane`` -- zapis elementów pojedynczej krotki _n_-elementowej, np. ``set dane := a b c d`` --> <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{(a, b, c, d)\}"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{a, b, c, d\}"> 
+	* ``: dane_w_macierzy`` -- dane w postaci macierzy
+	* ``(tr) : dane_w_macierzy`` -- dane w postaci macierzy transponowanej
+
+Przecinki mogą być pominięte. 
+
+Przykłady: 
+
+* proste listy (wektory): 
+	* ``set miesiac := sty lut mar kwi maj cze;``
+	* ``set miesiac 'sty', 'lut', 'mar', 'kwi', 'maj', 'cze';``
+	* ``set miesiac "sty", "lut", "marz";``
+* zbiory krotek:
+	* ``set A [3, mar] := (1, 2), (2, 3), (2, 2);``
+	* ``set A [3, 'mar'] := 1 2 2 3 2 2;``
+	* ``set B := (1,2,3) (1,3,2) (2,3,1) (2,1,3);``
+	* ``set B := (*, *, *) 1 2 3, 1 3 2, 2 3 1, 2 1 3;``
+	* ``set B := (1, * 2) 3 2 (2, *, 1) 3 1 (1, 2, 3) (2, 1, 3) (1, 1, 1);``
+* macierz: 
+	* ``set A [3, 'mar']``<br/>``: 1 2 3 4 :=``<br/>``1 - + - -``<br/>``2 - + + -``<br/>``3 + - - +``<br/>``4 - + - +;``
+	* ``set B := (1, *, *)``<br/>``: 1 2 3 :=``<br/>``1 + - -``<br/>``2 - + +``<br/>``3 - + -``<br/>``(2, *, *)``<br/>``: 1 2 3 :=``<br/>``1 + - +``<br/>``2 - - -``<br/>``3 + - -;``
+
+### Zbiory w postaci macierzy
+
+Składnia rekordu danych: 
+
+```
+:  c1  c2  ... cn   :=
+r1 a11 a12 ... a1n
+r2 a21 a22 ... a2n
+...
+rm am1 am2 ... amn;
+```
+
+* ``r`` -- numery lub etykiety (napisy) wierszy; 
+* ``c`` -- numbery lub etykiety (napisy) kolumn; 
+* ``a`` 
+	* wartości: ``+`` lub ``-``
+	* krotka dwuelementowa składająca się z indeksów ``(r, c)``
+	* ``+`` w zapisie oznacza, że krotka ``(r, c)`` skłądająca się z odpowiednich indeksów jest częścią danych; 
+* ograniczniki ``:`` oraz ``:=`` mogą być pominięte
+
+### Zbiory w postaci macierzy transponowanej
+
+Składnia rekordu danych: 
+
+```
+(tr): c1  c2  ... cn   :=
+r1    a11 a12 ... a1n
+r2    a21 a22 ... a2n
+...
+rm    am1 am2 ... amn;
+```
+
+Działanie analogiczne do zwykłej macierzy; jedyna różnica -- krotki oznaczone ``+`` mają przestawione indeksy: ``(c, r)``.
+
+Ograniczniki ``:`` oraz ``:=`` mogą być pominięte
+
+### Parametry
+
+Składnie: 
+
+``param nazwa, rekord, rekord, ..., rekord;``
+
+``param nazwa default wartość, rekord, ..., rekord;``
+
+``param : dane_tabelaryczne;``
+
+``param default wartość: dane_tabelaryczne;``
+
+* ``wartość`` -- opcjonalnie: domyślna wartość parametru;
+* ``rekord`` -- dane składające się z elementów: 
+	* ``:=`` -- opcjonalnie (zwiększa czytelność kodu),
+	* ``[przekrój]`` -- definiuje przekrój danych,
+	* ``proste_dane`` 
+	* ``: dane_tabelaryczne`` -- dane w formacie tabelarycznym; 
+	* ``(tr) : dane_tabularyczne`` -- jw., ale z dodatkową transpozycją.
+* przecinki i dwukropek można pominąć.
+
+Przykłady: 
+
+* ``param T := 4;``
+* ``param miesiac := 1 sty 2 lut 3 mar 4 kwi 5 maj;``
+* ``param zapas := zelazo 7.32 nikiel 35.8;``
+* ``param zapas [*] zelazo 7.32 nikiel 35.8;``
+* ``param zapas [zelazo] 7.32 [nikiel] 35.8;``
+	* 3 powyższe <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math== \{ zelazo, 7,32, nikiel, 35,8 \}">
+* ``param : stan cena wartosc :=``<br/>``zelazo 7.32 .025 -.1``<br/>``nikiel 35.8 .03 .02;``
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
+\begin{bmatrix} 
+& stan & cena & wartosc \\
+zelazo & 7.32 & 0.025 & -0.1 \\ 
+nikiel & 35.8 & 0.03 & 0.02 \\
+\end{bmatrix} ">
+
+* ``param : surowiec : stan cena wartosc :=``<br/>``zelazo 7.32 .025 -.1``<br/>``nikiel 35.8 .03 .02;``
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
+\begin{bmatrix} 
+surowiec & stan & cena & wartosc \\
+zelazo & 7.32 & 0.025 & -0.1 \\ 
+nikiel & 35.8 & 0.03 & 0.02 \\
+\end{bmatrix} ">
+
+* ``param demand default 0 (tr)``<br/>``: FRA DET LAN WIN STL FRE LAF :=``<br/>``bands 300 . 100 75 . 225 250``<br/>``coils 500 750 400 250 . 850 500``<br/>``plate 100 . . 50 200 . 250 ;``
+
+
+
+
+
+
+
+
+
+
+
 
 
 
