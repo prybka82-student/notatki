@@ -42,9 +42,17 @@
 	* [Instrukcja ``table`` (_table statement_)](#Instrukcja-``table``-(_table-statement_))
 * [Model danych](#Model-danych)
 	* [Sposoby definiowania modelu i danych](#Sposoby-definiowania-modelu-i-danych)
-	* [Wczytywanie modelu i danych z osobnych plików](#Wczytywanie-modelu-i-danych-z-osobnych-plików)
+	* [Wczytywanie modelu i danych](#Wczytywanie-modelu-i-danych)
 	* [Blok danych](#Blok-danych)
 * [Sufiksy (przyrostki)](#Sufiksy-(przyrostki))
+	* [Przyrostki zmiennych](#Przyrostki-zmiennych)
+	* [Przyrostki celów](#Przyrostki-celów)
+* [Funkcje związane z datą i czasem](#Funkcje-związane-z-datą-i-czasem)
+	*	[gmtime()](#gmtime())
+	*	[str2time](#str2time)
+	*	[time2str](#time2str)
+
+
 
 # Dokumentacja[^](#Spis-treści)
 
@@ -1199,6 +1207,13 @@ Przykłady:
 		* ``DO`` -- wartości indeksu ``t`` 
 		* ``PRZEPLYW`` -- wartości parametru lub zmiennej ``x`` zawierającej ciąg 2-elementowych krotek 
 
+Sterowniki: 
+
+* ``"CSV"`` -- pliki ``.csv``
+* ``"xBASE"`` -- pliki ``.dbf``
+* ``"ODBC"`` lub ``"iODBC"`` 
+* ``"MySQL"``
+
 # Model danych[^](#Spis-treści)
 
 ## Sposoby definiowania modelu i danych[^](#Spis-treści)
@@ -1249,11 +1264,46 @@ dane;
 end;
 ```
 
-## Wczytywanie modelu i danych z osobnych plików[^](#Spis-treści)
+## Wczytywanie modelu i danych[^](#Spis-treści)
+
+### Model i dane w 1 pliku
+
+```
+glpsol.exe --model plik.mod
+```
+
+### Model i dane w osobnych plikach
 
 ```
 glpsol.exe --model plik_z_modelem.mod --data plik_z_danymi.dat
 ```
+
+Jeśli model zawiera sekcję ``data;``, jest ona ignorowana w przypadku załadowania pliku ``.dat``. 
+
+### Zapis danych do pliku zewnętrznego 
+
+```
+glpsol.exe --model plik.mod --display wyniki.out
+```
+
+* plik ``wyniki.out`` będzie zawierał wartości zwrócone przez funkcje ``display`` i ``printf``. 
+
+```
+glpsol.exe --model plik.mod --output wyniki.sol
+```
+
+* zapis wyłącznie wyników.
+
+### Sprawdzenie modelu bez wykonywania obliczeń
+
+```
+glpsol.exe --check --model plik.mod --wlp problem.lp
+```
+
+Zapis problemu wygenerowanego przez model może być zapisany do pliku ``.lp``, nie jest to jednak konieczne.
+
+
+
 
 ## Blok danych[^](#Spis-treści)
 
@@ -1504,8 +1554,8 @@ Oznaczenia formatu daty i czasu
 
 Zakres wartości zmiennej liczbowej przechowującej datę i czas: 
 
-* minimum: ``-62135596800``
-
+* minimum: ``-62 135 596 800`` -- północ 1 stycznia 0001 r.
+* maksimum: ``+64 092 211 199`` -- 23:59:59 31 grudnia 4000 r.
 
 
 
