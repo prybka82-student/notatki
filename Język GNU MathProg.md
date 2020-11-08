@@ -129,8 +129,6 @@ else
 	return q[i+1];
 ```
 
----
-
 Kod: 
 
 ```if i == 2 then 3```
@@ -181,8 +179,6 @@ Zapis matematyczny:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\sum_{i \in S \setminus T} {a_i b_{ij} }">
 
----
-
 Kod: 
 
 ```prod{i in I} f(i)``
@@ -190,8 +186,6 @@ Kod:
 Zapis matematyczny: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\prod_{i \in I} f(i)">
-
----
 
 Kod: 
 
@@ -202,8 +196,6 @@ Zapis matematyczny:
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=min_{i_1, ..., i_n \in I} f(i)">
 
 -- minimalna wartość funkcji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> obliczanej dla parametrów od <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i_1"> do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i_n"> ze zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=I">. 
-
----
 
 Kod: 
 
@@ -222,8 +214,6 @@ Kod:
 Zapis matematyczny: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a_{ij}">
-
----
 
 Kod: 
 
@@ -350,7 +340,7 @@ Wartości iloczynu <img style="min-width: 300px;" src="https://render.githubuser
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 2, y}">
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, b, 2, z}">
 
----
+<br/>
 
 * Parametr zawierający zbiory
 
@@ -369,6 +359,152 @@ var p = new
 };
 ```
 
+* Indeks niemy wykorzystany w dalszej części wyrażenia: 
+
+Kod: 
+
+``{ i in A, (i - 1, k) in B, l in C }``
+
+Analogiczna konstrukcja w języku ``Python``:
+
+```python
+for i in A:
+   for (i - 1, k) in B:
+      for l in C:
+         pass
+```
+
+Przykładowe wartości zbiorów: 
+
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = { 1, 2 }">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B = { (2, a), (3, b) }">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=C = { x, y, z }">
+
+Wartości kodu ``{ i in A, (i - 1, k) in B, l in C }``: 
+
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 1, a, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 1, a, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 1, a, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 1, b, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 1, b, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 1, b, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 2, a, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 2, a, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 2, a, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 2, b, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 2, b, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={1, 2, b, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 1, a, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 1, a, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 1, a, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 1, b, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 1, b, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 1, b, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 2, a, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 2, a, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 2, a, z}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 2, b, x}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 2, b, y}">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math={2, 2, b, z}">
+
+<br/>
+
+* Wyrażenia indeksujące z ograniczeniami (predykatami)
+
+Kod: 
+
+``action{ i in A, (j, k) in B, l in C: i <= 5 and k <> 'a' }``
+
+Analogiczny kod w języku ``Python``:
+
+```python
+for i in A:
+	for (i, j) in B:
+		for l in C:
+			if (i <= 5 and k != 'a'):
+				action()
+```
+
+## Wyrażenia zbiorowe (_set expressions_)
+
+Wyrażenia przetwarzające zbiory.
+
+| Składnia | Objaśnienie |
+| --- | --- |
+| ``{(123,'a'),(i+1,'b'),(j-1,'c')}`` | literał zbiorowy |
+| ``{ }`` | jw. (zbiór pusty) |
+| ``{ 1, 2, 3 }`` | jw. (zbiór krotek jednoelementowych |
+| ``{ (1, 'a'), (2, 'b') }`` | jw. (zbiór krotek dwuelementowych |
+| ``I``, ``DOGS`` | zbiory bez indeksów |
+| ``S[i, j-1]`` | zbiór z indeksami |
+| ``1..t-1 by 2`` | zbiór arytmetyczny |
+| ``{t in 1..T, (t+1, j) in S: (t, j) in F}`` | wyrażenie indeksujące |
+| ``setof{i in I, j in J}(i+1, j-1)`` | iterowane wyrażenie zbiorowe |
+| ``if i < j then S[i,j] else F diff S[i,j]`` | warunkowe wyrażenie zbiorowe |
+| ``(1..10 union 21..30)`` | wyrażenie zbiorowe w nawiasach |
+
+### Zbiory arytmetyczne
+
+| Przykład składni | Wartość |
+| --- | --- |
+| ``1..7`` | ciąg liczb od 1 do 24: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{ 1, 2, 3, 4, 5, 6, 7 \}"> |
+| ``1..7 by 2`` | co druga liczba od 1 do 6: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{ 1, 3, 5, 7 \}"> |
+
+Krok ``k`` w składni ``a..b by k`` może być ujemny (wtedy ciąg będzie malejący), ale nie może być równy 0 (wtedy ciąg będzie nieskończony).
+
+### Wyrażenia iterowane (_iterated expressions_)
+
+Składnia: 
+
+```
+setof{ ZBIOR_A, ZBIOR_B... }( element_a, element_b... )
+```
+
+* ``ZBIOR_A``, ``ZBIOR_B`` -- wyrażenia indeksowane (_indexing-expressions_) z niemymi indeksami; 
+* ``element_a``, ``element_b`` -- (_integrands_) wyrażenia numeryczne lub symboliczne (napisowe) wyodrębnione w zbiorach, występujące:
+	* pojedynczo -- całe wyrażenie oznacza zbiór jednoelementowych krotek;
+	* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n"> razy -- całe wyrażenie oznacza zbiór _n_-elementowych krotek
+
+Przykłady: 
+
+<mark><code>setof{i in I, j in J}(i+1, j-1)</code></mark>
+
+* wybierz kolejny (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i+1">) i poprzedni (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=j-1">) element ze zbiorów <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=I"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=j">
+* analogiczny kod w języku ``Python``:
+
+```python
+for i in I:
+	for j in J:
+		foo(i+1, j-1)
+```
+
+* zapis matematyczny:
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{i \in I} \forall_{j \in J} f(i+1, j-1)">
+
+<mark><code>setof{k in nodes, (i,k) in steps[s-1], (k,j) in steps[s-1]}(i,j)</code></mark>
+
+* elementami ``k`` ze zbioru ``nodes`` przeszukujemy zbiór ``steps``,
+* z każdego ``s - 1`` elementu zbioru ``steps`` bierzemy _i_-ty i _k_-ty element, 
+* z każdego ``s - 1`` elementu zbioru ``steps`` bierzemy _k_-ty i _j_-y  element, 
+* wybieramy ostatecznie elementy _i_ oraz _j_;
+* analogiczny kod w języku ``Python``:
+
+```python
+for k in nodes:
+	for (i, k) in steps:
+		for (k, j) in steps:
+			foo(i, j)
+```
+
+* zapis matematyczny: 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{k \in N} \forall_{ik \in S_{s-1}} \forall_{kj \in S_{s-1}} f(i, j)">
+
+gdzie: 
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=N"> -- ``nodes``
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=S"> -- ``steps``
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> -- jakaś funkcja działająca na elementach _i_ oraz _j_
 
 
 # Operatory
