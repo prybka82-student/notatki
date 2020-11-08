@@ -506,6 +506,196 @@ gdzie:
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=S"> -- ``steps``
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> -- jakaś funkcja działająca na elementach _i_ oraz _j_
 
+### Wyrażenia warunkowe (_conditional expressions_)
+
+Jw.
+
+## Wyrażenia logiczne (_logical expressions_)
+
+Mają wartość logiczną -- prawda lub fałsz. 
+
+Przykłady składni
+
+* ``a[i, j] < 1.5``
+
+-- wyrażenie porównujące: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a_{ij} < 1,5"> 
+
+* ``s[i + 1, j - 1] <> 'marzec' & rok``
+
+-- porównujące; matematycznie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_{i+1 j-1} \neq"> 'marzec' + rok
+
+* ``(i + 1, 'luty') not in I cross J`` 
+
+-- porównujące; ``C#``:
+
+```csharp
+if (!I.Except(J).Contains((i+1, "luty")))
+```
+
+* ``S union T within A[i] inter B[j]`` 
+
+-- porównujące;``C#``: 
+
+```csharp
+if (A[i].Union(B[j]).Contains(S.Union(T))
+```
+
+* ``forall{i in I, j in J} a[i, j] < .5 * b[i]``
+
+-- iterowane wyrażenie logiczne; matematycznie: 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{i \in I, j \in J} a_{ij} < \frac{b_i}{2} ">
+
+-- ``C#``: 
+
+```csharp
+I.Union(J).Where(i < b[i]/2 && j < b[i]/2)
+```
+
+* ``(a[i,j] < 1.5 or b[i] >= a[i,j])`` 
+
+-- ``C#``: 
+
+```csharp
+for (int i = 0, int j = 0; i < a.GetLength(0) && j < a.GetLength(1) && i < b.Length; i++, j++)
+{
+	if (a[i, j] < 1.5 || b[i] >= a[i, j])
+		//jakaś funkcja
+}
+```
+
+* ``not (a[i,j] < 1.5 or b[i] >= a[i,j]) and (i,j) in S``
+
+-- ``C#``: 
+
+```csharp
+for (int i = 0, int j = 0; i < a.GetLength(0) && j < a.GetLength(1); i++, j++)
+{
+	if (!(a[i, j] < 1.5 || b[i] >= a[i, j])) && S.Contains((i, j)))
+		//jakaś funkcja
+}
+```
+
+### Wyrażenia porównujące
+
+Przykłady
+
+* ``x < y``
+* ``x <= y``
+* ``x = y`` lub ``x == y``
+* ``x >= y``
+* ``x <> y`` lub ``x != y``
+* ``x in Y`` -- w ``C#``: ``Y.Contains(x)``
+* ``(x_1, x_2, x_3) in Y``
+* ``x not in Y`` lub ``x !in Y`` -- w ``C#``:  ``!Y.Contains(x)``
+* ``(x_1, x_2) not in Y`` lub ``(x_1, x_2) !in Y``
+* ``X within Y`` -- zawieranie się lub równość zbiorów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \subseteq Y">[^zbiory]
+* ``X not within Y`` lub ``X !within Y`` -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \nsubseteq Y">[^zbiory]
+
+[^zbiory]: Zbiory _X_ i _Y_ muszą zawierać taką samą liczbę elementów. 
+
+### Wyrażenia iterowane (_iterated expressions_)
+
+Składnia:
+
+```operator wyrażenie_indeksujące warunki``
+
+Przykłady: 
+
+* ``forall { i in I, j in J} a[i, j] < 0.5 * b[i]``
+
+```csharp
+foreach (int i in I)
+	foreach (int j in J)
+		if (a[i, j] < b[i]/2)
+			//jakaś funkcja
+```
+
+## Wyrażenia liniowe (_linear expressions_)
+
+Wyrażenia działające jak funkcja liniowa. 
+
+Przykłady: 
+
+* ``sum{j in J} (a[i, j] * x[i, j] + 3 * y[i -1])``
+
+```csharp
+double sum = 0;
+
+foreach (int j in J)
+{
+	for (int i = 1; i < a.GetLength(0)+1 && i < x.GetLength(0)+1 && i < y.Length; i++)
+		sum += a[i-1, j] * x[i-1, j] + 3 * y[i]; 
+}
+```
+
+* ``if i in I then x[i, j] else 1.5 * z + 3.25``
+
+```csharp
+
+for (int i = 0; i < 100; i++)
+{
+	for (int j = 0; j < x.Length; i++, j++)
+		if (I.contains(i)) 
+			yield return x[i, j];
+		else
+			yield return 1.5 * z + 3.25;
+}
+```
+
+* ``(- x[i,j] + 3.5 * y[k]) / sum{t in T} abs(d[i,j,t])``
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\frac{-x_{ij} + 3,5 \times y_k }{\sum_{t \in T} |d_{ijt}|}">
+
+```csharp
+double dzielnik = 0;
+
+for (int i = 0; i < d.GetLength(0); i++)
+	for (int j = 0; j < d.GetLength(1); j++)
+		for (int t = 0; t < 100; t++)
+			if (T.Contains(t))
+				dzielnik += Math.Abs(d[i, j, t]);
+
+for (int i = 0; i < x.GetLength(0); i++)
+	for (int j = 0; j < x.GetLength(1); j++)
+		for (int k = 0; k < y.Length; k++)
+			yield return (-x[i, j] + 3.5 * y[k]) / dzielnik;
+```
+
+Przypadki szczególne
+
+### Zmienne bez indeksów (_unsubscripted variables_)
+
+Przykład: ``2 * x - 4 / y + 2.5``
+
+### Zmienne z indeksami (_subscripted variables_)
+
+Przykład: ``2 * x[i-1, j+1] - 4 / y[k] + 2.5``
+
+Indeksy mogą być wyrażeniami liczbowymi (standardowymi indeksami typu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x_1">) lub symbolicznymi (napisami, etykietami, np. słowniki w ``C#``). 
+
+### Wyrażenia iterowane (_iterated expressions_)
+
+Składnia: 
+
+```sum wyrażenie_indeksujące operacje_lub_warunki```
+
+Przykłady
+
+* ``sum{i in I} abs(d[i])``
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\sum_{i \in I} |d_i|">
+
+```csharp
+var I = new[] {0, 2, 4}.ToList();
+var d = new[] {-1, -2, -3, -4, -5, -6};
+
+int suma = 0;
+I.ForEach(i => suma += Math.Abs(d[i])); //suma = 9
+```
+
+
+
 
 # Operatory
 
@@ -553,6 +743,176 @@ gdzie:
 1. Funkcje. 
 2. Konkatenacja. 
 3. Wyrażenia warunkowe. 
+
+## Operatory zbiorów
+
+| Składnia | Liczba argumentów | Funkcja |
+| --- | --- | --- |
+| ``X union Y`` | 2 | suma zbiorów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \cup Y"> |
+| ``X diff Y`` | 2 | różnica zbiorów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \setminus Y">[^roznica] |
+| ``X symdiff Y`` | 2 | różnica symetryczna: <br/><img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \bigoplus Y = (X \setminus Y) \cup (Y \setminus X)">[^roznica_symetryczna] |
+| ``X inter Y`` | 2 | część wspólna zbiorów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \cap Y"> |
+| ``X cross Y`` | 2 | iloczyn kartezjański: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X \times Y">[^iloczyn_kartezjanski] |
+
+[^roznica]: To, co w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X">, ale nie w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Y">. 
+
+[^roznica_symetryczna]: Suma elementów obu zbiorów za wyjątkiem elementów wspólnych (wszystko, co należy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X">, ale nie do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Y">, razem z wszystkim, co należy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Y">, ale nie należy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X">). 
+
+[^iloczyn_kartezjanski]: Dopasowanie każdy z każdym. 
+
+## Hierarchia operatorów symbolicznych 
+
+1. Ustalenie wartości wyrażeń z operatorami numerycznymi. 
+2. Ustalenie wartości wyrażeń z operatorami symbolicznymi.
+3. Ustalenie wartości operatora ``setoff``
+4. Iloczyn kartezjański ``cross``
+5. Część wspólna zbiorów ``inter``
+6. Suma i różnice zbiorów ``union``, ``diff``, ``symdiff``
+7. Wyrażenia warunkowe ``if then``, ``if then else``
+
+## Operatory logiczne
+
+| Składnia | Liczba argumentów | Funkcja |
+| --- | --- | --- |
+| ``not x`` | 1 | negacja: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\neg x"> |
+| ``!x`` | 1 | jw. |
+| ``x and y`` | 2 | logiczne "i": ``x && y`` |
+| ``x && y`` | 2 | jw. |
+| ``x or y`` | 2 | lobiczne "lub": ``x || y`` |
+| ``x || y`` | 2 | jw. |
+
+## Hierarchia operatorów logicznych
+
+1. Ustalenie wartości działań na liczbach
+2. Ustalenie wartości działań na symbolach (napisach)
+3. Ustalenie wartości działań na zbiorach
+4. Porównania, np. ``>``, ``<=``, ``=``
+5. Negacja ``not``, ``!``
+6. Suma logiczna ``and``, ``&&``
+7. Kwantyfikatory ``forall`` i ``exists``
+8. Iloczyn logiczny ``or``, ``||``
+
+## Operatory wyrażeń liniowych
+
+Takie same jak w przypadku wyrażeń liczbowych. 
+
+## Hierarchia operatorów wyrażeń liczbowych
+
+Taka sama jak w przypadku operatorów wyrażeń liczbowych. 
+
+# Instrukcje (_statements_)
+
+Podstawowe jednostki operacji. 
+
+Rodzaje: 
+
+* deklaracje -- zadeklarowanie:
+	* zbioru
+	* parametru
+	* zmiennej
+	* ograniczenia
+	* celu
+* operacje (_functional statements_):
+	* rozwiąż ``solve``
+	* sprawdź ``check``
+	* wyświetl ``display``, wydrukuj ``printf``
+	* wykonuj w pętli ``loop``
+	* tabela (_table_) 
+
+## Deklaracje zbiorów
+
+Składnia: ``set nazwa alias dziedzina, atrybut1, atrybut2...;``
+
+* _alias_ -- opcjonalny
+* _dziedzina_ -- opcjonalna 
+* _atrybuty_ -- opcjonalne: 
+	* ``dimen n`` -- liczba elementów w krotkach tworzących zbiór (domyślnie 1)
+	* ``within wyrażenie`` -- ograniczenie nałożone na zbiór
+	* ``:= wyrażenie`` 
+		* wskazanie elementów zbioru;
+		* jeśli nie podano, elementy zbioru muszą być wskazane w sekcji ``data;``
+	* ``default wyrażenie`` -- domyślne elementy zbioru (jeśli nie przypisano innych w deklaracji lub sekcji ``data;``)
+
+Przykłady
+
+* ``set nodes;`` 
+	* deklaracja zbioru o nazwie ``nodes`` 
+* ``set arcs within nodes across nodes;`` 
+	* zbiór ``arcs`` zawierający elementy zbioru ``nodes`` dopasowane do samych siebie
+* ``set A{i in I, j in J},``<br/>``within B[i+1] cross C[j-1],``<br/>``within D diff E,``<br/>``default {('abc',123), (321,'cba')}`` 
+	* zbiór ``A`` zawierający dwuelementowe krotki o indeksach _i_, _j_
+	* zawierający elementy zbioru ``B`` (bez pierwszego) dopasowane do każdego elementu zbioru ``C`` (bez ostatniego) 
+	* oraz elementy zbioru ``D`` różne od elementów zbioru ``D``
+	* domyślnie zbiór zawiera 2 krotki: ``('abc',123)`` i ``(321,'cba')`` |
+
+## Deklaracja parametrów 
+
+Składnia: ``param nazwa alias dziedzina, atrybut1, atrybut2...;``
+
+* ``alias`` -- opcjonalny;
+* ``dziedzina`` -- opcjonalna; wyrażenie indeksujące wskazujące typ danych (tablica jedno- lub wielowymiarowa);
+* ``atrybuty`` -- opcjonalne (przecinki można pominąć): 
+	* nieokreślony -- parametr jest dowolną liczbą 
+	* ``integer`` -- parametr jest liczbą całkowitą
+	* ``binary`` -- parametr jest liczbą binarną (przyjmuje wartości 0 lub 1)
+	* ``symbolic`` -- parametr jest liczbą lub napisem
+	* wyrażenie porównujące z atrybutami ``<``, ``<=``< ``=`` lub ``==``, ``>=``, ``>``, ``<>`` lub ``!=`` -- warunek ograniczający wartości parametru
+	* ``in wyrażenie`` -- zbiór, z którego pochodzą elementy parametru
+	* ``:= wyrażenie`` -- określa wartość przypisaną parametrowi
+	* ``default wyrażenie`` -- domyślna wartość parametru
+
+Przykłady:
+
+* ``param units{raw, prd} >= 0;``
+	* parametr ``units`` zawierający zmienne ``raw`` i ``prd``, o ile są nieujemne
+* ``param profit{prd, 1..T+1};``
+	* parametr ``profit`` zawierający zmienną ``prd`` i ciąg liczb od 1 do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=T+1">
+* ``param N := 20 integer >= 0 <= 100;``
+	* parametr ``N`` o wartości (początkowej) 20 i ograniczeniach: 
+		* liczba całkowita
+		* liczba nieujemna
+		* liczba nie większa niż 100
+* ``param comb 'n choose k' {n in 0..N, k in 0..n} :=``<br/>``if k = 0 or k = n then 1``<br/>``else comb[n-1,k-1] + comb[n-1,k];``
+	* parametr ``comb`` o aliasie ``n choose k`` zawierający zbiór elementów:
+		* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, jeśli indeks elementu wynosi <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">
+		* sumę elementów o indeksach <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n-1, k-1"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n-1, k">
+* ``param p{i in I, j in J},``<br/>``integer,``<br/>``>=0,``<br/>``<= i+j,``<br/>``in A[i] symdiff B[j],``<br/>``in C[i,j],``<br/>``default 0.5 * (i + j);``
+	* parametr ``p`` zawierający ciąg liczb ze zbiorów ``I`` oraz ``J`` takich, że: 
+		* są liczbami całkowitymi 
+		* są nieujemne
+		* pochodzą z niewspólnych elementó zbiorów ``A`` i ``B``
+		* pochodzą ze zbioru ``C``
+		* są mniejsza niż suma indeksów zbioru ``A`` i ``B`` 
+		* domyślnie to ciąg średnich wartości indeksów _i_ oraz _j_ 
+* ``param miesiac symbolic default 'maj' in {'luty', 'maj', 'lipiec'};``
+	* parametr napisowy o nazwie ``miesiac`` o wartości domyślnej ``'maj'`` i przyjmujący jedną z 3 wartości: ``'luty'``, ``'maj'`` lub ``'lipiec'``
+
+## Deklaracja zmiennych (_variable statements_)
+
+Składnia: ``var nazwa alias dziedzina, atrybut1, atrybut2...;``
+
+* alias -- jw.
+* dziedzina -- jw.
+* atrybuty -- opcjonalne (przecinki można pominąć): 
+	* ``integer`` -- jw.
+	* ``binary`` -- jw.
+	* ograniczenia: 
+		* ``>= wyrażenie``
+		* ``<= wyrażenie``
+		* ``= wyrażenie``
+
+Przykłady:
+
+* ``var x >= 0;``
+	* nieujemna zmienna ``x``
+* ``var y{I, J};``
+	* zmienna ``y`` przyjmująca wartości ze zbiorów ``I`` oraz ``J``
+* ``var marka{p in produkt}, integer, >= kupione[p], <= na_rynku[p];``
+	* zmienna ``marka`` przyjmująca wartości całkowite ze zbioru ``produkt`` nie mniejsza niż wartości ze zbioru ``kupion`` i nie większa niż wartości ze zbioru ``na_rynku``
+* ``var magazyn{surowce, 1..T+1} >= 0;``
+	* zmienna ``magazyn`` zawierająca ciąg liczb od ``surowce``, przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=T+1"> 
+* ``var z{i in I, j in J} >= i+j;``
+	* zmienna ``z`` zawierające kolejne liczby ze zbiorów ``I`` oraz ``J`` pod warunkiem, że są nie mniejsza niż suma indeksów tych liczb
 
 
 
