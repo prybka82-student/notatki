@@ -922,7 +922,7 @@ Składnia:
 
 (przecinki można pominąć)
 
-* ``s.t.`` -- skrót od słów kluczowych ``subject to`` lub ``subj to``, które można używać zamiennie z ``s.t.``
+* ``s.t.`` -- opcjonalny skrót od słów kluczowych ``subject to`` lub ``subj to``, które można używać zamiennie z ``s.t.``; 
 * ``alias`` -- jw.
 * ``dziedzina`` -- jw.; 
 	* jeśli pominięta, ograniczenie dotyczy liczb rzeczywistych; 
@@ -943,7 +943,27 @@ Przykłady
 
 * ``.s.t. r: x + y + z, >= 0, <= 1;``
 	* ograniczenie o nazwie ``r`` takie, że suma zmiennych/parametrów ``x``, ``y``, ``z`` musi się mieścić w przedziale <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0, 1]">
-* ``
+* ``limit{t in 1..T}: sum{j in produkty} marka[j, t] <= max_produkt;``
+	* ograniczenie o nazwie ``limi`` takie, że
+	* suma elementów zbioru ``marka`` nie może przekroczyć wartości ``max_produkt``
+	* zbiór ``marka`` jest tablicą (macierzą) dwuwymiarową z indeksami ``j`` i ``t`` takimi, że:
+		* indeks ``t`` mieści się w przedziale <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1, T]"> 
+		* indeks ``j`` mieści zawarty jest w zbiorze ``produkty`` 
+* ``subject to bilans{i in surowce, t in 1..T}:``<br/>``magazyn[i, t+1] =``<br/>``magazyn[i,t] - sum{j in produkty} jednostki[i,j] * marki[j, t];``
+	* ograniczenie o nazwie ``bilans`` takie, że
+	* każdy element tablicy ``magazyn`` musi być równy różnicy
+		* wartości elementu z tablicy ``magazyn``
+		* i sumie elementów z tablicy ``jednostki``
+	* indeksy tablicy ``magazyn`` pochodzą ze zbioru ``surowce`` i przedziału <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[1, T]">
+	* indeksy tablicy ``jednostki`` pochodzą ze zbioru ``surowce`` i zbioru ``produkty`` 
+* ``subject to dniowka 'standardowa dniowka' {t in czas}:``<br/>``sum{p in produkt} produkt_czas[p] * zwykly_produkt[p, t]``<br/>``<= 1.3 * wytworzenie_produktu[t] * pracownicy[t];``
+	* ograniczenie o nazwie ``dniowka`` z aliasem ``standardowa dniowka`` takie, że:
+		* suma iloczynów elementów listy ``produkt_czas`` i ``zwykly_produkt`` 
+		* nie może przekroczyć 130% iloczynu elementów list ``wytworzenie_produktu`` i ``pracownicy``
+	* elementy listy ``produkt`` są indeksowane wartościami ze zbioru ``produkt``
+	* elementy tablicy ``zwykly_produkt`` są indeksowane wartościami ze zbioru ``produkt`` i zbioru ``czas``
+	* elementy list ``wytworzenie_produktu`` i ``pracownicy`` są indeksowane wartościami ze zbioru ``czas``
+
 
 > Written with [StackEdit](https://stackedit.io/).
 
