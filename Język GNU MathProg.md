@@ -44,6 +44,7 @@
 	* [Sposoby definiowania modelu i danych](#Sposoby-definiowania-modelu-i-danych)
 	* [Wczytywanie modelu i danych z osobnych plików](#Wczytywanie-modelu-i-danych-z-osobnych-plików)
 	* [Blok danych](#Blok-danych)
+* [Sufiksy (przyrostki)](#Sufiksy-(przyrostki))
 
 # Dokumentacja[^](#Spis-treści)
 
@@ -1352,10 +1353,21 @@ Składnie:
 * ``rekord`` -- dane składające się z elementów: 
 	* ``:=`` -- opcjonalnie (zwiększa czytelność kodu),
 	* ``[przekrój]`` -- definiuje przekrój danych,
-	* ``proste_dane`` 
-	* ``: dane_tabelaryczne`` -- dane w formacie tabelarycznym; 
-	* ``(tr) : dane_tabularyczne`` -- jw., ale z dodatkową transpozycją.
-* przecinki i dwukropek można pominąć.
+	* ``proste_dane`` -- rekord postaci ``el1, el2, el3...``
+	* ``: dane_tabelaryczne`` (_tabular data record_) -- dane w formacie tabelarycznym, np. 
+    
+    ``param : kol1 kol2 kol3 :=``<br/>``w1 rek rek rek``<br/>``w2 rek rek rek;``
+    
+    | | kol1 | kol2 | kol3 |
+    | - | - | - | - |
+    | w1 | rek | rek | rek | 
+    | w2 | rek | rek | rek |
+         
+    * ``(tr) : dane_tabularyczne`` (_transposed tabular data record_) -- jw., ale z dodatkową transpozycją.
+	* dane etykietowane (_tabbing data format_) -- dane w foramcie: 
+    ``: param default wartość : przekrój : kol1, kol2, kol3 :=``<br/>`` et11, et12, et13, rek11, rek12, rek13``<br/>``et21, et22, et23, rek21, rek22, rek23;`` 
+		* ``wartość`` -- wartość domyślna (opcjonalnie)
+    * przecinki i dwukropek można pominąć.
 
 Przykłady: 
 
@@ -1367,27 +1379,49 @@ Przykłady:
 	* 3 powyższe <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math== \{ zelazo, 7,32, nikiel, 35,8 \}">
 * ``param : stan cena wartosc :=``<br/>``zelazo 7.32 .025 -.1``<br/>``nikiel 35.8 .03 .02;``
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
-\begin{bmatrix} 
-& stan & cena & wartosc \\
-zelazo & 7.32 & 0.025 & -0.1 \\ 
-nikiel & 35.8 & 0.03 & 0.02 \\
-\end{bmatrix} ">
+| | stan | cena | wartosc |
+| - | - | - | - |
+| zelazo | 7.32 | 0.025 | -0.1 | 
+| nikiel | 35.8 | 0.03 | 0.02 |
 
 * ``param : surowiec : stan cena wartosc :=``<br/>``zelazo 7.32 .025 -.1``<br/>``nikiel 35.8 .03 .02;``
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
-\begin{bmatrix} 
-surowiec & stan & cena & wartosc \\
-zelazo & 7.32 & 0.025 & -0.1 \\ 
-nikiel & 35.8 & 0.03 & 0.02 \\
-\end{bmatrix} ">
+| surowiec | stan | cena | wartosc |
+| - | - | - | - |
+| zelazo | 7.32 | 0.025 | -0.1 | 
+| nikiel | 35.8 | 0.03 | 0.02 |
 
 * ``param demand default 0 (tr)``<br/>``: FRA DET LAN WIN STL FRE LAF :=``<br/>``bands 300 . 100 75 . 225 250``<br/>``coils 500 750 400 250 . 850 500``<br/>``plate 100 . . 50 200 . 250 ;``
 
+| FRA | DET | LAN | WIN | STL | FRE | LAF |
+| - | - | - | - | - | - | - |
+| bands | 300 | 0 | 100 | 75 | 0 | 225 | 250 | 
+| coils | 500 | 750 | 400 | 250 | 0 | 850 | 500 |
+| plate | 100 | 0 | 0 | 50 | 200 | 0 | 250 |
 
+# Sufiksy (przyrostki)[^](#Spis-treści)
 
+Pozwalają uzyskać dodatkowe wartości ze zmiennych (_variables_), ograniczeń (_constraints_) i celów (_objectives_). 
 
+Składnia: ``.sufiks``
+
+Przykład: ``x[i, j].lb`` -- najniższa wartość tablicy ``x``
+
+## Przyrostki zmiennych[^](#Spis-treści)
+
+| Sufiks | Wartość |
+| - | - |
+| ``.lb`` | (_lower bound_) najniższa wartość |
+| ``.ub`` | (_upper bound_) najwyższa wartość |
+| ``.status`` | wynik rozwiązania:<br/>``0`` -- nieokreślony<br/>``1`` -- podstawowy<br/>``2`` -- najniższa wartość<br/>``3`` -- najwyższa wartość<br/>``4`` -- dowolna wartość<br/>``5`` -- stała wartość |
+
+## Przyrostki celów[^](#Spis-treści)
+
+Jw. oraz dodatkowe: 
+
+| Sufiks | Wartość |
+| - | - |
+| ``.val`` | _primal value of the linea
 
 
 
