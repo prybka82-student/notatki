@@ -33,7 +33,11 @@
 	* [Deklaracja parametrów](#Deklaracja-parametrów)
 	* [Deklaracja zmiennych (_variable statements_)](#Deklaracja-zmiennych-(_variable-statements_))
 	* [Deklaracje ograniczeń (_constraing statement_)](#Deklaracje-ograniczeń-(_constraing-statement_))
-
+	* [Deklaracje celu (_objective statement_)](#Deklaracje-celu-(_objective-statement_))
+	* [Instrukcja ``solve`` (_solve statement_)](#Instrukcja-solve-(solve-statement))
+	* [Instrukcja ``check`` (_check statement_)](#Instrukcja-check-(check-statement))
+	* [Instrukcja ``display`` (_display statement_)](#Instrukcja-``display``-(_display-statement_))
+	* [Instrukcja ``printf`` (_printf statement_)](#Instrukcja-``printf``-(_printf-statement_))
 
 # Dokumentacja[^](#Spis-treści)
 
@@ -996,6 +1000,74 @@ Przykłady
 	* elementy listy ``produkt`` są indeksowane wartościami ze zbioru ``produkt``
 	* elementy tablicy ``zwykly_produkt`` są indeksowane wartościami ze zbioru ``produkt`` i zbioru ``czas``
 	* elementy list ``wytworzenie_produktu`` i ``pracownicy`` są indeksowane wartościami ze zbioru ``czas``
+* ``s.t. ogr: {i in 0...n} sum{a[i+1] * x[i+1]} <= 1.5``
+	* matematycznie: 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a_1 x_1 + a_2 x_2 + ... + a_n x_n <= 1.5 ">
+
+## Deklaracje celu (_objective statement_)[^](#Spis-treści)
+
+Model może zawierać tylko jedną deklarację celu. Jeśli zadeklarowano więcej niż jeden cel, program bierze pod uwagę tylko pierwszą deklarację. 
+
+Składnie: 
+``minimize nazwa alias dziedzina : wyrażenie;``
+``maximize nazwa alias dziedzina : wyrażenie;``
+
+* ``alias`` -- jw.
+* ``dziedzina`` -- jw.; jeśli nie wskazana, cel definiuje pojedynczą wartość; jeśli wskazana, cel jest wektorem lub macierzą _n_-elementowych krotek;
+* ``wyrażenie`` -- wyrażenie liniowe.
+
+Przykłady: 
+* ``minimize cel: x + 1.5 * (y + z);``
+* ``maximize zysk_calk: sum{p in produkty} zysk[p] * marka[p];``
+
+## Instrukcja ``solve`` (_solve statement_)[^](#Spis-treści)
+
+Składnia: ``solve;``
+
+Opcjonalna. Jeśli jej nie podano, program traktuje model tak, jakby instrukcja znajdowała się na końcu modelu. 
+
+Może być użyta tylko raz w modelu. Powoduje rozwiązanie zadania i obliczenie wartości wszystkich zmiennych w modelu. 
+
+Deklaracje nie mogą się pojawić poniżej instrukcji ``solve``.
+
+## Instrukcja ``check`` (_check statement_)[^](#Spis-treści)
+
+Składnia: ``check dziedzina : wyrażenie;``
+
+* ``dziedzina`` -- jw.; 
+	* jeśli nie zdefiniowano, program sprawdza warunek tylko 1 raz (dla 1 zestawu wartości);
+	* jeśli zdefiniowano, warunek jest sprawdzany dla wielu wartości; 
+* ``wyrażenie`` -- wyrażenie logiczne do sprawdzenia (dwukropek można pominąć). 
+
+Przykłady: 
+
+* ``check: x + y <= 1 and x >= 0 and y >= 0;``
+* ``check sum{i in DOSTAW} zapas[i] = sum{j in ODBIOR} zamow[j];``
+* ``check {i in I, j in 1..10}: S[i, j] in U[i] union V[j];``
+
+Instrukcja ``check`` pozwala sprawdzić, czy uzyskany wynik zgodny jest z określonymi warunkami. Jeśli wynik nie spełnia wymagań, program zwraca błąd. 
+
+## Instrukcja ``display`` (_display statement_)[^](#Spis-treści)
+
+Składnia: ``display dziedzina : element, element, ... element;``
+
+* ``dziedzina`` -- jw.
+* ``element`` -- obiekty, których wartość ma być wyświetlona (dwukropek można pominąć).
+
+Przykłady: 
+
+* ``display: 'x =', x, 'y =', y, 'z =', z;``
+* ``display sqrt(x ** 2 + y ** 2 + z ** 2);``
+* ``display {i in I, j in J}: i, j, a[i, j], b[i, j];``
+
+## Instrukcja ``printf`` (_printf statement_)[^](#Spis-treści)
+
+
+
+
+
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
