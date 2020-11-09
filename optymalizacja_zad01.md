@@ -102,9 +102,9 @@ Te same ograniczenia zapisane w kodzie GNU MathProg:
 ``minimize cena_calkowita:``<br/>``sum{p in Pestycydy} jednostki[p] * cena[p];``
 
 * gdzie: 
-	* ``s`` indeks zbioru ``C``
+	* ``s`` indeks zbiorów ``Carb`` i ``Mal``
 	* ``Carb`` jednoelementowy zbiór zawierający etykietę ``'Carb'``
-	* ``p`` indeks zbioru ``Pestycydy``
+	* ``p`` indeks zbioru ``Pestycydy``	
 	* ``jednostki`` -- zbiór jednostek pestycydów
 	* ``zawartosc`` -- zbiór zawartości
 	* ``norma`` -- zbiór norm
@@ -136,42 +136,44 @@ end;
 ```
 set Pestycydy; # deklaracja zbioru pestycydow
 set Skladniki; # deklaracja zbioru skladnikow
-
+ 
 # deklaracja ceny -- parametr indeksowany elementami ze zbioru Pestycydy
 param cena{p in Pestycydy};
-
+ 
 # deklaracja zawartosci -- parametr indeksowany elementami ze zbiorow Pestycydy i Skladniki
 param zawartosc{s in Skladniki, p in Pestycydy};
-
+ 
 # deklaracja normy -- parametr indeksowany elementami ze zbioru Skladniki
 param norma{s in Skladniki};
-
+  
 # deklaracja jednostek
+#param jednostki{p in Pestycydy}, integer, >= 0;
+#param jednostki{p in Pestycydy};
 param jednostki{p in Pestycydy}, default 0;
-
+  
 # ograniczenia
 s.t. carb{s in Skladniki: s <> 'Mal'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
 s.t. mal{s in Skladniki: s <> 'Carb'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
 
 #s.t. carb: sum{p in Pestycydy} jednostki[p] * zawartosc['Mal',p] >= norma['Mal'];
 #s.t. mal: sum{p in Pestycydy} jednostki[p] * zawartosc['Carb',p] >= norma['Carb'];
-
+ 
 # cel
 minimize cena_calkowita: sum{p in Pestycydy} jednostki[p] * cena[p];
-
+  
 solve;
-
+ 
 #display "Jednostki: ", jednostki;
 printf{p in Pestycydy} "Jednostka %s = <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.2f", p, jednostki[p];
 
-end; 
+end;
 ```
 
 ## Zadanie B - Inwestowanie
 
 ### Dane wejściowe
 
-* ``X`` -- kwota do zaintestowania
+* ``X`` -- kwota do zainwestowania
 * możliwości: 
 	* fundusz A -- zysk: 9% z X
 	* fundusz B -- zysk: 11% z X
@@ -212,7 +214,7 @@ Wówczas ograniczenia:
 * ogrA: ">ile_A <= \frac{X}{2}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 * ogrB1: ">ile_B <= \frac{X}{2}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 * ogrB2: ">ile_B <= Y<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
-* ogrL: ">ile_L >= Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+* ogrL: ">ile_L >= Z$ 
 
 Cel: 
 
@@ -253,37 +255,30 @@ end;
 ### Model
 
 ```
-set Pestycydy; # deklaracja zbioru pestycydow
-set Skladniki; # deklaracja zbioru skladnikow
+# deklaracja wartosci
+param X default 0;
+param Y default 0;
+param Z default 0;
 
-# deklaracja ceny -- parametr indeksowany elementami ze zbioru Pestycydy
-param cena{p in Pestycydy};
+# mozliwosci
+set mozliwosci := {'A', 'B', 'L'};
 
-# deklaracja zawartosci -- parametr indeksowany elementami ze zbiorow Pestycydy i Skladniki
-param zawartosc{s in Skladniki, p in Pestycydy};
-
-# deklaracja normy -- parametr indeksowany elementami ze zbioru Skladniki
-param norma{s in Skladniki};
-
-# deklaracja jednostek
-param jednostki{p in Pestycydy}, default 0;
+# ile zainwestowano
+param ile{m in mozliwosci} default 0;
 
 # ograniczenia
-s.t. carb{s in Skladniki: s <> 'Mal'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
-s.t. mal{s in Skladniki: s <> 'Carb'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
-
-#s.t. carb: sum{p in Pestycydy} jednostki[p] * zawartosc['Mal',p] >= norma['Mal'];
-#s.t. mal: sum{p in Pestycydy} jednostki[p] * zawartosc['Carb',p] >= norma['Carb'];
+s.t. ogrA: ile['A'] <= 0.5 * X;
+s.t. ogrB1: ile['B'] <= 0.5 * X;
+s.t. ogrB2: ile['B'] <= Y;
+s.t. ogrL: ile['L'] >= Z;
 
 # cel
-minimize cena_calkowita: sum{p in Pestycydy} jednostki[p] * cena[p];
+maximize zysk_calk{m in mozliwosci}: ile[m] * .09 + ile[m] * .11 + ile[m] * .1;
 
 solve;
+display "Zysk: ", zysk_calk;  
 
-#display "Jednostki: ", jednostki;
-printf{p in Pestycydy} "Jednostka %s = ">.2f", p, jednostki[p];
-
-end; 
+end;
 ```
 
 
