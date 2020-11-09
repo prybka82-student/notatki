@@ -1,7 +1,7 @@
 
-# Optymalizacja kombinatoryczna
+# Optymalizacja kombinatoryczna -- zadania, seria 2
 
-## Zadania 1 (A) -- Pestycydy
+## Zadanie A -- Pestycydy
 
 ### Dane wejściowe
 
@@ -40,7 +40,7 @@ Minimalny koszt pestycydów zawierających minimalną zawartość każdego skła
 
 Przepisanie danych z kodu GNU MathProg na zapis w postaci zbiorów i wartości z indeksami jest pomocny: w GNU MathProg operuje się na indeksach. 
 
-### Formuły ograniczeń 
+### Formuły ograniczeń i celu
 
 Ilość pestycydu ``Pest`` i ``Bug`` musi być taka, by zawarte w nich składniki były większe lub równe normie. 
 
@@ -86,6 +86,226 @@ gdzie:
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n_{Carb}">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n_{Mal}"> -- norma dla składnika
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_p"> -- cena pestycydu _p_ 
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P"> -- zbiór pestycydów
+
+Te same ograniczenia zapisane w kodzie GNU MathProg: 
+
+* ograniczenie ``Carb``: 
+
+``s.t. carb{s in Carb}:``<br/>``sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];``
+
+* ograniczenie ``Mal``: 
+
+``s.t. mal{s in Mal}:``<br/>``sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s]; ``
+
+* cena: 
+
+``minimize cena_calkowita:``<br/>``sum{p in Pestycydy} jednostki[p] * cena[p];``
+
+* gdzie: 
+	* ``s`` indeks zbioru ``C``
+	* ``Carb`` jednoelementowy zbiór zawierający etykietę ``'Carb'``
+	* ``p`` indeks zbioru ``Pestycydy``
+	* ``jednostki`` -- zbiór jednostek pestycydów
+	* ``zawartosc`` -- zbiór zawartości
+	* ``norma`` -- zbiór norm
+	* ``Mal`` jednoelementowy zbiór zawierający etykietę ``'Mal'`` 
+	* ``cena`` -- zbiór cen 
+
+### Dane
+
+```
+data;
+
+set Pestycydy := Pest Bug;
+set Skladniki := Carb Mal;
+
+param cena := Pest 3 Bug 2.5;
+param zawartosc :=
+   Carb Pest 30
+   Carb Bug 40
+   Mal Pest 40
+   Mal Bug 20;
+
+param norma := Carb 120 Mal 60;
+
+end;
+```
+
+### Model
+
+```
+set Pestycydy; # deklaracja zbioru pestycydow
+set Skladniki; # deklaracja zbioru skladnikow
+
+# deklaracja ceny -- parametr indeksowany elementami ze zbioru Pestycydy
+param cena{p in Pestycydy};
+
+# deklaracja zawartosci -- parametr indeksowany elementami ze zbiorow Pestycydy i Skladniki
+param zawartosc{s in Skladniki, p in Pestycydy};
+
+# deklaracja normy -- parametr indeksowany elementami ze zbioru Skladniki
+param norma{s in Skladniki};
+
+# deklaracja jednostek
+param jednostki{p in Pestycydy}, default 0;
+
+# ograniczenia
+s.t. carb{s in Skladniki: s <> 'Mal'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
+s.t. mal{s in Skladniki: s <> 'Carb'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
+
+#s.t. carb: sum{p in Pestycydy} jednostki[p] * zawartosc['Mal',p] >= norma['Mal'];
+#s.t. mal: sum{p in Pestycydy} jednostki[p] * zawartosc['Carb',p] >= norma['Carb'];
+
+# cel
+minimize cena_calkowita: sum{p in Pestycydy} jednostki[p] * cena[p];
+
+solve;
+
+#display "Jednostki: ", jednostki;
+printf{p in Pestycydy} "Jednostka %s = <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.2f", p, jednostki[p];
+
+end; 
+```
+
+## Zadanie B - Inwestowanie
+
+### Dane wejściowe
+
+* ``X`` -- kwota do zaintestowania
+* możliwości: 
+	* fundusz A -- zysk: 9% z X
+	* fundusz B -- zysk: 11% z X
+	* lokata L -- zysk: 10% z X
+* ograniczenia:
+	* maksymalna inwestycja w A: 1/2 X
+	* maksymalna inwestycja w B: 1/2 X
+	* maksymalna inwestycja w B: Y
+	* minimalna inwestycja w L: Z
+ 
+### Szukane 
+
+Maksymalny zysk z inwestycji. 
+
+### Zapis danych wejściowych 
+
+...w GNU MathProg i ich analogiczne zapisy matematyczne. 
+
+| Kod GNU MathProg | Zapis matematyczny |
+| - | - |
+| ``param X := 200000;`` | ">X = 200000<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ``param Y := 40000;`` | ">Y = 40000<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ``param Z:= 70000;`` | ">Z = 70000<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+
+### Formuły ograniczeń i celu
+
+Przyjmijmy zmienne: 
+* ">ile_A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- kwota zainwestowana w A
+* ">ile_B<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- kwota zainwestowana w B
+* ">ile_L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- kwota zainwestowana w L
+
+Zyski: 
+* ">zysk_A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- procent zysku w A
+* ">zysk_B<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- procent zysku w B
+* ">zysk_L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- procent zysku w L
+
+Wówczas ograniczenia: 
+* ogrA: ">ile_A <= \frac{X}{2}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+* ogrB1: ">ile_B <= \frac{X}{2}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+* ogrB2: ">ile_B <= Y<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+* ogrL: ">ile_L >= Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+
+Cel: 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\sum_{i \in \{A, B, L\}} ile_i \times zysk_i">
+
+Zapis ograniczeń w języku GNU MathProg
+
+* ``s.t. ogrA: ile['A'] <= 0.5 * X;``
+* ``s.t. ogrB1: ile['B'] <= 0.5 * X;``
+* ``s.t. ogrB2: ile['B'] <= Y;``
+* ``s.t. ogrL: ile['L'] >= Z;``
+
+Zapis celu w języku GNU MathProg
+
+* ``maximize zysk_calk: sum{m in mozliwosci} ile[m] * zysk[m];``
+
+
+### Dane
+
+```
+data;
+
+set Pestycydy := Pest Bug;
+set Skladniki := Carb Mal;
+
+param cena := Pest 3 Bug 2.5;
+param zawartosc :=
+   Carb Pest 30
+   Carb Bug 40
+   Mal Pest 40
+   Mal Bug 20;
+
+param norma := Carb 120 Mal 60;
+
+end;
+```
+
+### Model
+
+```
+set Pestycydy; # deklaracja zbioru pestycydow
+set Skladniki; # deklaracja zbioru skladnikow
+
+# deklaracja ceny -- parametr indeksowany elementami ze zbioru Pestycydy
+param cena{p in Pestycydy};
+
+# deklaracja zawartosci -- parametr indeksowany elementami ze zbiorow Pestycydy i Skladniki
+param zawartosc{s in Skladniki, p in Pestycydy};
+
+# deklaracja normy -- parametr indeksowany elementami ze zbioru Skladniki
+param norma{s in Skladniki};
+
+# deklaracja jednostek
+param jednostki{p in Pestycydy}, default 0;
+
+# ograniczenia
+s.t. carb{s in Skladniki: s <> 'Mal'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
+s.t. mal{s in Skladniki: s <> 'Carb'}: sum{p in Pestycydy} jednostki[p] * zawartosc[s,p] >= norma[s];
+
+#s.t. carb: sum{p in Pestycydy} jednostki[p] * zawartosc['Mal',p] >= norma['Mal'];
+#s.t. mal: sum{p in Pestycydy} jednostki[p] * zawartosc['Carb',p] >= norma['Carb'];
+
+# cel
+minimize cena_calkowita: sum{p in Pestycydy} jednostki[p] * cena[p];
+
+solve;
+
+#display "Jednostki: ", jednostki;
+printf{p in Pestycydy} "Jednostka %s = ">.2f", p, jednostki[p];
+
+end; 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
