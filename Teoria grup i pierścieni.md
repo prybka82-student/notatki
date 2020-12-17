@@ -14,11 +14,11 @@ Wykład odwołany.
 ## Oznaczenia zbiorów
 
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{N}"> -- liczby naturalne: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{N} = \{0, 1, 2... \}">
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z_+}"> -- liczby całkowite dodatnie
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z_+}"> -- liczby całkowite dodatnie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z} = \{1, 2, 3...\}">
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z}"> -- liczby całkowite: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z} = \{...-2, -1, 0, 1, 2...\}">
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Q}"> -- liczby (ułamki) wymierne: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Q} = \{ \frac{a}{b}: a \in \mathbb{Z}, b \in \mathbb{Z_+}">
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{IQ}"> -- niewymierne, np. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt{2}"> 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}"> -- rzeczywiste: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R} = \mathbb{Q} \cup \mathbb{IQ} \}"> 
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}"> -- rzeczywiste: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R} = \mathbb{Q} \cup \mathbb{IQ}"> 
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}"> -- zespolone: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C} = \{ a + ib; a, b \in \mathbb{R}; i^2 = -1 \}">
 
 ## Działania arytmetyczne na zbiorach 
@@ -29,7 +29,7 @@ Wykład odwołany.
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z_+}"> | tak | nie | tak | nie |
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z}"> | tak | tak | tak | nie |
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Q}"> | tak | tak | tak | nie |
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Q} \setminus \{Q\}"> | nie | nie | tak | tak |
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Q} \setminus \{0\}"> | nie | nie | tak | tak |
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{IQ}"> | nie | nie | nie | nie |
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}"> | tak | tak | tak | nie |
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}"> | tak | tak | tak | nie |
@@ -43,65 +43,90 @@ Wykład odwołany.
 
 Przykład: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(2+3i)(-3-2i) = -6 - 6i^2 - 13i = -13i">
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(2+3i)(-3-2i) \\= -6 - 6i^2 - 13i \\= -6 - 6(-1) - 13i \\=-6 + 6 - 13i \\= -13i">
 
 ## Definicja formalna działania dwuargumentowego
 
-Niech <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> będzie niepustym zbiorem. Działaniem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> (czyt. kropka) określonym na zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> nazywamy (każdą) funkcję <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> (kropka) taką, że: 
+Niech <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> będzie niepustym zbiorem. Działaniem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> (czyt. kropka) określonym na zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> nazywamy (każdą) funkcję <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> (kropka) taką, że każdej parze elementów ze zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A">, czyli: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=A \times A -> A">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=A \times A = \{ (a,b) : a, b \in A \}">
 
-(czyt. _A krzyż A_) tj. zbiór uporządkowanych par (iloczyn kartezjański), gdzie:  <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A \times A = \{ (a,b) : a, b \in A \}">
+(czyt. _A krzyż A_) tj. zbiorowi uporządkowanych par (iloczynowi kartezjańskiemu) -- funkcja <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> przyporządkowuje inny element również ze zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A">: 
 
-Przykłady
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=A \times A \rightarrow A">
 
-* mnożenie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\cdot(a, b) := a \cdot b, ab">
+## Przykłady działań dwuargumentowych
 
-* działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\cdot"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = \{1, 2\}"> zdefiniowanym jako: 
+* mnożenie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\cdot(a, b) := a \cdot b">, skrótowo:  <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=ab">
+
+---
+
+* działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\cdot"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = \{1, 2\}"> zdefiniowane tabelką: 
 
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet_1"> | 1 | 2 | 
 |-|-|-|
-| **1** | 1 | 2 | 
+| **1** | 1 | 1 | 
 | **2** | 1 | 1 |
 
-* działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = \{1, 2\} zdefiniowanym jako: 
+---
 
-| ">\bullet_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | 1 | 2 |
+* działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = \{1, 2\}"> zdefiniowane tabelką: 
+
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet_2"> | 1 | 2 |
 |-|-|-|
 | **1** | 2 | 2 |
 | **2** | 2 | 2 |
 
 # Ćwiczenia 2 | 24.10.2020
 
-* działanie w zbiorze 3-elementowym ">A = \{1, 2, 3\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z działaniem 2-argumentowym ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">3^2=9<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= możliwych działań): 
+## Liczba możliwych działań dwuargumentowych
 
-| ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | 1 | 2 | 3 |
+Dla zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = \{a, b\}"> i działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> zdefiniowanego tabelką
+
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet_A"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> |
+|-|-|-|
+| **<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">** | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> |
+| **<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b">** | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> |
+
+-- liczba możliwych działań: 2 możliwe wartości w każdej kratce w 4 różnych kombinacjach, a więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2^4=2^{2^2}">
+
+Dla zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B = \{a, b, c\}"> i działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> zdefiniowanego tabelką
+
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet_B"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c"> |
 |-|-|-|-|
-| **1** | 3 | 2 | 2 |
-| **2** | 2 | 1 | 1 |
-| **3** | 3 | 1 | 3 |
+| **<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">** | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a, b, c"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a, b, c"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a,b, c"> |
+| **<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b">** | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a, b, c"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a, b, c"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a,b, c"> |
+| **<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c">** | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a, b, c"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a, b, c"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a,b, c"> |
 
-* działania w zbiorze 4-elementowym: ">4^2 = 16<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= możliwych działań 2-argumentowych; 
+-- liczba możliwych działań: 3 możliwe wartości w każdej kratce w 9 różnych kombinacjach, a więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3^9=3^{3^2}"> możliwych działań.
 
-* działania w zbiorze 5-elementowym: ">5^2 = 25<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= możliwych działań 2-argumentowych. 
+* działania w zbiorze 4-elementowym: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4^{16} = 4^{4^2}"> możliwych działań 2-argumentowych; 
 
-Ogólnie w zbiorze ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-elementowym możliwe jest ">n^m<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= działań ">m<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-elementowych. 
+* działania w zbiorze 5-elementowym: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^25=5^{5^2} = 25"> możliwych działań 2-argumentowych. 
+
+Ogólnie w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">-elementowym możliwe jest 
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=n^{n^2}"> 
+
+działań <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2">-elementowych. 
 
 ## Wzajemna odpowiedniość działań w zbiorach 
 
-Przykład działań i zbiorów odpowiednich: 
+Przykład działań i zbiorów wzajemnie sobie odpowiadających: 
 
-* zbiór ">A = \{1, 2, 3\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* działania: 
+* zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A = \{1, 2, 3\}">
+* działania: 
 
-| ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | 1 | 2 | 3 |
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> | 1 | 2 | 3 |
 |-|-|-|-|
 | **1** | 2 | 1 | 1 |
 | **2** | 3 | 3 | 2 |
 | **3** | 2 | 1 | 1 |
 
-* zbiór ">B = \{a, b, c\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* działania: 
+* zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B = \{a, b, c\}">
+* działania: 
 
-| ">*<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | a | b | c |
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=*"> | a | b | c |
 |-|-|-|-|
 | **a** | b | a | a |
 | **b** | c | c | b |
@@ -109,25 +134,35 @@ Przykład działań i zbiorów odpowiednich:
 
 ## Własności działań
 
-Działanie ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w zbiorze ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nazywamy: 
+Działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> nazywamy: 
 
-* __przemiennym__ jeśli dla każdej pary _a_, _b_ należących do zbioru _A_ zachodzi równość: ">a\bullet b = b\bullet a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a,b \in A} a \bullet b = b \bullet a">
+* __przemiennym__ jeśli dla każdej pary _a_, _b_ należących do zbioru _A_ zachodzi równość: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a\bullet b = b\bullet a">
 
-* __łącznym__ jeśli dla każdej trójki _a_, _b_, _c_ należących do _A_ zachodzi równość: ">(a \bullet b) \bullet c = a \bullet (b \bullet c)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a, b \in A} (a \bullet b) \bullet c = a \bullet (b \bulletc)">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a,b \in A} a \bullet b = b \bullet a">
+
+* __łącznym__ jeśli dla każdej trójki _a_, _b_, _c_ należących do _A_ zachodzi równość: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a \bullet b) \bullet c = a \bullet (b \bullet c)">
+
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a, b \in A} (a \bullet b) \bullet c = a \bullet (b \bulletc)">
 
 Przykłady działań niełącznych: 
-* odejmowanie: ">(2 - 2) - 3 \neq 2 - (2 - 3)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
+* odejmowanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(2 - 2) - 3 \neq 2 - (2 - 3)">. 
 * dzielenie. 
 
-## Grupoid -- zbiór ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z działaniem ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Definicja: grupoid to zbiór ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z określonym działaniem ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
+## Grupoid -- zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> z działaniem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet">
 
-Zapis: ">(A, \bullet)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Grupoid ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest **przemienny**, jeśli działanie ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w zbiorze ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest **przemienne**. 
+Definicja: grupoid to zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> z określonym działaniem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet">. 
+
+Zapis: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)">
+
+Grupoid <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> jest **przemienny**, jeśli działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> jest **przemienne**. 
 
 ## Półgrupa 
 
-Definicja: grupoid ">(A, \bullet)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to **półgrupa**, jeśli działanie ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w zbiorze ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest **łączne**. 
+Definicja: grupoid <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)"> to **półgrupa**, jeśli działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> jest **łączne**. 
 
-## Element neutralny w zbiorze ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Definicja: element ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należący do ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest neutralny, jeśli dla każdego elementu tego zbioru zachodzi równość ">a\bullet 1 = 1 \bullet a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (wykonanie działania na dowolnym elemencie zbioru i elemencie neutralnym nie zmienia wartośći): 
+## Element neutralny w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A">
+
+Definicja: element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> należący do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> jest neutralny, jeśli dla każdego elementu tego zbioru zachodzi równość <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a\bullet 1 = 1 \bullet a = a"> (wykonanie działania na dowolnym elemencie zbioru i elemencie neutralnym nie zmienia wartośći): 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in A} a \bullet 1 = 1 \bullet a = a">
 
@@ -135,8 +170,8 @@ Przykłady
 
 | Zbiór i działanie | El. neutr. | Sprawdzenie |
 |-|-|-|
-| ">(\mathbb{R},+)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= <br/>-- liczby rzeczywiste i dodawanie | ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">\forall_{a \in \mathbb{R}} a+0 = 0+a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
-| ">(\mathbb{R},\cdot)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= <br/>-- liczby rzeczywiste i mnożenie | ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">\forall_{a \in \mathbb{R}} a\cdot 1 = 1\cdot 1 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{R},+)"> <br/>-- liczby rzeczywiste i dodawanie | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in \mathbb{R}} a+0 = 0+a = a"> |
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{R},\cdot)"> <br/>-- liczby rzeczywiste i mnożenie | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in \mathbb{R}} a\cdot 1 = 1\cdot 1 = a"> |
 
 ## Monoid
 
@@ -147,11 +182,11 @@ Definicja: monoid to półgrupa z
 
 ## Inwers (element odwrotny)
 
-Definicja: niech będzie grupoid ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (dokładnie zbiór z działaniem: ">(A, \bullet)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=) z elementem neutralnym ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to element ">b \in A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nazywamy **odwrotnym**, jeśli dla każdego ">a \in A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= zachodzi: ">a \bullet b = b \bullet a = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
+Definicja: niech będzie grupoid <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> (dokładnie zbiór z działaniem: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)">) z elementem neutralnym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, to element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b \in A"> nazywamy **odwrotnym**, jeśli dla każdego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \in A"> zachodzi: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \bullet b = b \bullet a = 1">: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in A} a\bullet b = b = \bullet a = 1">
 
-Twierdzenie: w półgrupie (czyli grupie z działaniem łącznym) ">(A, \bullet)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z elementem neutralnym ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= każdy element ma co najwyżej jeden element odwrotny lub nie ma go wcale. 
+Twierdzenie: w półgrupie (czyli grupie z działaniem łącznym) <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)"> z elementem neutralnym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> każdy element ma co najwyżej jeden element odwrotny lub nie ma go wcale. 
 
 Dowód: niech 
 
@@ -161,15 +196,15 @@ oraz
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=1 = a \bullet b = b \bullet a = a \bullet c = c \bullet a"> 
 
-(a więc ">b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= są odwrotne do ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=), wówczas można zapisać, że
+(a więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c"> są odwrotne do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">), wówczas można zapisać, że
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=b = b \bullet 1">
 
--- każdy element zbioru można zapisać jako działanie z elementem neutralnym, np. ">2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= można zapiać jako ">2 + 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= lub ">2 \cdot 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.
+-- każdy element zbioru można zapisać jako działanie z elementem neutralnym, np. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2"> można zapiać jako <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 + 0"> lub <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 \cdot 1">.
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=b \bullet 1 = b \bullet (a \bullet c)">
 
--- skoro ">a \bullet c = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.
+-- skoro <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \bullet c = 1">.
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=b \bullet (a \bullet c) = (b \bullet a) \bullet c"> 
 
@@ -177,7 +212,7 @@ oraz
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(b \bullet a) \bullet c = 1 \bullet c"> 
 
--- skoro ">b \bullet a = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.
+-- skoro <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b \bullet a = 1">.
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=1 \bullet c = 1">
 
@@ -189,10 +224,10 @@ Od następnego zjazdu wykład od godz. 8.20
 
 ## Grupa
 
-Wyznaczniki grupy ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=:
+Wyznaczniki grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A">:
 
 * działanie grupy jest **łączne**;
-* działanie posiada **element neutralny** ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, taki że ">\forall_{a \in A} a \bullet 1 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (element neutralny działania ">\bullet<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie zmienia wartośći);
+* działanie posiada **element neutralny** <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, taki że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in A} a \bullet 1 = a"> (element neutralny działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> nie zmienia wartośći);
 *
 wykład od 8.20 do 9.-5
 
@@ -201,28 +236,32 @@ wykład od 8.20 do 9.-5
 Grupa jeśli 3 warunki spełnione: 
 - działanie jest łączne
 - istnieje element neutralny działania
-- każdy element ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= grupy ma **inwers** (element odwrotny) ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= spełniający warunek:
+- każdy element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> grupy ma **inwers** (element odwrotny) <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x"> spełniający warunek:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in A} \exists_{x \in A} ax = xa = 1">
 
--- tzn. wykonanie działania na dowolnym elemencie grupy i inwersie daje w rezultacie element neutralny. Inwers możnamożemy inwers oznaczać jako ">a^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+-- tzn. wykonanie działania na dowolnym elemencie grupy i inwersie daje w rezultacie element neutralny. Inwers możnamożemy inwers oznaczać jako <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1}"> 
 
 ## Przykłady grup
 
-* ">(\mathbb{C}, +, 0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= --Największy zbiór: liczby zespolone z dodawaniem i zerem 
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{C}, +, 0)"> --Największy zbiór: liczby zespolone z dodawaniem i zerem 
 
 Sprawdzenie przemienności: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=">(CC, +, 0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-(a + ib) = -a + i(-b)"><img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(a+ib) + (-a + i(-b)) = 0">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(CC, +, 0)">
+
+-(a + ib) = -a + i(-b)"><img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(a+ib) + (-a + i(-b)) = 0">
 
 * L
-Inny przykład: liczby rzeczywiste ">\mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=R z dodawaniem i zerem.
+Inny przykład: liczby rzeczywiste <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}">R z dodawaniem i zerem.
 
-* LInny przykład: liczby wymierne ">\mathbb{Q}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Q z dodawaniem i zerem.
+* LInny przykład: liczby wymierne <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Q}">Q z dodawaniem i zerem.
 
-* LiczbyPrzykład: całkowite ">\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z z dodawaniem i zerem. 
+* LiczbyPrzykład: całkowite <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z}">Z z dodawaniem i zerem. 
 
-* Liczby zespolone ">\mathbb{C}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Przykład: zespolone bez zera z, mnożeniem i, jednością: 
+* Liczby zespolone <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}">
+
+Przykład: zespolone bez zera z, mnożeniem i, jednością: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{C} \setminus en 
 
@@ -242,11 +281,11 @@ Przykład: wymierne bez zera z, mnożeniem i jednością:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{Q} \setminus \{0\}, \cdot, 1)">
 
-* Bijekcja ">B(X)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to dowolny zbiór: 
+* Bijekcja <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B(X)">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> to dowolny zbiór: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=B(X) - \{f : X \rightarrow X\}">
 
--- funkcja jest różnowartościowa (różnym wartościom przypisuje różne wartości z tego samego zbioru) i ma zbiór ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
+-- funkcja jest różnowartościowa (różnym wartościom przypisuje różne wartości z tego samego zbioru) i ma zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X">. 
 
 Bijekcja posiada również funkcję odwrotną. 
 
@@ -258,13 +297,29 @@ Odwrotność:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=f^{-1} = \Bigl (\begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{matrix}\Bigr)">
 
-* Funkcja ">f(x) = x^3, x \in \mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=  
+* Funkcja <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f(x) = x^3, x \in \mathbb{R}">  
 
-Funkcja jest różnowartościowa w zbiorze ">\mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">f: \mathbb{R} \rightarrow \mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Funkcja odwrotna: ">f^{-1} = \sqrt[3]{x}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* Składanie funkcji: ">(B(X), \circ, 1_x)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neutralny -- funkcja identycznościowa ">1_x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= taka, że ">1_x(x) = x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Dowód: ">\forall_x (f \circ 1_x)(x) = f(1_x(x)) = f(x)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">f \circ 1_x =f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1_x \circ f = f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* Permutacja 
+Funkcja jest różnowartościowa w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}">: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f: \mathbb{R} \rightarrow \mathbb{R}">
 
-Jeśli ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest zbiorem wieloelementowym: ">X = \{1, 2, 3, ...., n \}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i zamiast ">B(X)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= będziemy pisać ">P_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (">B(X) := P_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=), to zbiór wszystkich permutcji (bijekcji) zbioru ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-elementowego. 
+Funkcja odwrotna: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f^{-1} = \sqrt[3]{x}">
 
-Niech ">n = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
+* Składanie funkcji: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(B(X), \circ, 1_x)">
+
+Element neutralny -- funkcja identycznościowa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_x"> taka, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_x(x) = x">
+
+Dowód: 
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\forall_x (f \circ 1_x)(x) = f(1_x(x)) = f(x)">
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f \circ 1_x =f">
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_x \circ f = f">
+
+* Permutacja 
+
+Jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> jest zbiorem wieloelementowym: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X = \{1, 2, 3, ...., n \}"> i zamiast <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B(X)"> będziemy pisać <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P_n"> (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B(X) := P_n">), to zbiór wszystkich permutcji (bijekcji) zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">-elementowego. 
+
+Niech <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n = 5">. 
 
 Element neutralny: 
 
@@ -288,17 +343,45 @@ Sprawdzenie:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= \Bigl[ \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \Bigr] \cdot \Bigl[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{matrix} \Bigr] = \Bigl[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{matrix} \Bigr]">
 
-* Pełna grupa liniowa z mnożeniem">GL(2)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- takie macierze należące do ">M_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, że wyznacznik jest niezerowy: 
+* Pełna grupa liniowa z mnożeniem
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=GL(2)"> -- takie macierze należące do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M_2">, że wyznacznik jest niezerowy: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=GL(2) = \{ A \in M_2 : \det{A} \neq 0\}">
 
-* ">Z_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- wszystkie reszty z dzielenia liczby całkowitej przez ">5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Możliwe liczby: 0, 1, 2, 3, 4 (">Z_5 = \{0, 1, 2, 3, 4\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_5"> -- wszystkie reszty z dzielenia liczby całkowitej przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5">
 
-Przyjmujemy oznaczenie: jeśli ">a \in Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to ">(a)_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= może być resztą z dzielenia ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= przez ">5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, np. ">(10)_5 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(13)_5 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Przyjmijmy działanie dodawanie modulo 5 ">+_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, np. ">2 +_5 1 = (2+1)_5 = 3_5 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, bo ">3 = 0 \cdot 5 + 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">2 +_5 2 = 4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">3 +_5 2 = (3+2)_5 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=# Ćwiczenia 3 (14.11.2020)
+Możliwe liczby: 0, 1, 2, 3, 4 (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_5 = \{0, 1, 2, 3, 4\}">.
+
+Przyjmujemy oznaczenie: jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \in Z">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a)_5"> może być resztą z dzielenia <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5">, np. 
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(10)_5 = 0">
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(13)_5 = 3">
+
+Przyjmijmy działanie dodawanie modulo 5 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_5">, np. 
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 +_5 1 = (2+1)_5 = 3_5 = 3">, bo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3 = 0 \cdot 5 + 3">
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 +_5 2 = 4">
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3 +_5 2 = (3+2)_5 = 0">
+
+# Ćwiczenia 3 (14.11.2020)
 
 ## Przykłady grup c.d. 
 
-* Dodawanie modulo 5 w zbiorze ">\{0,1,2,3,4\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Zbiór: ">Z_5 = \{0,1,2,3,4\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Działanie: ">a +_5 b = (a+b)_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sposób obliczania: ">a +_5 b = \begin{cases} a+b, & a+b<5 \\ a+b-5, & a+b >=5 \end{cases}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Wyniki: ">+_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | 0 | 1 | 2 | 3 | 4
+* Dodawanie modulo 5 w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{0,1,2,3,4\}">
+
+Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_5 = \{0,1,2,3,4\}">
+
+Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a +_5 b = (a+b)_5">
+
+Sposób obliczania: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a +_5 b = \begin{cases} a+b, & a+b<5 \\ a+b-5, & a+b >=5 \end{cases}">
+
+Wyniki: 
+
+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_5"> | 0 | 1 | 2 | 3 | 4
 -|-|-|-|-|-
 **0** |0|1|2|3|4
 **1** |1|2|3|4|0
@@ -309,49 +392,47 @@ Przyjmujemy oznaczenie: jeśli ">a \in Z<img style="min-width: 300px;" src="http
 Elementy odwrotne (takie, które po zsumowaniu dadzą 5):
 
 * dla 0 -- 0 (bo 5 nie należy do zbioru), 
-* dla 1 -- 4 (zapis: ">-_5 1 = 4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=) 
+* dla 1 -- 4 (zapis: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_5 1 = 4">) 
 * dla 2 -- 3, 
 * dla 3 -- 2, 
 * dla 4 -- 1
 
-* Ogólnie dla zbioru ">Z_n = \{0, 1, 2, ..., n-2, n-1\}, (n>1)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (zbiorami typu ">Z_1 = \{0\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie będziemy się zajmować)
+* Ogólnie dla zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_n = \{0, 1, 2, ..., n-2, n-1\}, (n>1)"> (zbiorami typu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_1 = \{0\}"> nie będziemy się zajmować)
 
-Działanie dodawanie modulo ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=:: 
+Działanie dodawanie modulo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">:: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a +_n b= (a_b)_n = \begin{cases} a+b, & a+b < n \\ a+b-n, & a+b >=n \end{cases} ">
 
-Element neutralny działania ">+_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element przeciwny ">-_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
+Element neutralny działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_n">: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">
+
+Element przeciwny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_n">: 
  
-* ">-_n 0 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">-_n k =  n-k, k > 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=## Zadania 
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_n 0 = 0">
+* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_n k =  n-k, k > 0">
+
+## Zadania 
 
 1. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne.  
 
-* Zbiór: ">\mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* Działanie: ">a \circ b = a+b+3, a \in \mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Wynik ">a \circ b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należy do ">\mathbb{R}<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=. 
+* Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}">
+* Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b = a+b+3, a \in \mathbb{R}">
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Działanie jest przemienne, bo dodawanie jest przemienne:">b \circ a = b + a + 3<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=Korzystamy z przemienności dodawania: ">b + a + 3 = a + b + 3 = a \circ b<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= (q.e.d)
+Wynik <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b"> należy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=. ">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Działanie jest przemienne, bo dodawanie jest przemienne:">b \circ a = b + a + 3<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=Korzystamy z przemienności dodawania: ">b + a + 3 = a + b + 3 = a \circ b<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= (q.e.d)">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności:">(a \circ b) \circ c = (a + b + 3) \circ c = a + b + c + 6<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności:">(a \circ b) \circ c = (a + b + 3) \circ c = a + b + c + 6<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
+Korzystamy z przemienności:">a \circ (b \circ c) = a \circ (b + c + 3) = a + b + c + 6 = (a \circ b) \circ c<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie elementu neutralnego">a \circ x = a \Leftrightarrow x = -3<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=">x \circ b = b \Leftrightarrow x = -3##
 
-Korzystamy z przemienności:">a \circ (b \circ c) = a \circ (b + c + 3) = a + b + c + 6 = (a \circ b) \circ c<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Sprawdzenie elementu neutralnego">a \circ x = a \Leftrightarrow x = -3<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=">x \circ b = b \Leftrightarrow x = -3##
-
-Element neutralny: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Elementy przeciwne:
+Element neutralny: ">-3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Elementy przeciwne:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ x = -3">
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a + x + 3 = -3 /-3">
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a + x = -6 - a">
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=x = -6 - a">
 
-Ogólny wzór na element przeciwny do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x = -6 - a">
-
-Sprawdzenie: 
+Ogólny wzór na element przeciwny do ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">x = -6 - a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ -6 -a = a + -6 -a +3 = -3">
 
-A <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-3"> to element neutralny. 
+A ">-3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to element neutralny. 
 
 Mamy więc do czynienia z grupą przemienną (tzw. abelową). 
 
@@ -359,80 +440,11 @@ Mamy więc do czynienia z grupą przemienną (tzw. abelową).
 
 2. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne.  
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b = a + b + ab">
+Działanie: ">a \circ b = a + b + ab<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Działanie jest przemienne, bo dodawanie i mnożenie jest przemienne. 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Działanie jest przemienne, bo dodawanie i mnożenie jest przemienne. 
+Sprawdzenie">L = a \circ b = a + b + ab<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = b \circ a = b + a + ba<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Pytanie, czy ">L = P<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = b \circ a = b + a + ba = a + b + ab = a \circ b = L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie, czy działanie jest łączne: ">L = (a \circ b) \circ c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = a \circ (b \circ c)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Pytanie, czy ">L = P<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = a \circ (b \circ c) \\= a \circ (b + c + bc)\\ = a + (b + c + bc) + a(b+c+bc)\\ = a + b + c + bc + ab + ac + abc\\ = a + b + c + ab + bc + ac + abc<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">L = (a \circ b) \circ c\\ = (a + b +ab) \circ c\\ = (a+b+ab) + c + c(a+b+ab) \\= a + b + ab + c + ca +cb + cab \\= a + b + c + ab + bc + ac + abc = P<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element neutralny ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
 
-Sprawdzenie
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = a \circ b = a + b + ab">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = b \circ a = b + a + ba">
-
-Pytanie, czy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = P">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = b \circ a = b + a + ba = a + b + ab = a \circ b = L">
-
-(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie, czy działanie jest łączne: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = (a \circ b) \circ c">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = a \circ (b \circ c)">
-
-Pytanie, czy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = P">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = a \circ (b \circ c) \\= a \circ (b + c + bc)\\ = a + (b + c + bc) + a(b+c+bc)\\ = a + b + c + bc + ab + ac + abc\\ = a + b + c + ab + bc + ac + abc">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = (a \circ b) \circ c\\ = (a + b +ab) \circ c\\ = (a+b+ab) + c + c(a+b+ab) \\= a + b + ab + c + ca +cb + cab \\= a + b + c + ab + bc + ac + abc = P">
-
-(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Element neutralny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x">: 
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ x"> powinno się równać <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">, a więc:
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ x = a">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + x + ax = a / -a">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x + ax = 0">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x(1+a) = 0 / \frac{1}{1+a}">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x = 0">
-
-Element neutralny: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ 0 = a">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + 0 + 0\cdot a = a">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Element odwrotny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x">
-
-Z definicji elementu odwrotnego, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ x"> powinno dać element neutralny, czyli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">, a więc: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ x = 0">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + x +ax = 0 / -a">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x + ax = -a">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x(1+a) = -a / \frac{1}{1+a}">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x = \frac{-a}{1+a}">
-
-Element odwrotny do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\frac{-a}{1+a}">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ \frac{-a}{1+a} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + \frac{-a}{1+a} + a\cdot \frac{-a}{1+a} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\frac{a(1+a) - a - a^2}{1+a} = 0 / \frac{1}{1+a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a+a^2-a-a^2 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a - a + a^2 - a^2 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0 = 0">
-
-(q.e.d.)
+Z definicji ">a \circ x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= powinno się równać ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a więc:">a \circ x = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + x + ax = a / -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x + ax = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x(1+a) = 0 / \frac{1}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neutralny: ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">a \circ 0 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + 0 + 0\cdot a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element odwrotny ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji elementu odwrotnego, ">a \circ x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= powinno dać element neutralny, czyli ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a więc: ">a \circ x = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + x +ax = 0 / -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x + ax = -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x(1+a) = -a / \frac{1}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x = \frac{-a}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element odwrotny do ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to ">\frac{-a}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">a \circ \frac{-a}{1+a} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + \frac{-a}{1+a} + a\cdot \frac{-a}{1+a} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\frac{a(1+a) - a - a^2}{1+a} = 0 / \frac{1}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a+a^2-a-a^2 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a - a + a^2 - a^2 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">0 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
 # Wykład 4 | 28.11.2020
 
@@ -440,199 +452,71 @@ Sprawdzenie:
 
 3. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne.  
 
-Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R_+}"> -- liczby rzeczywiste większe do zera. 
+Zbiór: ">\mathbb{R_+}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- liczby rzeczywiste większe do zera. 
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\circ"> zdefiniowane jako: 
+Działanie: ">\circ<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= zdefiniowane jako: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ b = (\sqrt[3]{a} + \sqrt[3]{b})^3">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ b = (\sqrt[3]{a} + \sqrt[3]{b})^3">">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie przemienności -- działanie jest przemienne, bo dodawanie jest przemienne. ">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności: ">L = (a \circ b) \circ c = (\sqrt[3]{a} + \sqrt[3]{b})^3 \circ c\\=(\sqrt[3]{(\sqrt[3]{a} + \sqrt[3]{b})^3} + \sqrt[3]{c})^3\\=(\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c})^3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = a \circ (b \circ c) = a \circ (\sqrt[3]{b} + \sqrt[3]{c})^3\\=(\sqrt[3]{a} + \sqrt[3]{(\sqrt[3]{b} + \sqrt[3]{c})^3})^3\\=(\sqrt[3]{a}+\sqrt[3]{b}+\sqrt[3]{c})^3 = L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Sprawdzenie przemienności -- działanie jest przemienne, bo dodawanie jest przemienne. 
+A więc działanie jest łączne. ">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element neutralny ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji: ">a \circ x = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{x})^3 = a /\sqrt[3]{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{a} + \sqrt[3]{x} = \sqrt[3]{a}  / -\sqrt[3]{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{x} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neutralny: ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element odwrotny do ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji ">a \circ a^{-1} = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest elementem neutralnym. A więc: ">a \circ a^{-1} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{a^{-1}})^3 = 0 / \sqrt[3]{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{a} + \sqrt[3]{a^{-1}} = 0 / -\sqrt[3]{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ">\sqrt[3]{a^{-1}} = -\sqrt[3]{a} /^3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1} = -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A więc element odwrotny do ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to ">-a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = (a \circ b) \circ c = (\sqrt[3]{a} + \sqrt[3]{b})^3 \circ c\\=(\sqrt[3]{(\sqrt[3]{a} + \sqrt[3]{b})^3} + \sqrt[3]{c})^3\\=(\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c})^3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = a \circ (b \circ c) = a \circ (\sqrt[3]{b} + \sqrt[3]{c})^3\\=(\sqrt[3]{a} + \sqrt[3]{(\sqrt[3]{b} + \sqrt[3]{c})^3})^3\\=(\sqrt[3]{a}+\sqrt[3]{b}+\sqrt[3]{c})^3 = L">
-
-(q.e.d.)
-
-A więc działanie jest łączne. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Element neutralny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x">
-
-Z definicji: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ x = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{x})^3 = a /\sqrt[3]{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a} + \sqrt[3]{x} = \sqrt[3]{a}  / -\sqrt[3]{a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{x} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x = 0">
-
-Element neutralny: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Element odwrotny do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = e">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e"> jest elementem neutralnym. A więc: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{a^{-1}})^3 = 0 / \sqrt[3]{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a} + \sqrt[3]{a^{-1}} = 0 / -\sqrt[3]{a}"> 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a^{-1}} = -\sqrt[3]{a} /^3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} = -a">
-
-A więc element odwrotny do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-a">. 
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ -a = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{-a})^3 = 0 / \sqrt[3]{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a} - \sqrt[3]{a} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0 = 0">
-
-(q.e.d.)
+Sprawdzenie: ">a \circ -a = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{-a})^3 = 0 / \sqrt[3]{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{a} - \sqrt[3]{a} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">0 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
 ---
 
 4. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne.  
 
-Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R^+}"> (dodatnie liczby rzeczywiste.
+Zbiór: ">\mathbb{R^+}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (dodatnie liczby rzeczywiste.
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \diamond b = 5^{\log_5{a} \cdot \log_5{b}}">
+Działanie: ">a \diamond b = 5^{\log_5{a} \cdot \log_5{b}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie przemienności.
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Sprawdzenie przemienności.
+Z własności logarytmów możemy zapisać: ">=5^{ \log_5{b} \cdot \log_5{a} } = b \diamond a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-Z własności logarytmów możemy zapisać: 
+A zatem działanie jest przemienne.">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności. ">L = (a \diamond b) \diamond c = (5^{\log_5{a} \cdot \log_5{b}}) \diamond c= 5^{\log_5{5^{\log_5{a} \cdot \log_5{b}}} \cdot \log_5{c}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Korzystając z własności logarytmu: ">\log_n{x^\alpha} = \alpha \cdot \log_n{x}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">L = 5^{{\log_5{a} \cdot \log_5{b} } \cdot \log_5{5} \cdot \log_5{c}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math==5^{ \log_5{b} \cdot \log_5{a} } = b \diamond a"> 
+Usuwamy ">\log_5{5} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">L = 5^{\log_5{a} \cdot \log_5{b} \cdot \log_5{c}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = a \diamond (b \diamond c) = a \diamond (5^{\log_5{b} \cdot \log_5{c}}) = 5^{\log_5{a} \cdot \log_5{5^{\log_5{b} \cdot \log_5{c}}}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = 5^{\log_5{a} \cdot \log_5{5} \cdot \log_5{b} \cdot \log_5{c}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Usuwamy ">\log_5{5} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = 5^{\log_5{a} \cdot \log_5{b} \cdot \log_5{c}} = L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
-A zatem działanie jest przemienne.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = (a \diamond b) \diamond c = (5^{\log_5{a} \cdot \log_5{b}}) \diamond c= 5^{\log_5{5^{\log_5{a} \cdot \log_5{b}}} \cdot \log_5{c}}">
-
-Korzystając z własności logarytmu: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_n{x^\alpha} = \alpha \cdot \log_n{x}">: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = 5^{{\log_5{a} \cdot \log_5{b} } \cdot \log_5{5} \cdot \log_5{c}}"> 
-
-Usuwamy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{5} = 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = 5^{\log_5{a} \cdot \log_5{b} \cdot \log_5{c}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = a \diamond (b \diamond c) = a \diamond (5^{\log_5{b} \cdot \log_5{c}}) = 5^{\log_5{a} \cdot \log_5{5^{\log_5{b} \cdot \log_5{c}}}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = 5^{\log_5{a} \cdot \log_5{5} \cdot \log_5{b} \cdot \log_5{c}}">
-
-Usuwamy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{5} = 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = 5^{\log_5{a} \cdot \log_5{b} \cdot \log_5{c}} = L">
-
-(q.e.d.)
-
-A więc działanie jest łączne. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Element neutralny 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \diamond e = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{e}} = a"> (logarytmujemy obustronnie)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{5^{\log_5{a} \cdot \log_5{e}}} = \log_5{a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} \cdot \log_5{e} \cdot \log_5{5} = \log_5{a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} \cdot \log_5{e} = \log_5{a} / \frac{1}{\log_5{a}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=log_5{e} = 1 \Leftrightarrow 5^1=e">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e = 5">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \diamond 5 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{5}} = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{(\log_5{a}) \cdot 1} = a">
-
-Z własności logarytmu: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{\log_a{b}} = b">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = a">
-
-(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Element odwrotny do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">
-
-Z definicji elementu odwrotnego: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \diamond a^{-1} = e">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e"> jest elementem neutralnym. A więc: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \diamond a^{-1} = 5 = 5^1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{a^{-1}}} = 5 = 5^1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} \cdot \log_5{a^{-1}} = 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} \neq 0">, a zatem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \neq 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} = 1"> oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a^{-1}} = 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = 5"> oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} = 5 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = a^{-1}">
-
-Działanie nie ma zatem elementu odwrotnego, a więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{R^+}, \diamond, 5)"> nie jest grupą. 
+A więc działanie jest łączne. ">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element neutralny ">a \diamond e = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a} \cdot \log_5{e}} = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (logarytmujemy obustronnie)">\log_5{5^{\log_5{a} \cdot \log_5{e}}} = \log_5{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} \cdot \log_5{e} \cdot \log_5{5} = \log_5{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} \cdot \log_5{e} = \log_5{a} / \frac{1}{\log_5{a}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">log_5{e} = 1 \Leftrightarrow 5^1=e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">e = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">a \diamond 5 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a} \cdot \log_5{5}} = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{(\log_5{a}) \cdot 1} = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z własności logarytmu: ">a^{\log_a{b}} = b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element odwrotny do ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji elementu odwrotnego: ">a \diamond a^{-1} = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest elementem neutralnym. A więc: ">a \diamond a^{-1} = 5 = 5^1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a} \cdot \log_5{a^{-1}}} = 5 = 5^1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} \cdot \log_5{a^{-1}} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} \neq 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a zatem ">a \neq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= oraz ">\log_5{a^{-1}} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= oraz ">a^{-1} = 5 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a = a^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Działanie nie ma zatem elementu odwrotnego, a więc ">(\mathbb{R^+}, \diamond, 5)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie jest grupą. 
 
 # Ćwiczenia 4 | 28.11.2020 
 
 ## Podgrupa 
 
-Definicja: niepusty podzbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> nazywamy **podgrupą** grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G">, jeśli sam jest grupą, a więc musi spełniac warunki: 
+Definicja: niepusty podzbiór ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nazywamy **podgrupą** grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, jeśli sam jest grupą, a więc musi spełniac warunki: 
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 \in H"> -- musi mieć element neutralny,
+* ">1 \in H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- musi mieć element neutralny,
 * działanie w tym zbiorze musi być przemienne; 
 
-a dodatkowo dla każdego elementu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> musi istnieć jego inwers (element przeciwny): 
+a dodatkowo dla każdego elementu ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= musi istnieć jego inwers (element przeciwny): 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in H} a^{-1} \in H">
 
 ## Przykłady podgrup
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G=Z_4"> z dodawaniem modulo 4 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(+_4)">
+* ">G=Z_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z dodawaniem modulo 4 ">(+_4)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
+
+* ">(Q\{0\}, \circ, 1)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
+
+* Liczby całkowite z mnożeniem nie są podgrupą, bo ">\frac{1}{\mathbb{Z}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie należy od zbioru liczb całkowitych.
 
 ---
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(Q\{0\}, \circ, 1)">
-
----
-
-* Liczby całkowite z mnożeniem nie są podgrupą, bo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\frac{1}{\mathbb{Z}}"> nie należy od zbioru liczb całkowitych.
-
----
-
-* Bijekcja <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B(X)"> (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> to dowolny zbiór), zdefiniowana jako funkcja przepisująca elementy zbioru w ten sam zbiór:  
+* Bijekcja ">B(X)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to dowolny zbiór), zdefiniowana jako funkcja przepisująca elementy zbioru w ten sam zbiór:  
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=B(X) \{f : X \rightarrow X: f\}">
 
-Bijekcja <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B"> jest różnowartościowa i ma zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X">. 
+Bijekcja ">B<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest różnowartościowa i ma zbiór ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
 Przykład: 
 
-zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> ---  zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> 
-1 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\rightarrow"> 2
-2 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\rightarrow"> 1
-3 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\rightarrow"> 3
+zbiór ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ---  zbiór ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+1 ">\rightarrow<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 2
+2 ">\rightarrow<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 1
+3 ">\rightarrow<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 3
 
--- różnym wartościom przypisane są różne wartości; wszystkie elementy zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> są wykorzystane. 
+-- różnym wartościom przypisane są różne wartości; wszystkie elementy zbioru ">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= są wykorzystane. 
 
-Funkcję <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> można pokazać jako permutację: 
+Funkcję ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= można pokazać jako permutację: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=f = \Bigl( \begin{matrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{matrix} \Bigr)">
 
@@ -642,9 +526,7 @@ Odwrotność (funkcja odwrotna):
 
 ---
  
-* Funkcja <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f(x) = x^3, x \in \mathbb{R}">
-
-Funkcja jest różnowartościowa w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}">: 
+* Funkcja ">f(x) = x^3, x \in \mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Funkcja jest różnowartościowa w zbiorze ">\mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=f: \mathbb{R} \rightarrow \mathbb{R}">
 
@@ -660,29 +542,11 @@ Funkcja odwrotna:
 
 * Składanie funkcji <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(B(X), \circ, 1_x)">
 
-Symbol działania: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\circ">
+Symbol działania: ">\circ<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neutralny -- funkcja identycznościowa ">1_x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">1_x(x) = x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">(f \circ 1_x)(x) = f( 1_x(x) ) = f(x)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=  dla każdego ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">f \circ 1_x =f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1_x \circ f = f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
 
-Element neutralny -- funkcja identycznościowa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_x">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_x(x) = x">
+* Permutacja (bijekcja)">X<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest zbiorem wieloelementowym (">X = \{1, 2, 3, ...., n \}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)
 
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(f \circ 1_x)(x) = f( 1_x(x) ) = f(x)">  dla każdego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f \circ 1_x =f">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_x \circ f = f">
-
----
-
-* Permutacja (bijekcja)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X"> jest zbiorem wieloelementowym (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=X = \{1, 2, 3, ...., n \}">)
-
-Zamiast <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B(x)"> możemy pisać <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P_n">: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B(X) := P_n">
-
-Niech <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n = 5">
-
-Element neturalny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">:
+Zamiast ">B(x)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= możemy pisać ">P_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">B(X) := P_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Niech ">n = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neturalny ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=1 = \Bigl( \begin{matrix} 1 & 2 & 3 & 4 & 5 \\ 1 & 2 & 3 & 4 & 5 \end{matrix} \Bigr)">
 
@@ -706,56 +570,21 @@ Element neutralny -- macierz jednostkowa
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=1 = \Bigl[ \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \Bigr]">
 
-Sprawdzenie:
+Sprawdzenie:">\Bigl[ \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \Bigr] \cdot \Bigl[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{matrix} \Bigr] = \Bigl[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{matrix} \Bigr]<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\Bigl[ \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \Bigr] \cdot \Bigl[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{matrix} \Bigr] = \Bigl[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{matrix} \Bigr]">
-
----
-
-* Pełna grupa liniowa z mnożeniem
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=GL(2)"> -- takie macierze należące do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M_2">, że ich wyznacznik jest niezerowy: 
+* Pełna grupa liniowa z mnożeniem">GL(2)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- takie macierze należące do ">M_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, że ich wyznacznik jest niezerowy: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=GL(2) = \{ A \in M_2 : \det{A} \neq 0 \}">
 
 ---
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_5, +_5"> -- wszystkie reszty z dzielenia liczby całkowitej przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5">
-
-Możliwe liczby: 0, 1, 2, 3, 4
+* ">Z_5, +_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- wszystkie reszty z dzielenia liczby całkowitej przez ">5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Możliwe liczby: 0, 1, 2, 3, 4
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=Z_5 = \{0, 1, 2, 3, 4\}">
 
-Przyjmujemy oznaczenie: jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a\in Z">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a)_5"> może być dowolną liczbą naturalną i resztą z dzielenia <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5">, np. 
+Przyjmujemy oznaczenie: jeśli ">a\in Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to ">(a)_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= może być dowolną liczbą naturalną i resztą z dzielenia ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= przez ">5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, np. ">(10)_5 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(13)_5 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Przyjmijmy działanie dodawanie modulo 5 ">+_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= takie, że jeśli">a +_5 b = (a + b)_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Przykłady">2 +_5 1 = (2+1)_5 = 3_5 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (bo ">3 = 0 \cdot 5 + 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)">2 +_5 2 = 4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">3 +_5 2 = (3+2)_5 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(10)_5 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(13)_5 = 3">
-
-Przyjmijmy działanie dodawanie modulo 5 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_5"> takie, że jeśli
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a +_5 b = (a + b)_5">
-
-Przykłady
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 +_5 1 = (2+1)_5 = 3_5 = 3"> (bo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3 = 0 \cdot 5 + 3">)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 +_5 2 = 4">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3 +_5 2 = (3+2)_5 = 0">
-
----
-
-* Dodawanie modulo 5 (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_5">): <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a +_5 b = (a+b)_5">
-
-Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_5 = {0,1,2,3,4}">
-
-Sposób obliczania:
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\begin{cases} a + b, & a + b < 5 \\ a + b - 5, &a + b \geq 5 \end{cases}">
-
-Działania
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_5"> | 0 | 1 | 2 | 3 | 4
+* Dodawanie modulo 5 (">+_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=): ">a +_5 b = (a+b)_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Zbiór: ">Z_5 = {0,1,2,3,4}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sposób obliczania:">\begin{cases} a + b, & a + b < 5 \\ a + b - 5, &a + b \geq 5 \end{cases}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Działania">+_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | 0 | 1 | 2 | 3 | 4
 -|-|-|-|-|-
 **0** |0|1|2|3|4
 **1** |1|2|3|4|0
@@ -763,167 +592,35 @@ Działania
 **3** |3|4|0|1|2
 **4** |4|0|1|2|3
 
-Elementy odwrotne: (takie, że suma da 5): 
+Elementy odwrotne: (takie, że suma da 5): ">-_5 0 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (bo 5 nie należy do zbioru)">-_5 1 = 4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">-_5 2 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">-_5 3 = 2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">-_5 4 = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=----
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_5 0 = 0"> (bo 5 nie należy do zbioru)
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_5 1 = 4">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_5 2 = 3">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_5 3 = 2">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_5 4 = 1">
-
-----
-
-* Ogólnie dodawanie modulo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_n = \{0, 1, 2, ..., n-2, n-1\}, (n>1)">
-
-Zbiorem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_1 = {0}"> nie będziemy się zajmować
+* Ogólnie dodawanie modulo ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w zbiorze ">Z_n = \{0, 1, 2, ..., n-2, n-1\}, (n>1)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Zbiorem ">Z_1 = {0}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie będziemy się zajmować
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a +_n b = (a+b)_n = \begin{cases} a + b, & a + b < n \\ a + b - n,& a+b \geq n \end{cases}">
 
-Element neutralny działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=+_n">: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">
-
-Element przeciwny: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_n"> 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_n 0 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-_n k =  n-k   , k > 0">
-
-----
+Element neutralny działania ">+_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element przeciwny: ">-_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ">-_n 0 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">-_n k =  n-k   , k > 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=----
 
 ## Zadania
 
 1. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne. 
 
-Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}">
+Zbiór: ">\mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Działanie: ">a \circ b = a+b+3, a \in \mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, wynik ">a \circ b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należy do ">\mathbb{R}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Działanie jest przemienne, bo dodawanie jest przemienne:">b \circ a = b + a + 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Korzystam z przemienności dodawania:">b + a + 3 = a + b + 3 = a \circ b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d)">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności:">(a \circ b) \circ c = (a + b + 3) \circ c = a + b + c + 6<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Korzystam z przemienności">a \circ (b \circ c) = a \circ (b + c + 3) = a + b + c + 6 = (a \circ b) \circ c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b = a+b+3, a \in \mathbb{R}">, wynik <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b"> należy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}">
+(q.e.d.)">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie elementu neutralnego:
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Działanie jest przemienne, bo dodawanie jest przemienne:
+Z definicji ">a \circ x = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + x + 3 = a / -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x + 3 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x = -3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neutralny: ">-3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Elementy przeciwne:
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b \circ a = b + a + 3">
+Z definicji ">a \circ a^{-1} = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to element neutralny.">a \circ a^{-1} = -3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + a^{-1} + 3 = -3 / -3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + a^{-1} = -6 /-a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1} = -6 - a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (ogólny wzór na element przeciwny) 
 
-Korzystam z przemienności dodawania:
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b + a + 3 = a + b + 3 = a \circ b">
-
-(q.e.d)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności:
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a \circ b) \circ c = (a + b + 3) \circ c = a + b + c + 6">
-
-Korzystam z przemienności
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ (b \circ c) = a \circ (b + c + 3) = a + b + c + 6 = (a \circ b) \circ c"> 
-
-(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Sprawdzenie elementu neutralnego:
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ x = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + x + 3 = a / -a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x + 3 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x = -3">
-
-Element neutralny: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Elementy przeciwne:
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = e">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e"> to element neutralny.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = -3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + a^{-1} + 3 = -3 / -3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + a^{-1} = -6 /-a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} = -6 - a"> (ogólny wzór na element przeciwny) 
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ -6 -a = a + -6 -a +3 = -3 = e">
-
-Mamy zatem do czynienia z grupą przemienną (abelową).
+Sprawdzenie: ">a \circ -6 -a = a + -6 -a +3 = -3 = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Mamy zatem do czynienia z grupą przemienną (abelową).
 
 ## Zadanie domowe
 
 Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne. 
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b = a + b + ab">
+Działanie: ">a \circ b = a + b + ab<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie przemienności ">L = a \circ b = a + b + ab<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">P = b \circ a = b + a + ba<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Korzystam z przemienności dodawania i mnożenia: ">L = b + a + ba = P<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności">(a \circ b) \circ c \\= (a + b + ab) \circ c \\= (a + b + ab) + c + c(a + b + ab) \\=a + b + c + ab + ac + bc + abc<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a \circ (b \circ c) \\=a \circ (b + c + cb) \\= a + (b + c +cb) + a(b + c + bc) \\=a + b + c + ab + ac + bc + abc\\=(a \circ b) \circ c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d)">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element neutralny ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji ">a \circ e = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + e + ae = a /-a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">e + ae = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">e(1 + a) = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">e = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">a \circ 0 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + 0 + a\cdot 0 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + 0 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element odwrotny ">a^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Sprawdzenie przemienności 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = a \circ b = a + b + ab">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P = b \circ a = b + a + ba">
-
-Korzystam z przemienności dodawania i mnożenia: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L = b + a + ba = P">
-
-(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a \circ b) \circ c \\= (a + b + ab) \circ c \\= (a + b + ab) + c + c(a + b + ab) \\=a + b + c + ab + ac + bc + abc">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ (b \circ c) \\=a \circ (b + c + cb) \\= a + (b + c +cb) + a(b + c + bc) \\=a + b + c + ab + ac + bc + abc\\=(a \circ b) \circ c">
-
-(q.e.d)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Element neutralny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e">
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ e = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + e + ae = a /-a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e + ae = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e(1 + a) = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e = 0">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ 0 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + 0 + a\cdot 0 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + 0 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = a">
-
-(q.e.d.)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Element odwrotny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1}"> 
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = e">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e"> to element neutralny.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + a^{-1} + aa^{-1} = 0 / -a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} + aa^{-1} = -a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1}(1 + a) = -a / \frac{1}{1+a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} = \frac{-a}{1+a}">
-
-Sprawdzenie
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ \frac{-a}{1+a} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a + \frac{-a}{1+a} + a\frac{-a}{1+1} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\frac{a(1+a) + ( -a) + ( -a^2)}{1+a} = 0/(1+a)">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a+a^2-a-a^2 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0=0">
-
-(q.e.d.)
+Z definicji ">a \circ a^{-1} = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to element neutralny.">a \circ a^{-1} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + a^{-1} + aa^{-1} = 0 / -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1} + aa^{-1} = -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1}(1 + a) = -a / \frac{1}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1} = \frac{-a}{1+a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie">a \circ \frac{-a}{1+a} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a + \frac{-a}{1+a} + a\frac{-a}{1+1} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\frac{a(1+a) + ( -a) + ( -a^2)}{1+a} = 0/(1+a)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a+a^2-a-a^2 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">0=0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
 # ???Wykład 4 | 28.11.2020
 
@@ -931,177 +628,23 @@ Sprawdzenie
 
 1. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne.
 
-Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}^+">
+Zbiór: ">\mathbb{R}^+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Działanie: ">\circ<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ b = (\sqrt[3]{a} + \sqrt[3]{b})^3">">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie przemienności -- działanie ">\circ<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest przemienne, bo dodawanie jest przemienne. ">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności">(a \circ b) \circ c \\= (\sqrt[3]{a} + \sqrt[3]{b})^3 \circ c \\= (\sqrt[3]{(\sqrt[3]{a} + \sqrt[3]{b})^3} + \sqrt[3]{c})^3 \\= (\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c})^3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a \circ (b \circ c) \\=a \circ (\sqrt[3]{b} + \sqrt[3]{c})^3 \\=(\sqrt[3]{a} + \sqrt[3]{(\sqrt[3]{b} + \sqrt[3]{c})^3})^3 \\=(\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c})^3 \\=(a \circ b) \circ c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A więc działanie jest łączne.">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element neutralny ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji ">a \circ e = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{e})^3 = a /\sqrt[3]{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{a} + \sqrt[3]{e} = \sqrt[3]{a} /-\sqrt[3]{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{e} = 0 /^3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">e = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Element neutralny: ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">a \circ 0 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{0})^3 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + 0)^3 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a})^3 = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\circ">
+Mając element neutralny, możemy mówić o elemencie odwrotnym.">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element odwrotny ">a^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji ">a \circ a^{-1} = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest elementem neutralnym. ">a \circ a^{-1} = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{a^{-1}})^3 = 0 /\sqrt[3]{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{a} + \sqrt[3]{a^{-1}}=0 /-\sqrt[3]{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[3]{a^{-1}} = -\sqrt[3]{a} /^3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1} = -a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (ogólny wzór na element odwrotny)
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ b = (\sqrt[3]{a} + \sqrt[3]{b})^3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Sprawdzenie przemienności -- działanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\circ"> jest przemienne, bo dodawanie jest przemienne. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a \circ b) \circ c \\= (\sqrt[3]{a} + \sqrt[3]{b})^3 \circ c \\= (\sqrt[3]{(\sqrt[3]{a} + \sqrt[3]{b})^3} + \sqrt[3]{c})^3 \\= (\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c})^3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ (b \circ c) \\=a \circ (\sqrt[3]{b} + \sqrt[3]{c})^3 \\=(\sqrt[3]{a} + \sqrt[3]{(\sqrt[3]{b} + \sqrt[3]{c})^3})^3 \\=(\sqrt[3]{a} + \sqrt[3]{b} + \sqrt[3]{c})^3 \\=(a \circ b) \circ c">
-
-A więc działanie jest łączne.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Element neutralny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e">
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ e = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{e})^3 = a /\sqrt[3]{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a} + \sqrt[3]{e} = \sqrt[3]{a} /-\sqrt[3]{a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{e} = 0 /^3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e = 0">
-
-Element neutralny: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ 0 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{0})^3 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + 0)^3 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a})^3 = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = a">
-
-(q.e.d.)
-
-Mając element neutralny, możemy mówić o elemencie odwrotnym.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Element odwrotny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1}">
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = e">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e"> jest elementem neutralnym. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{a^{-1}})^3 = 0 /\sqrt[3]{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a} + \sqrt[3]{a^{-1}}=0 /-\sqrt[3]{a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[3]{a^{-1}} = -\sqrt[3]{a} /^3">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} = -a"> (ogólny wzór na element odwrotny)
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ -a = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} + \sqrt[3]{-a})^3 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\sqrt[3]{a} - \sqrt[3]{a})^3 = 0">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(0)^3 = 0">
-
-(q.e.d.)
+Sprawdzenie: ">a \circ -a = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} + \sqrt[3]{-a})^3 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(\sqrt[3]{a} - \sqrt[3]{a})^3 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(0)^3 = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
 -------
 
 2. Sprawdzić, czy dane działanie jest przemienne, łączne i czy posiada element neutralny, a jeśli tak, to znaleźć elementy odwrotne.
 
-Zbiór: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}^+">
+Zbiór: ">\mathbb{R}^+<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Działanie: ">\circ<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ b = 5^{log_5{a} \cdot log_5{b}}">">1\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie przemienności 
 
-Działanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\circ">
-
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=a \circ b = 5^{log_5{a} \cdot log_5{b}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1\degree"> Sprawdzenie przemienności 
-
-Mnożenie jest przemienne, a więc: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ b\\=5^{\log_5{a} \cdot \log_5{b}} \\=5^{\log_5{b} \cdot \log_5{a}} \\=b \circ a">
-
-jest przemienne.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2\degree"> Sprawdzenie łączności 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a \circ b) \circ c \\= (5^{\log_5{a} \cdot \log_5{b}}) \circ c \\= 5^{\log_5(5^\log_5{a} \cdot \log_5{b}) \cdot \log_5{c}}">
-
-Z własności logarytmu wiemy, że: 
+Mnożenie jest przemienne, a więc: ">a \circ b\\=5^{\log_5{a} \cdot \log_5{b}} \\=5^{\log_5{b} \cdot \log_5{a}} \\=b \circ a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=jest przemienne.">2\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Sprawdzenie łączności ">(a \circ b) \circ c \\= (5^{\log_5{a} \cdot \log_5{b}}) \circ c \\= 5^{\log_5(5^\log_5{a} \cdot \log_5{b}) \cdot \log_5{c}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z własności logarytmu wiemy, że: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\log_5{x^\alpha} = \alpha \cdot \log_5{x}">
 
-Z zatem
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{b} \cdot \log_5{5} \cdot \log_5{c}} \\= 5^{log_5{a} \cdot \log_5{b} \cdot \log_5{c}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3\degree"> Element neutralny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e">
-
-Z definicji elementu neutralnego: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ e = a">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot log_5{e}} = a /\log_5{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{5^{\log_5{a} \cdot \log_5{e}}} = \log_5{a}">
-
-Z definicji logarytmu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_a{x} = y \leftrightarrow a^y=x">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a}} = 5^{\log_5{a} \cdot \log_5{e}}">
-
-A więc: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} = \log_5{a} \cdot \log_5{e} /\frac{1}{\log_5{a}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{e} = 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^1 = e = 5">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{5}} = a/\log_5{}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{5^{\log_5{a} \cdot \log_5{5}}} = \log_5{a}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a}} = 5^{\log_5{a} \cdot \log_5{5}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} = \log_5{a} \cdot \log_5{5} /\frac{1}{\log_5{a}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 = \log_5{5}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^1 = 5">
-
-(q.e.d)
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4\degree"> Element przeciwny <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1}">
-
-Z definicji <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \circ a^{-1} = e">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=e"> to element neutralny. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{a^{-1}}} = 5">
-
-Z własności potęgowania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a^x)^y = a^{x\cdot y}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(5^{\log_5{a}})^{\log_5{a^{-1}}} = 5">
-
-Z własności logarytmów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{\log_a{b}} = b">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{\log_5{a^{-1}}} = 5">
-
-Z własności logarytmów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{\log_c{b}} = b^{\log_c{a}}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a^{-1})^{\log_5{a}} = 5">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^{-1} = 5^{\frac{1}{\log_5{a}}}">
-
-Sprawdzenie: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{5^{\frac{1}{\log_5{a}}}}} = 5">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{\log_5{a} \cdot \log_5{5^{\frac{1}{\log_5{a}}}}} = 5^1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} \cdot \log_5{5^{\frac{1}{\log_5{a}}}} = 1">
-
-Z własności logarytmów: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_a{x^y} = y\log_a{x}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\log_5{a} \cdot \frac{1}{\log_5{a} } \log_5{5} = 1">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 \cdot 1 = 1">
-
-(q.e.d.)
+Z zatem">5^{\log_5{a} \cdot \log_5{b} \cdot \log_5{5} \cdot \log_5{c}} \\= 5^{log_5{a} \cdot \log_5{b} \cdot \log_5{c}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">3\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element neutralny ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji elementu neutralnego: ">a \circ e = a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a} \cdot log_5{e}} = a /\log_5{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{5^{\log_5{a} \cdot \log_5{e}}} = \log_5{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji logarytmu ">\log_a{x} = y \leftrightarrow a^y=x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a}} = 5^{\log_5{a} \cdot \log_5{e}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A więc: ">\log_5{a} = \log_5{a} \cdot \log_5{e} /\frac{1}{\log_5{a}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{e} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^1 = e = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">5^{\log_5{a} \cdot \log_5{5}} = a/\log_5{}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{5^{\log_5{a} \cdot \log_5{5}}} = \log_5{a}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a}} = 5^{\log_5{a} \cdot \log_5{5}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} = \log_5{a} \cdot \log_5{5} /\frac{1}{\log_5{a}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1 = \log_5{5}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^1 = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d)">4\degree<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= Element przeciwny ">a^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z definicji ">a \circ a^{-1} = e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to element neutralny. ">5^{\log_5{a} \cdot \log_5{a^{-1}}} = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z własności potęgowania ">(a^x)^y = a^{x\cdot y}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(5^{\log_5{a}})^{\log_5{a^{-1}}} = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z własności logarytmów: ">a^{\log_a{b}} = b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{\log_5{a^{-1}}} = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z własności logarytmów: ">a^{\log_c{b}} = b^{\log_c{a}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(a^{-1})^{\log_5{a}} = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">a^{-1} = 5^{\frac{1}{\log_5{a}}}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Sprawdzenie: ">5^{\log_5{a} \cdot \log_5{5^{\frac{1}{\log_5{a}}}}} = 5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">5^{\log_5{a} \cdot \log_5{5^{\frac{1}{\log_5{a}}}}} = 5^1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} \cdot \log_5{5^{\frac{1}{\log_5{a}}}} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z własności logarytmów: ">\log_a{x^y} = y\log_a{x}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\log_5{a} \cdot \frac{1}{\log_5{a} } \log_5{5} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1 \cdot 1 = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(q.e.d.)
 
 -------------------
 
@@ -1109,77 +652,62 @@ Z własności logarytmów: <img style="min-width: 300px;" src="https://render.gi
 
 ## Podgrupa 
 
-Definicja: niepusty podzbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> nazywamy **podgrupą** grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G">, jeśli sam jest grupą.
+Definicja: niepusty podzbiór ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nazywamy **podgrupą** grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, jeśli sam jest grupą.
 
 ## Przykłady podgrup
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G=Z_4"> z dodawaniem modulo 4 <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(+_4)">
-
-Na ogół podzbiórami są elementy z 1 elementem i równe innej grupie. 
+* ">G=Z_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z dodawaniem modulo 4 ">(+_4)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Na ogół podzbiórami są elementy z 1 elementem i równe innej grupie. 
 
 ## Twierdzenie Lagrange'a
 
-Niech <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> będzie podgrupą grupy skończonej <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> (tzn. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> ma skończoną liczbę elementów), wówczas liczba elementów (tzw. rząd) grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> dzieli liczbę elementów grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G">.
+Niech ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= będzie podgrupą grupy skończonej ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (tzn. ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma skończoną liczbę elementów), wówczas liczba elementów (tzw. rząd) grupy ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= dzieli liczbę elementów grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.
 
-Np. jeśli grupa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> ma 12 elementów, to wówczas podgrupa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> ma 12, 1, 6, 2, 3, 4 elementów.
+Np. jeśli grupa ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma 12 elementów, to wówczas podgrupa ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma 12, 1, 6, 2, 3, 4 elementów.
 
 ## Warstwy lewo- i prawostronne grup
 
 Oznaczenia: 
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> to grupa, 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> -- podgrupa grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G">, 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> -- element należący do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \in G">), 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=aH"> -- zbiór elementów <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a\cdot h"> takich, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=h"> przebiega przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">:
+* ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to grupa, 
+* ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- podgrupa grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, 
+* ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- element należący do ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (">a \in G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=), 
+* ">aH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- zbiór elementów ">a\cdot h<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= takich, że ">h<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= przebiega przez ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=:
  
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=aH = \{ a \cdot h : h \in H\}">
 
-Np. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H = \{0,2\}">
-to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0 +_4 H = \{0, 2\}">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 +_4 H = \{1, 3\}">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2 +_4 H = \{2, 0\}"> 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3 +_4 H = \{3, 1\}"> 
+Np. ">H = \{0,2\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=to ">0 +_4 H = \{0, 2\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1 +_4 H = \{1, 3\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">2 +_4 H = \{2, 0\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ">3 +_4 H = \{3, 1\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-Taki zbiór nazywamy **warstwą lewostronną** (bo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> jest po lewej) grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> wyznaczoną przez element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> i podgrupę <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">. 
+Taki zbiór nazywamy **warstwą lewostronną** (bo ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest po lewej) grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wyznaczoną przez element ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i podgrupę ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
 A taki zbiór:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=Ha= \{h \cdot a : h \in H\}">
 
--- nazywamy **warstwą prawostronną** grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> wyznaczoną przez element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> i podgrupę <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">
-
-Dla <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = 1">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \cdot H = 1 \cdot H = H \cdot 1 = H"> 
+-- nazywamy **warstwą prawostronną** grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wyznaczoną przez element ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i podgrupę ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Dla ">a = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to ">a \cdot H = 1 \cdot H = H \cdot 1 = H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
 Warstwy mają tyle samo elementów co grupa
 
 ## Przykłady
 
-* Niech będzie grupa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">
-
-Weźmy funkcję 
+* Niech będzie grupa ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Weźmy funkcję 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=L_a: H \rightarrow aH">
 
-gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L_a (h) = a \cdot h, h \in H"> 
+gdzie ">L_a (h) = a \cdot h, h \in H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-Zauważamy, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L_a"> jest różnowartościowa, bo jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L_a(h) = L_a(h')">, to wówczas <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=ah = ah' |a^-1">, a zatem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a{^-1} a h = a^{-1} a h'">, czyli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=h = h'">. A więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=L_4"> jest na zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=aH">. 
+Zauważamy, że ">L_a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest różnowartościowa, bo jeśli ">L_a(h) = L_a(h')<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to wówczas ">ah = ah' |a^-1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a zatem ">a{^-1} a h = a^{-1} a h'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, czyli ">h = h'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. A więc ">L_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest na zbiór ">aH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-Mamy tu bijekcję, tzn. wzajemne dopasowanie elementów grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> i zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=aH">. 
+Mamy tu bijekcję, tzn. wzajemne dopasowanie elementów grupy ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i zbioru ">aH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
 W przypadku zbiorów skończonych wszystkie warstwy mają tyle samo elementów co odpowiadająca im grupa. 
 
-Np. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=aH"> ma tyle samo elementów co <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> i tyle samo co <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Ha">. 
+Np. ">aH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma tyle samo elementów co ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i tyle samo co ">Ha<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
 ---
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_4, H = \{0,2\}">
+* ">Z_4, H = \{0,2\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Warstwy: 
 
-Warstwy: 
-
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0 +_4 H = \{0, 2\} = 2 +_4 H">
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 +_4 H = \{1, 3\} = 3 +_4 H">
-
-Mamy zatem 2 warstwy 
+* ">0 +_4 H = \{0, 2\} = 2 +_4 H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">1 +_4 H = \{1, 3\} = 3 +_4 H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Mamy zatem 2 warstwy 
 
 0	| 	1
 2	| 	3
@@ -1192,31 +720,11 @@ bo nie może być tak, żeby jakiś element był częścią wspólną
 
 ## Dowód rozłączności warstw
 
-Założenie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x \in aH \cap bH">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(?) aH \neq bH">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x \in aH \cap bH">, a stąd wynika, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=( \exists h_1, h_2 \in H)(x ah_1 = ab_2)">
-
-Dowód <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=aH \neq bH">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y = aH \rightarrow (\exists h \in H)(y = ah)">
-
-Podstawiamy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = bh_2 h_1^{-1}">
-
-Więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y = bh_1 h_1^{-1} h \in bH">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=bh_1 h_1^{-1} h \in H">
-
-A więc, gdy mamy grupę. 
+Założenie: ">x \in aH \cap bH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">(?) aH \neq bH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x \in aH \cap bH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a stąd wynika, że ">( \exists h_1, h_2 \in H)(x ah_1 = ab_2)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Dowód ">aH \neq bH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">y = aH \rightarrow (\exists h \in H)(y = ah)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Podstawiamy ">a = bh_2 h_1^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Więc ">y = bh_1 h_1^{-1} h \in bH<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">bh_1 h_1^{-1} h \in H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A więc, gdy mamy grupę. 
 
 ---
 
-## Przykłady warstw podgrup c.d.
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G">, podrupa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">
-
-Warstwy
+## Przykłady warstw podgrup c.d.">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, podrupa ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Warstwy
 
 |H||||
 |-|-|-|-|
@@ -1228,20 +736,18 @@ A więc warstwa jest wielokrotnością wielokrotność elementów grupy.
 
 Wnioski z twierdzenia
 
-1) Ilość elementów grupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|G|">):
+1) Ilość elementów grupy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (">|G|<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=):
 
-Jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|G| = p"> (liczba pierwsza), to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> ma tylko 2 podgrupy: 
+Jeśli ">|G| = p<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (liczba pierwsza), to ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma tylko 2 podgrupy: 
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_1 = G">, 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_2 = \{1\}"> (element neutralny) 
+* ">H_1 = G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, 
+* ">H_2 = \{1\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (element neutralny) ">Z_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">Z_5<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">Z_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">Z_7<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">Z_11<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= itd. -- wszystkie one nie mają wlaściwych (definicyjnych) podgrup. 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_2">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_5">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_3">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_7">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_11"> itd. -- wszystkie one nie mają wlaściwych (definicyjnych) podgrup. 
+2) Niech będzie grupa ">Z_12<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to mamy podgrupy o liczbach elementów: 1, 12, 2, 6, 3, 4. 
 
-2) Niech będzie grupa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_12">, to mamy podgrupy o liczbach elementów: 1, 12, 2, 6, 3, 4. 
+Pytanie, czy ">Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma podgrupę 2 elementową -- dzielimy ">Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= na 2 i mamy 6, a 6 jest w zbiorze, więc ">12:6 = 2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a więc mamy ">[0,2]<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-Pytanie, czy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z"> ma podgrupę 2 elementową -- dzielimy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z"> na 2 i mamy 6, a 6 jest w zbiorze, więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=12:6 = 2">, a więc mamy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=[0,2]">. 
-
-Wniosek: w grupie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_e"> dla każdego dzielnika istnieje dokładnie 1 podgrupa 
+Wniosek: w grupie ">Z_e<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= dla każdego dzielnika istnieje dokładnie 1 podgrupa 
 
 # Ćwiczenia 5 | 05.12.2020
 
@@ -1251,11 +757,7 @@ Wniosek: w grupie <img style="min-width: 300px;" src="https://render.githubuserc
 
 1. Znaleźć wszystkie podgrupy (właściwe, tzn. nietrywialne) grup: 
 
-a) <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(Z_{24}, +_{24}, 0)"> różne od całego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_{24}"> oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{0\}">
-
-b) <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(Z_{36}, +_{36}, 0)"> różne od całego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_{36}"> oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{0\}">
-
----
+a) ">(Z_{24}, +_{24}, 0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= różne od całego ">Z_{24}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= oraz ">\{0\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b) ">(Z_{36}, +_{36}, 0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= różne od całego ">Z_{36}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= oraz ">\{0\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
 
 Ad a
 
@@ -1263,19 +765,9 @@ Podgrupa ma tyle elementów, ile jest dzielników właściwych liczby elementów
 
 A więc dzielniki 24: 1, 24 (te nas nie interesują), 2, 12, 3, 8, 4, 6. 
 
-* 2-elementowa podgrupa: dzielimy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=24 / 2">, mamy 12, podgrupa <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_2 = \{0, 12}\">
+* 2-elementowa podgrupa: dzielimy ">24 / 2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, mamy 12, podgrupa ">H_2 = \{0, 12}\<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 12-elementowa podgrupa: ">24 / 12 = 2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_{12} = \{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (co 2).
 
-* 12-elementowa podgrupa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=24 / 12 = 2"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_{12} = \{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22\}"> (co 2).
-
-* 3-elementowa podgrupa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=24 / 3 = 8"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_3 = \{0, 8, 16\}">
-
-* 8-elementowa podgrupa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=24 / 8 = 3"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_8 = \{0, 3, 6, 9, 12, 15, 18, 21\}">
-
-* 4-elementowa podgrupa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=24 / 4 = 6"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_4 = \{0, 6, 12, 18\}">
-
-* 6-elementowa podgrupa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=24 / 6 = 4"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_6 = \{0, 4, 8, 12, 16, 20\}">
-
----
+* 3-elementowa podgrupa: ">24 / 3 = 8<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_3 = \{0, 8, 16\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 8-elementowa podgrupa: ">24 / 8 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_8 = \{0, 3, 6, 9, 12, 15, 18, 21\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 4-elementowa podgrupa: ">24 / 4 = 6<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_4 = \{0, 6, 12, 18\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 6-elementowa podgrupa: ">24 / 6 = 4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_6 = \{0, 4, 8, 12, 16, 20\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
 
 Ad b
 
@@ -1285,137 +777,71 @@ Dzielniki: 1, 36 (te nas nie interesują), 2, 18, 3, 12, 4, 9, 6,
 
 Istnieje zatem 7 właściwych podgrup:
 
-* 2-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/2 = 18"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_2 = \{0, 18\}">
-* 18-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/18 = 2"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_{18} = \{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34\}">
-* 3-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/3 = 12"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_3 = \{0, 12, 24\}">
-* 12-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/12 = 3"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_{12} = \{0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33\}">
-* 4-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/4 = 9"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_4 = \{0, 9, 18, 27\}">
-* 9-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/9 = 4"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_9 = \{0, 4, 8, 12, 16, 20, 24, 26, 32\}">
-* 6-elementowa: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=36/6 = 6"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H_6 = \{0, 6, 12, 18, 24, 30\}"> 
+* 2-elementowa: ">36/2 = 18<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_2 = \{0, 18\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 18-elementowa: ">36/18 = 2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_{18} = \{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 3-elementowa: ">36/3 = 12<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_3 = \{0, 12, 24\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 12-elementowa: ">36/12 = 3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_{12} = \{0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 4-elementowa: ">36/4 = 9<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_4 = \{0, 9, 18, 27\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 9-elementowa: ">36/9 = 4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_9 = \{0, 4, 8, 12, 16, 20, 24, 26, 32\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* 6-elementowa: ">36/6 = 6<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">H_6 = \{0, 6, 12, 18, 24, 30\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
 ## Generatory podgrup
 
-2. Znaleźć wszystkie podgrupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{Z}, +, 0)"> (całkowite, z dodawaniem i elementem neutralnym) 
+2. Znaleźć wszystkie podgrupy ">(\mathbb{Z}, +, 0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (całkowite, z dodawaniem i elementem neutralnym) 
 
 2 podgrupy są trywialne: 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{0\}"> -- tylko zero (dodawanie 0 do 0 zawsze da 0, więc nie wyjdziemy poza zbiór, 0 też jest elementem neutralnym dodawania), 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z}"> -- wszystkie liczby całkowite.
+* ">\{0\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- tylko zero (dodawanie 0 do 0 zawsze da 0, więc nie wyjdziemy poza zbiór, 0 też jest elementem neutralnym dodawania), 
+* ">\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- wszystkie liczby całkowite.
 
-Jeśli do podgrupy weźmiemy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, to automatycznie musimy też dodać <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0"> (element neutralny) oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-1"> (inwers), a dalej cały zbiór liczb całkowitych (dwie jedynki dają <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2">, trzy jedynki -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3"> itd.). 
+Jeśli do podgrupy weźmiemy ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to automatycznie musimy też dodać ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (element neutralny) oraz ">-1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (inwers), a dalej cały zbiór liczb całkowitych (dwie jedynki dają ">2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, trzy jedynki -- ">3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= itd.). 
 
-Jeśli do podgrupy weźmiemy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2">, to musi się w niej znaleźć także <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-2">, a także <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-4">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=6"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-6"> itd.
+Jeśli do podgrupy weźmiemy ">2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to musi się w niej znaleźć także ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">-2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a także ">4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">-4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">6<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">-6<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= itd.">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w powyższych przykładach to **generatory** podgrup: 
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2"> w powyższych przykładach to **generatory** podgrup: 
-
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<1> = <-1> = \mathbb{Z}">
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<2> = <-2> = \{0, 2, -2, 4, -4, ...\} = 2 \cdot \mathbb{Z}">
-* trójka generuje: 
+* "><1> = <-1> = \mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* "><2> = <-2> = \{0, 2, -2, 4, -4, ...\} = 2 \cdot \mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* trójka generuje: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=<3> = \{0, 3, -3, 6, -6...\} = 3 \cdot \mathbb{Z}">
 
-Ogólnie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n \cdot \mathbb{Z}"> to zbiór wielokrotności <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">, (bo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n = 0, 1, 2...">). 
+Ogólnie: ">n \cdot \mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to zbiór wielokrotności ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, (bo ">n = 0, 1, 2...<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=). 
 
 Każdy zbiór wielokrotności jakiejś liczby to jest podgrupa dla każdej liczby naturalnej. 
 
-Podgrupa zerowa to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{0\} = 0 \cdot \mathbb{Z}">
+Podgrupa zerowa to ">\{0\} = 0 \cdot \mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Podgrupa równa grupie: ">\mathbb{Z} = 1 \cdot \mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=## Dowód, że nie ma innych podgrup ">\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= niż te złożone z wielokrotności poszczególnych liczb całkowitych
 
-Podgrupa równa grupie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z} = 1 \cdot \mathbb{Z}">
-
-## Dowód, że nie ma innych podgrup <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{Z}"> niż te złożone z wielokrotności poszczególnych liczb całkowitych
-
-Jeśli wezmę grupę <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H \notin \{0\}">, to w tym zbiorze 
+Jeśli wezmę grupę ">H \notin \{0\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to w tym zbiorze 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(\exists k \in \mathbb{Z}, k \neq 0) (k \in H)">
 
--- jeśli jakaś liczba należy do grupy, to z tego wynika, że moduł <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=k"> należy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">, a moduł z <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=k"> to liczba naturalna (<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|k| \in H, |k| \in \mathbb{N}">)
+-- jeśli jakaś liczba należy do grupy, to z tego wynika, że moduł ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należy do ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a moduł z ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to liczba naturalna (">|k| \in H, |k| \in \mathbb{N}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)
 
-A skoro tak, to taki zbiór liczb naturalnych ma element najmniejszy. Oznaczmy go jako <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n"> -- najmniejsza liczba naturalna należąca do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H">. 
+A skoro tak, to taki zbiór liczb naturalnych ma element najmniejszy. Oznaczmy go jako ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- najmniejsza liczba naturalna należąca do ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-A powiedzieliśmy wcześniej, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n \dot \mathbb{Z} \in H">
+A powiedzieliśmy wcześniej, że ">n \dot \mathbb{Z} \in H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Dowód na to, że innych podgrup liczb całkowitych nie ma: 
 
-Dowód na to, że innych podgrup liczb całkowitych nie ma: 
+Jeśli wezmę jakieś ">m \in H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to mogę podzielić zbiór ">H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= tak, że ">m = qn + r, 0 \leq r < n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">r = m - qn, (m, q \in H)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Ale ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= miało być najmniejszą liczbą naturalną, a skoro ">r \in H<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">r < n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to ">r = 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Więc ">m = qn \in n\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Pokazaliśmy zatem, że ">H \in n\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a więc ">H = n\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-Jeśli wezmę jakieś <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=m \in H">, to mogę podzielić zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H"> tak, że 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=m = qn + r, 0 \leq r < n">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=r = m - qn, (m, q \in H)">
-
-Ale <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n"> miało być najmniejszą liczbą naturalną, a skoro <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=r \in H"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=r < n">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=r = 0">
-
-Więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=m = qn \in n\mathbb{Z}">
-
-Pokazaliśmy zatem, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H \in n\mathbb{Z}">, a więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=H = n\mathbb{Z}">. 
-
-A więc innych podgrup liczb całkowitych niż wielokrotności <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n\mathbb{Z}"> nie ma. 
+A więc innych podgrup liczb całkowitych niż wielokrotności ">n\mathbb{Z}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie ma. 
 
 ## Przykłady podgrup c.d.
 
-* Liczby zespolone z mnożeniem i jedynką:
+* Liczby zespolone z mnożeniem i jedynką:">(\mathbb{C} \setminus \{0\}, \cdot, 1)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Udowodnić, że następujące zbiory są podgrupami tej grupy
 
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{C} \setminus \{0\}, \cdot, 1)">
-
-Udowodnić, że następujące zbiory są podgrupami tej grupy
-
-a) <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}_1 = \{z \in \mathbb{C} : |z| = 1 \}">
-
-Liczby <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}_1"> to takie liczby zespolone, że ich odległość (moduł) jest równy 1, a więc wszystkie leżą na okręgu jednostkowym. 
+a) ">\mathbb{C}_1 = \{z \in \mathbb{C} : |z| = 1 \}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Liczby ">\mathbb{C}_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to takie liczby zespolone, że ich odległość (moduł) jest równy 1, a więc wszystkie leżą na okręgu jednostkowym. 
 
 A zatem 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 \in \mathbb{C}_1">
-* jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z_1, z_2 \in \mathbb{C}_1">, to iloczyn <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|z_1 z_2|"> też powiniem należeć do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}_1">: 
+* ">1 \in \mathbb{C}_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* jeśli ">z_1, z_2 \in \mathbb{C}_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to iloczyn ">|z_1 z_2|<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= też powiniem należeć do ">\mathbb{C}_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=|z_1 z_2| = |z_1||z_2| = 1 \cdot 1 = 1 \rightarrow z_1 \cdot z_2 \in \mathbb{C}_1"> 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z = a + ib">
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|z| = \sqrt{a^2 + b^2}">
-
-Liczbę odwrotną do zespolonej: 
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=|z_1 z_2| = |z_1||z_2| = 1 \cdot 1 = 1 \rightarrow z_1 \cdot z_2 \in \mathbb{C}_1"> ">z = a + ib<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">|z| = \sqrt{a^2 + b^2}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Liczbę odwrotną do zespolonej: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\frac{1}{a+ib}">
 
-obliczymy przez sprzężenie - przemnożenie przez mianownik: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\frac{1}{a+ib} \cdot \frac{a-ib}{a-ib}=\frac{a-ib}{a^2-iab+iab+b^2}=\frac{a-ib}{a^2+b^2}=\frac{a}{a^2+b^2} - i\frac{b}{a^2+b^2}">
-
-Jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z \in \mathbb{C}_1">, to także <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a^2 + b^2 = 1">, a więc: 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\frac{a}{a^2+b^2} - i\frac{b}{a^2+b^2}=a+i(-b)">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z^{-1} = a+(-b)i">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|z^{-1}| = \sqrt{a^2 + (-b)^2} = \sqrt{a^2 + b^2} = \sqrt{1} = 1">
-
-Liczba odwrotna też należy do okręgu jednostkowego,
+obliczymy przez sprzężenie - przemnożenie przez mianownik: ">\frac{1}{a+ib} \cdot \frac{a-ib}{a-ib}=\frac{a-ib}{a^2-iab+iab+b^2}=\frac{a-ib}{a^2+b^2}=\frac{a}{a^2+b^2} - i\frac{b}{a^2+b^2}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Jeśli ">z \in \mathbb{C}_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to także ">a^2 + b^2 = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a więc: ">\frac{a}{a^2+b^2} - i\frac{b}{a^2+b^2}=a+i(-b)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">z^{-1} = a+(-b)i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">|z^{-1}| = \sqrt{a^2 + (-b)^2} = \sqrt{a^2 + b^2} = \sqrt{1} = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Liczba odwrotna też należy do okręgu jednostkowego,
 mamy więc podgrupę:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=z \in \mathbb{C}_1 \rightarrow z^{-1} \in \mathbb{C}_1">
 
-Dla <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n = 2, 3, 4, ... \mu_n = \{z \in \mathbb{C}: z^n = 1 \}"> -- zbiór wszystkich pierwiatków <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">-tego stopnia z jedynki; 
-takich pierwiastków jest <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">. 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[2]{1} = \{1, -1\}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\sqrt[4]{1} = \{1, i, -1, -i\} = <i>"> (generowana przez <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=i">)
+Dla ">n = 2, 3, 4, ... \mu_n = \{z \in \mathbb{C}: z^n = 1 \}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- zbiór wszystkich pierwiatków ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-tego stopnia z jedynki; 
+takich pierwiastków jest ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. ">\sqrt[2]{1} = \{1, -1\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\sqrt[4]{1} = \{1, i, -1, -i\} = <i><img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (generowana przez ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)
 
 A więc 
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 \in \mu_4">, bo <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1^n = 1">
+* ">1 \in \mu_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, bo ">1^n = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* jeśli 2 liczby ">z_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">z_2 \in \mu_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to ">(z_1 \cdot z_2)^n = z_1 z_2 z_1 z_2... = 
+z_1^n \cdot z_2^n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a już wiemy, że ">z_1^n = 1, z_2^n = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, więc ">1 \cdot 1 = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* skoro ">z \in \mu_n \rightarrow (z^-{1)}^n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to czy element odwrotny też należy? 
 
-* jeśli 2 liczby <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z_1">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z_2 \in \mu_4">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(z_1 \cdot z_2)^n = z_1 z_2 z_1 z_2... = 
-z_1^n \cdot z_2^n">, a już wiemy, że <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z_1^n = 1, z_2^n = 1">, więc <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 \cdot 1 = 1">
-
-* skoro <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z \in \mu_n \rightarrow (z^-{1)}^n">, to czy element odwrotny też należy? 
-
-Wiemy, że 
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z \cdot z \cdot ...\cdot z \cdot z = 1 /\cdot z^{-1}">
-
-Jedno <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z"> się skróci, zostanie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z \cdot z \cdot... \cdot z \cdot z = 1 \cdot z^{-1}">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z \cdot z \cdot ... \cdot z \cdot z = z^{-1} \rightarrow (z^1)^n = 1">
-
-Co jest analogiczne do generowania przez 1.
+Wiemy, że ">z \cdot z \cdot ...\cdot z \cdot z = 1 /\cdot z^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Jedno ">z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= się skróci, zostanie ">z \cdot z \cdot... \cdot z \cdot z = 1 \cdot z^{-1}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">z \cdot z \cdot ... \cdot z \cdot z = z^{-1} \rightarrow (z^1)^n = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Co jest analogiczne do generowania przez 1.
 
 ---
 
@@ -1431,9 +857,7 @@ A zatem
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\bigcup_n=2^\infty \mu_n">
 
-Z mnożeniem, jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z_1^n = 1">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=z_2^m = 1">
-
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(z_1 z_2)^nm = z_1^nm \cdot z_2^nm = (z_1^n)^m \cdot (z_2^m)^n
+Z mnożeniem, jeśli ">z_1^n = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to ">z_2^m = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=(z_1 z_2)^nm = z_1^nm \cdot z_2^nm = (z_1^n)^m \cdot (z_2^m)^n
 = 1^m \cdot 1^n = 1">
 
 # Wyklad 6 | 12.12.2020
@@ -1452,28 +876,18 @@ Grupa izometrii będzie przekształcała ten trójkąt w inne trójkąty:
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=GI_\triangle = \{ 1_\triangle, 0_{120\degree}, 0_{250\degree}, s_1 \}">
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> -- brak przekształcenia
+* ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- brak przekształcenia
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> -- obrót o 120 stopni: uzyskamy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{2, 3, 1\}">
-
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_|240\degree}"> -- obrót o 240 stopni -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{ 3, 1, 2\}">
-
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> -- symetria osiowa względem osi przechodzącej przez wierzchołek <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{ 1, 3, 2\}">
-
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> -- symetria osiowa względem osi przechodzącej przez wierzchołek <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{ 3, 2, 1\}">
-
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> -- symetria osiowa względem osi przechodzącej przez wierzchołek <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3"> -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{ 2, 1, 3\}">
-
-|0| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | 
+* ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- obrót o 120 stopni: uzyskamy ">\{2, 3, 1\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">0_|240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- obrót o 240 stopni -- ">\{ 3, 1, 2\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- symetria osiowa względem osi przechodzącej przez wierzchołek ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">\{ 1, 3, 2\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- symetria osiowa względem osi przechodzącej przez wierzchołek ">2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">\{ 3, 2, 1\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- symetria osiowa względem osi przechodzącej przez wierzchołek ">3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">\{ 2, 1, 3\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|0| ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | 
 |-|-|-|-|-|-|-|
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> |  <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> |  <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> |
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> |
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> |
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> |
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> |
-| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=s_1"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{120\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=0_{240\degree}"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> |
+| ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |  ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |  ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
+| ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_3<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">s_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{120\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">0_{240\degree}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= | ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= |
 
-Identyczność <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1_\triangle"> jest elementem neutralnym -- nic nie zmienia.
+Identyczność ">1_\triangle<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest elementem neutralnym -- nic nie zmienia.
 
 Mamy grupę nieprzemienną (tabela nie jest symetryczna). 
 
@@ -1492,8 +906,8 @@ Zadania
 * definicja grupy + przykłady grup
 * sprawdzanie własności działań -- czy przemienne, łączne, mają element neutralny, element odwrotny (inwers)
 * znajdowanie permutacji odwrotnej do danej 
-* uzupełnianie tabelki z wynikami, np. półgrupy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_4, \cdot_4"> (mnożenie modulo 4)
-* znajdowanie wszystkich podgrup jakiejś grupy, np. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Z_{12}, +_2"> (dodawanie modulo 2)
+* uzupełnianie tabelki z wynikami, np. półgrupy ">Z_4, \cdot_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (mnożenie modulo 4)
+* znajdowanie wszystkich podgrup jakiejś grupy, np. ">Z_{12}, +_2<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (dodawanie modulo 2)
 * rozkład permutacji na cykle 
 
 ## Permutacja odwrotna do danej
@@ -1516,21 +930,18 @@ Np. w permutacji:
 
 1 przechodzi w 3, 3 w 4, 4 w 5, 5 w 1
 
-Zapis skrótowy cyklu: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(1, 3, 4, 5)">
-
----
+Zapis skrótowy cyklu: ">(1, 3, 4, 5)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=---
 
 Permutacja: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\alpha = \Bigl( \begin{matrix} 1&2&3&4&5&6&7&8&9&10 \\ 4&5&2&6&3&8&2&1&9&10 \end{matrix} \Bigr)">
 
 -- posiada 2 cykle: 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(1, 4, 6, 8)"> (to skrótowy zapis z identycznościami w miejscu tych liczb, które nie mają znaczenia:
+* ">(1, 4, 6, 8)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (to skrótowy zapis z identycznościami w miejscu tych liczb, które nie mają znaczenia:
 1 2 3 4 5 6 7 8 9 10
 4 2 3 6 5 8 7 1 9 10 
 
-* <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(2, 5, 3)">
- 
+* ">(2, 5, 3)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 Cykle są rozłączne jako zbiory.
 
 ---
@@ -1575,7 +986,7 @@ Przykład 2:
 
 Definicja: 
 
-Funkcją <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f : A \rightarrow B"> (odwzorowującą <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> w <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B">, gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=B"> to grupy), nazywamy **homomorfizmem**, gdy dla dowolnych <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x">, <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y"> należących do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> zachodzi, że jeśli wymnożymy <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y"> i prześlemy do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f">, to uzyskamy to samo co w wyniku mnożenia wyników przesłania osobno <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x"> do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f"> i <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=y"> do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=f">: 
+Funkcją ">f : A \rightarrow B<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (odwzorowującą ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w ">B<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, gdzie ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">B<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to grupy), nazywamy **homomorfizmem**, gdy dla dowolnych ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">y<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należących do ">A<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= zachodzi, że jeśli wymnożymy ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">y<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i prześlemy do ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to uzyskamy to samo co w wyniku mnożenia wyników przesłania osobno ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= do ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">y<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= do ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
 
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall x, y \in A: f(xy) = f(x) \cdot f(y)">
 
@@ -1609,13 +1020,7 @@ Inny przykład: funkcja
 
 a więc logarytmowanie jest izomorficzne.  
 
-Np. dla <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=x = 1000">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1000 \dot 10000">
-
-<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\lg{1000} + \lg{10000} = 3 + 4 = 7">
-
-Wracamy: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=10^7 = 1000000">
+Np. dla ">x = 1000<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">1000 \dot 10000<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">\lg{1000} + \lg{10000} = 3 + 4 = 7<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Wracamy: ">10^7 = 1000000$
 
 
 
