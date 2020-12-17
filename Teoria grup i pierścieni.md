@@ -34,7 +34,7 @@ Wykład odwołany.
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{R}"> | tak | tak | tak | nie |
 | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\mathbb{C}"> | tak | tak | tak | nie |
 
-[a]: Dla każdych z liczb można znaleźć sumę (różnicę, iloczyn, iloraz) z tego samego zbioru. 
+[a]: Dla każdych 2 liczb można znaleźć sumę (różnicę, iloczyn, iloraz) z tego samego zbioru. 
 
 ## Liczby zespolone
 
