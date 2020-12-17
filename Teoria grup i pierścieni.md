@@ -142,15 +142,15 @@ Działanie <img style="min-width: 300px;" src="https://render.githubusercontent.
 
 * __łącznym__ jeśli dla każdej trójki _a_, _b_, _c_ należących do _A_ zachodzi równość: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(a \bullet b) \bullet c = a \bullet (b \bullet c)">
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a, b \in A} (a \bullet b) \bullet c = a \bullet (b \bulletc)">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a, b, c \in A} (a \bullet b) \bullet c = a \bullet (b \bullet c)">
 
 Przykłady działań niełącznych: 
 * odejmowanie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(2 - 2) - 3 \neq 2 - (2 - 3)">. 
-* dzielenie. 
+* dzielenie: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(2 : 2) : 3 \neq 2 : (2 : 3)">. 
 
 ## Grupoid -- zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> z działaniem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet">
 
-Definicja: grupoid to zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> z określonym działaniem <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet">. 
+Definicja: grupoid to zbiór <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> z określonym działaniem dwuargumentowym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet">. 
 
 Zapis: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)">
 
@@ -175,16 +175,57 @@ Przykłady
 
 ## Monoid
 
-Definicja: monoid to półgrupa z
-* jednością,
-* działaniem łącznym 
-* elementem neutralnym. 
+Definicja: monoid to półgrupa z elementem neutralnym. 
 
-## Inwers (element odwrotny)
+## Element odwrotny (inwers)
 
-Definicja: niech będzie grupoid <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> (dokładnie zbiór z działaniem: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)">) z elementem neutralnym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, to element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b \in A"> nazywamy **odwrotnym**, jeśli dla każdego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \in A"> zachodzi: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \bullet b = b \bullet a = 1">: 
+Definicja: niech będzie grupoid <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=A"> (dokładnie: zbiór z działaniem: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)">) z elementem neutralnym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1">, to element <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b \in A"> nazywamy **odwrotnym**, jeśli dla każdego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \in A"> zachodzi: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \bullet b = b \bullet a = 1">: 
 
-<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in A} a\bullet b = b = \bullet a = 1">
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\forall_{a \in A} a\bullet b = b \bullet a = 1">
+
+Przykłady dla grupoidu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{R}, \cdot)">
+
+| liczba | inwers | 
+|-|-|
+|<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a=2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b=\frac{1}{2}"> |
+|<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a=-3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b=-\frac{1}{3}"> |
+
+Przykłady dla grupoidu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(\mathbb{R}, +)">
+
+| liczba | inwers | 
+|-|-|
+|<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a=2"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b=-2"> |
+|<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a=-3"> | <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b=3"> | 
+
+Dla dodawania inwersy są liczbami przeciwnymi. 
+
+Na ogół element odwrotny (jeśli istnieje) do danego elementu nie jest wyznaczony jednoznacznie. 
+
+Przykład działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{1, a, b\}"> (gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> jest elementem neutralnym) z inwersem niewyznaczonym jednoznacznie: 
+
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> | 1| a | b |
+|-|-|-|-|
+| **1** | 1| 1| 1|
+| **a** | 1| 1| 1|
+| **b** | 1| 1| 1|
+
+Elementy odwrotne do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1 = \{1, a, b\}"> 
+Elementy odwrotne do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a = \{1, a, b\}"> 
+Elementy odwrotne do <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b = \{1, a, b\}">   
+
+Przykład działania <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{1, a, b\}"> (gdzie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> jest elementem neutralnym) bez inwersów: 
+
+| <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\bullet"> | 1| a | b |
+|-|-|-|-|
+| **1** | a| 1| a|
+| **a** | b| a| 1|
+| **b** | 1| a| a|
+
+Tutaj brak elementów odwrotnych. <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> nie jest elementem odwrotnym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a">, bo o ile <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \bullet b = 1">, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b \bullet a \neq 1">. 
+
+
+
+## Twierdzenie o elementach odwrotnych (inwersach)
 
 Twierdzenie: w półgrupie (czyli grupie z działaniem łącznym) <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=(A, \bullet)"> z elementem neutralnym <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=1"> każdy element ma co najwyżej jeden element odwrotny lub nie ma go wcale. 
 
