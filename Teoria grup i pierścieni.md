@@ -102,7 +102,7 @@ Dla zbioru <img style="min-width: 300px;" src="https://render.githubusercontent.
 
 * działania w zbiorze 4-elementowym: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4^{16} = 4^{4^"> możliwych działań 2-argumentowych; 
 
-* działania w zbiorze 5-elementowym: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^25=5^{5^2} = 25"> możliwych działań 2-argumentowych. 
+* działania w zbiorze 5-elementowym: <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5^{25}=5^{5^2} = 25"> możliwych działań 2-argumentowych. 
 
 Ogólnie w zbiorze <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=n">-elementowym możliwe jest 
 
