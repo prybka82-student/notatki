@@ -6,8 +6,8 @@ Wykład odwołany.
 
 ## Kolokwia
 
-1. 6. zjazd
-2. 10. zjazd
+1. 6 zjazd
+2. 10 zjazd
 
 ## Adres: rgigon@ath.bielsko.pl
 
