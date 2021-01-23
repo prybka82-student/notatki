@@ -2114,8 +2114,8 @@ if (s.check() == sat) {			// jeśli jest wynik
 Definicja operatora ">\Delta_z f_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">\begin{array}{ll}
 \Delta_z f_n = f_{n+1} - zf_n & \\
 \Delta_z^{-1} f_n = F_n & \text{gdy}\ \Delta_z F_n = f_n
-\end{array}"><img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=**Zadanie:**
-* znaleźć ">f_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, dla której ">\Delta_2 f_n = n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (czyli: ">f_{n+1} - 2f_n = n$). 
+\end{array}<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=**Zadanie:**
+* znaleźć ">f_n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, dla której ">\Delta_2 f_n = n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (czyli: ">f_{n+1} - 2f_n = n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=). 
 
 Rozwiązanie w ``C++``
 
@@ -2131,13 +2131,17 @@ s.add(f(4) - 2 * f(3) == 3);
 s.add(f(5) - 2 * f(4) == 4);
 s.add(f(6) - 2 * f(5) == 5);
 
-if (s.check() == sat) {
+if (s.check() == sat) {				//sprawdzenie, czy jest wynik
 	model m = s.get_model();
-	for (int j=1; j<=6; j++)
+	for (int j=1; j<=6; j++)		//wyświetlenie wartości funkcji f
 		std::cout << "f(" << j << ") = " << m.eval(f(j)) << std::endl;
 }
 ```
- 
+
+Wynik dla różnych wartości: 
+
+* ">\begin{array}{ll}f(1) = 0 & -2+2^1\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(2) = 1 & -3+2^2\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(3) = 4 & -4+2^3\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(4) = 11 & -5+2^4\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(5) = 26 & -6+2^5\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(6) = 57 & -7+2^6\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Na podstawie tych wyników można postawić hitpotezę (co też wynika z treści zadania: ">F_n + Cz^n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)">f_n = -n -1 + C2^n"><img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+Sprawdzenie: ">\Delta_2(-n -1 +C2^n) \\ = -(n+1) -1 +C2^{n+1} -2(-n -1 +C2^n) \\ = -n -2 +2C2^n +2n +2 -2C2^n \\ = n$
 
 
 ## zadanie
