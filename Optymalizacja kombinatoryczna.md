@@ -1,4 +1,15 @@
-<h1 id="wykład-1--laboratorium-1--11.10.2020--podstawowe-definicje-i-pojęcia">Wykład 1 + Laboratorium 1 | 11.10.2020 | Podstawowe definicje i pojęcia</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optymalizacja kombinatoryczna</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="wykład-1--laboratorium-1--11.10.2020--podstawowe-definicje-i-pojęcia">Wykład 1 + Laboratorium 1 | 11.10.2020 | Podstawowe definicje i pojęcia</h1>
 <h2 id="kontakt">Kontakt</h2>
 <ul>
 <li>Teams – czat, dzwonić, jeśli p. prof. jest dostępny, okno dialogowe przy zgłaszaniu zadania.</li>
@@ -2219,4 +2230,7 @@ s<span class="token punctuation">.</span><span class="token function">add</span>
 </li>
 </ol>
 </section>
+</div>
+</body>
 
+</html>
