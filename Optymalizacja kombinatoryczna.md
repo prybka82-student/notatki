@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="wykład-1--laboratorium-1--11.10.2020--podstawowe-definicje-i-pojęcia">Wykład 1 + Laboratorium 1 | 11.10.2020 | Podstawowe definicje i pojęcia</h1>
 <h2 id="kontakt">Kontakt</h2>
 <ul>
