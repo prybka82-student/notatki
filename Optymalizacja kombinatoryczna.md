@@ -313,6 +313,12 @@ Twierdzenie o grafach i drzewach: jeśli <img style="min-width: 300px;" src="htt
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> jest spójny i ma <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=|V|-1"> krawędzi, wtedy, gdy 
 * <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=G"> nie ma cykli, ale po dodaniu 1 krawędzi powstaje cykl.
 
+**Sieć**: 
+* taki graf skierowany, 
+* w którym występuje wierzchołek początkowy (mający tylko krawędzie wychodzące) 
+* i ujście (wierzchołek mający tylko krawędzie dochodzące)  
+* i nie ma cykli.
+
 ## Literatura
 
 ![](https://www.evernote.com/shard/s443/res/747baff4-aab9-8ac2-aa4f-29c76aa94179)
@@ -2140,93 +2146,260 @@ if (s.check() == sat) {				//sprawdzenie, czy jest wynik
 
 Wynik dla różnych wartości: 
 
-* ">\begin{array}{ll}f(1) = 0 & -2+2^1\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(2) = 1 & -3+2^2\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(3) = 4 & -4+2^3\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(4) = 11 & -5+2^4\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(5) = 26 & -6+2^5\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(6) = 57 & -7+2^6\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Na podstawie tych wyników można postawić hitpotezę (co też wynika z treści zadania: ">F_n + Cz^n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)">f_n = -n -1 + C2^n"><img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
-Sprawdzenie: ">\Delta_2(-n -1 +C2^n) \\ = -(n+1) -1 +C2^{n+1} -2(-n -1 +C2^n) \\ = -n -2 +2C2^n +2n +2 -2C2^n \\ = n$
+* ">\begin{array}{ll}f(1) = 0 & -2+2^1\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(2) = 1 & -3+2^2\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(3) = 4 & -4+2^3\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(4) = 11 & -5+2^4\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(5) = 26 & -6+2^5\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">\begin{array}{ll}f(6) = 57 & -7+2^6\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Na podstawie tych wyników można postawić hitpotezę (co też wynika z treści zadania: ">F_n + Cz^n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=)">f_n = -n -1 + C2^n<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
+Sprawdzenie: ">\Delta_2(-n -1 +C2^n) \\ = -(n+1) -1 +C2^{n+1} -2(-n -1 +C2^n) \\ = -n -2 +2C2^n +2n +2 -2C2^n \\ = n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=## Zadanie
 
+Wybrać 1 ze zbioru 20 zadań i rozwiązać dowolną metodą, np. ASP lub SMT.
 
-## zadanie
-
-wybrać 1 ze zbioru 20 zadań i rozwiązać dowolną metodą, np. asp lub smt
-
-nietypowe zadanie - użyć smt
+Nietypowe zadanie -- użyć SMT.
 
 # Laboratorium 8 | 10.01.2021
 
-Zerówka z wykładu za 2 tygodnie na lab. (24.01.2021)
+Zerówka z wykładu za 2 tygodnie na lab. (24.01.2021) -- żeby zobaczyć wymagania (zagadnienia z wykładu), ocena do poprawy. Nie będzie algorytmów zachłannych -- nie zdążymy.
 
 Zadania do wyboru - zapisy na https://onedrive.live.com/edit.aspx?resid=72C9A8E5D9D3AE47%211814&id=documents&authkey=!ANCh2eLG1ccyEsQ&
 
-Wstępnie: zad. 11 - SMT
+Wstępnie: zad. 11 - SMT. 
 
+# Wykład 9 | 23.01.2021 | Algorytmy heurystyczne i aproksymacyjne 
 
+## Egzamin
 
+Egzamin -- test 1-krotnego wyboru na Moodle'u (E-Uczelni). Poprawna odpowiedź -- 1 pkt. Teoria, fragment kodu. 
 
+https://e-uczelnia.ath.bielsko.pl/enrol/index.php?id=706&fbclid=IwAR2DSHRNoTP3KCMA2yg9ykMngiVf9fQYnPDxa3Fbjc6UVlAIWpeYVjIu8x0
 
+==Za 2 tygodnie (6.02 -- wykład!!! -- godz. 10.25) -- test zerowy.==
 
+Egzamin -- termin 1.: 13.02, godz. 8.00
 
+Egzamin -- termin 2.: 6.03, godz. 8.00
 
+## Terminologia
 
+Algorytmy **heurystyczne** lub **metaheurystyczne** -- metody dla problemów trudnych obliczeniowo, działające szybko, ale nie gwarantujące uzyskania rozwiązania optymalnego (niekoniecznie muszą to być algorytmy optymalne). 
 
+Algorytmy **aproksymacyjne** -- też nie działają dokładnie. Algorytm jest aproksymacyjny, jeśli z góry wiadomo, jaka jest różnica między wynikiem a wynikiem optymalnym. 
 
+## Wybrane metody heurystyczne
 
+* Swarm Intelligence (np. PSO, ACS) 
+	* ogólny zbiór metod
+	* Partical Swarm Optimization
+	* Ant Colony Systems (systemy mrówkowe) 
+* Local Search
+	* prosta, wręcz trywialna metoda 
+* Tabu Search
+	* pominiemy 
+* Simulated Annealing
+	* symulowane wyżarzanie 
+* Genetic Algorithms
+	* algorytmy genetyczne 
+* Artificial Neural Networks
+	* sieci neuronowe
+* Support Vector Machines
+	* metody związane z ML, zwykle do klasyfikacji danych 
+* Randomized rounding (algorytm aproksymacyjny) 
+	* zaokrąglone randomizowanie
+* i inne...
 
+## Przeszukiwanie lokalne (ang. _Local search_)
 
+### Algorytm
 
+1) Obieramy jakiś punkt początkowy ">t<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należący do rozwiazań ">F<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2) Obliczamy ">\text{polepszony}(t)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wg wzoru: ">\text{polepszony}(t) = \begin{cases} = \text{taki}\ s \in N(t), \text{że}\ c(s) < c(t), \\ \text{NIL, jeśli taki}\ s \text{nie istnieje}. \end{cases}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-- gdzie ">c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= to funkcja kosztu, ">N(t)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- wszyscy sąsiedzi rozwiązania ">t<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3) Jeśli ">\text{polepszony}(t) = \text{NIL}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- koniec, zwracamy ">t<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4) W przeciwnym razie podmieniamy ">t<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (">t = \text{polepszony}(t)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=) i wracamy do kroku 2.
 
+Zapis skrócony:
 
+```
+t := pewien punkt początkowy w F
+while polepszony (t) != NIL do
+	t := polepszony(T)
+return t
+```
 
+Objaśnienie algorytmu: 
 
+Ad 1 -- startujemy od wygenerowania losowo pewnego rozwiązania początkowego. 
 
+Ad 2-3 -- rozwiązanie ulepszamy, wybierając sąsiada tego rozwiązania, który staje się bieżącym rozwiązaniem. Dla niego szukamy sąsiada tak długo, aż istnieje lepszy sąsiad. 
 
+Ad 4 -- jeśli nie ma lepszych sąsiadów, kończymy. 
 
+Rozwiązanie jest najlepsze lokalnie, ale nie ma gwarancji, że jest to rozwiązanie optymalne globalnie.
 
+### Przykład: szukanie niezależnych dróg w grafie
 
+Niezależne drogi w grafie -- biegnąc od wyznaczonego pktu początkowego do końcowego, w których to drogach żaden wierzchołek (poza pierwszym i ostatnim) żadne się nie powtarzają. 
 
+Poniżej są 3 drogi niezależne z ">a<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= do ">b<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: czerwona, zielona, niebieska. 
 
+![](https://www.evernote.com/shard/s443/res/6a7d0a2b-6fca-09d1-0c9e-53127eae9c0a)
 
+**Przykład praktyczny: projektowanie niezawodnej sieci**
 
+![](https://www.evernote.com/shard/s443/res/c17f047f-bd3f-8a69-2996-ded8176efae3)
 
+-- projektowanie takiego grafu, żeby liczba niezależnych dróg między parą wyznaczonych wierzchołków była równa liczbie zadanej. Mamy na wejściu pkty i odległości między nimi oraz informację, jaka ma być liczba niezależnych dróg miedzy każdą parą wierzchołków.  
 
+Problem: powstawiać krawędzie w taki sposób, żeby było ich jak najmniej, żeby suma odległości od punktu początkowego do końcowego była jak najmniejsza. 
 
+Przykładowe rozwiązanie
 
+![](https://www.evernote.com/shard/s443/res/85aab3fd-6476-cc4c-94e0-94e02ec77ebf)
 
+Aby rozwiązać to zadanie, musimy: 
+* wyznaczyć niezależne drogi
+* ustalić rozwiązanie początkowe
+* określić sąsiedztwa grafu
 
+### Algorytm do wyznaczania liczby niezależnych dróg: 
 
+1. Na wejściu mamy graf nieskierowany ">G=(V, E)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z wyznaczonym wierzchołkiem początkowym i końcowym. 
+2. Zamieniamy ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= na graf skierowany ">G' = (V', E')<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w taki sposób, że każdy wierzchołek ">v<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= grafu ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= zamieniamy na 2 wierzchołki ">v'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ">v''<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w grafie ">G'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= (">v', v'' \in V'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=) jak na rysunku:
 
-# Laboratorium 8 | 09.01.2021
+![](https://www.evernote.com/shard/s443/res/270c687b-4214-c218-defa-413d9350c2ce)
 
-Na ost. ćwiczeniach będzie test zerowy - ocena do poprawy, do zobaczenia wymagań z zagadnień na wykładzie
+ 3. Z grafu ">G'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: 
+	 * usuwamy wierzchołek ">i'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wraz z krawędziami dochodzącymi i krawędzią wychodzącą
+	 * usuwamy wierzchołek ">j''<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wraz z krawędzią dochodzącą i krawędziami wychodzącymi
 
-Nie będzie algorytmów zachłannych - nie zdążymy
+4. W powstałem sieci ">(V',E')<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ze źródłem ">i''<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ujściem ">j'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= każdej krawędzi nadajemy przepustowość (etykietę) ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5. Obliczamy maksymalny przepływ sieci ">(V',E')<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jako liczbę niezależnych dróg ">r_{ij}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= do ">j<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-------
+**Maksymalny przepływ** -- informacja ile maksymalne jakiejś substancji można wypuścić ze źródła (wierzchołka początkowego), tak aby cała ta ilość dotarła do ujścia (wierzchołka końcoweg) -- każda droga (zbiór krawędzi) ma określony przepływ ograniczający ilość substancji dochodzącej do ujścia do wartości najmniejszego przepływu krawędzi tworzących tę drogę. 
 
+### Algorytm generowania rozwiązania początkowego
 
+1. Dla każdego wierzchołka ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ustalamy tzw. ">\text{niedobór}(i)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= określony wzorem: 
+ 
+ ">\text{niedobór}(i) = \max_j{s_{ij}} - \text{stopień}(i)<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=2. Wybieramy wierzchołek ">v<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z największym niedoborem. 
+3. Spośród wierzchołków z drugim największym niedoborem wybieramy taki wierzchołek ">w<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, którego koszt połączenia z ">v<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= jest najmniejszy. 
+4. Dodajemy do grafu krawędź ">\{v, w\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=.
+5. Aktualizujemy niedobory wierzchołków. 
+6. Jeśli któryś z wierzchołków ma niedobór dodatni (">\text{niedobór}(v) > 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=), idziemy do pktu 2.
+7. Jeśli graf nie spełnia nierówności: ">\forall_{i,j,i\neq j} r_{ij} \geq s_{ij}<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math= 
+-- rozpoczynamy algorytm od nowa, zmieniając losowo numerację wierzchołków. 
 
+### Algorytm określania sąsiedztwa
 
+Mamy na wejściu graf ">G= (V, E)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= taki, że: 
+* spełnia on warunki zadania, 
+* ma krawędzie ">\{i,j\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">\{k, l\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* nie zawiera krawędzi ">\{i, l\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">\{j, k\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Algorytm: 
 
+1. Tworzymy graf ">G' = (V, E')<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= przez 
+	* usunięcie krawędzi ">\{i,j\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i ">\{k, l\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=	* oraz dodanie krawędzi ">\{i,l\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, ">\{j,k\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2. Jeśli graf ">G'<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= spełnia warunki zadania (ma zadaną liczbę niezależnych dróg między początkiem a końcem), to jest **sąsiadem** grafu ">G<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
+ 
 
+## Symulowane wyżarzanie 
 
+### Wady przeszukiwania lokalnego 
 
+Przeszukiwanie lokalne ma wadę: mając funkcję ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, którą minimalizujemy, to będąc w pkcie ">x<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i szukając sąsiadów, możemy znaleźć jedynie globalnego minimum: nie wyjdziemy poza sąsiadów gorszych, a za nimi mogą się znaleźć lepsi, w tym optimum globalne: 
 
+![](https://www.researchgate.net/publication/322270023/figure/fig3/AS:667627483562008@1536186204657/Example-of-local-and-global-solutions-in-an-optimization-problem.png)
 
+Symulowane wyżarzanie jest remedium na ww. problem -- jest tu szansa, że zaakceptujemy (przynajmniej na początku działania algorytmu) gorszego sąsiada, przez co możemy wyjść z dołka optimum lokalnego.
 
+### Algorytm 
 
+1. Wybierz ">f_0 \in F<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- jakieś rozwiązanie początkowe.
+2. Przyjmujemy ">t>0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
+3. Sprawdzamy warunek stopniu -- jeśli jest spełniony, zwracamy ">f_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=4. Przebiegamy przez wszystkie ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= od ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= do ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5. Wybieramy losowo inne rozwiązanie ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z sąsiedztwa bieżącecego rozwiązania ">N(f_0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=:">f \in N(f_0)<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=6. Obliczamy ">\delta<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wg wzoru: ">\delta = c(f) - c(f_0)<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=-- jest zatem różnica między kosztem bieżącego rozwiązania ">f_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= a losowo wybranego ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=7. Jeśli ">\delta < 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, czyli jeśli nowe rozwiązanie ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= ma mniejszy koszt niż bieżące ">f_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to zastępujemy nim bieżące:">f_0 = f<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=8. Jeśli ">\delta \geq 0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, czyli jeśli nowe rozwiązanie ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie jest lepsze od bieżącego, stosujemy podstawienie z prawdopodobieństwem: ">f_0 = f\ \text{z prawdopodobieństwem}\ e^{\frac{-\delta}{t}}<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=9. Jeśli ">i < k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, zwiększamy ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= o 1 i wracamy do punktu 5.
 
+9. Jeśli ">i=k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, aktualizujemy ">t<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">t = \alpha(t)<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=-- i idziemy do punktu 3. 
 
+Oznaczenia: 
+* ">f_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- bieżące i potencjalnie końcowe rozwiązanie
+* ">f<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- nowe, losowo dobrane rozwiązanie
+* ">c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- funkcja kosztu
+* ">F<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- zbiór rozwiązań
+* ">\delta<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- różnica między bieżącym a nowym rozwiązaniem: ">\delta=c(f)-c(f_0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">t<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- parametr algorytmu wyżarzania ustalony dla problemu, który jest zmniejszany, co jest analogią do temperatury schładzanego metalu; ta wartość się zmniejsza, co powoduje zmniejszanie się prawdopodobieństwa zaakceptowania gorszego rozwiązania w każdej iteracji 
+* ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- przyjęta liczba iteracji, podczas których sprawdzane są rozwiążania 
+* ">\alpha<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- funkcja określajaca szybkość schładzania
 
+Krótszy zapis:  
 
+```
+wybierz f_0 \in F i t>0
+while nie jest spelniony warunek stopu do
+	for i := 1 to k do
+		wybierz losowo f \in N(f_0)
+		\delta := c(f) - c(f_0) //koszt nowego jest mniejszy niż koszt nowego 
+		if \delta < 0 then f_0 := f //sąsiad jest gorszy, ale też go akceptuj
+		else
+			f_0 := f z prawdopodobienstem e^{-\delta/t} 
+		//t jest jakby temperatura schladzania
+	t := \alfa(t)
+return f_0
+```
 
+## Algorytmy genetyczne (wersja autorska)
 
+Algorytm ze stałą populacją
 
+1. Utwórz tablicę ">P<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= obiektów 
+2. Oceń funkcją kosztu ">c<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= każdy obiekt
+3. Sprawdź warunek stopu -- jeśli jest spełniony, zwróć obiekt o najmniejszym koszcie
+4. Wybierz losowo 3 obiekty: 
+* ">I = P_i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">J = P_j<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=* ">K=P_k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=5. Zakładając, że ">c(I) \leq c(J) \leq c(K)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, skrzyżuj ">I<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= z ">J<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, uzyskując obiekt ">L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=6. Podstaw ">L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= za ">P_k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=: ">P_k = L"><img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=7. Z małym (rzędu ">0,01<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=) prawdopodobieństwem zmień losowo fragment ">L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=8. Oceń obiekt ">L<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= i idź do pktu 3.
 
+Skrótowy zapis
 
+```
+utworz tblice P obiektow
+ocen za pomoca funkcj ikosztu c kazdy obiekt
+while nie jest spelniony warunek stopu do
+								//SELEKCJA
+								//tu metodą turnieją z rozmiarem turnieju 3
+	wybierz losowo trzy obiekty I = P[i], J = P[j] i K = P[k] 
+			 					//KRZYŻOWANIE
+	zakladajac, ze c(I) \leq c(J) \leq c(K) skrzyzuj I z J uzyskujac obiekt L
+	P[k] := L
+								//MUTACJA
+	z mamym p-m (np. 0,01) zmien losowo wybrany fragment w L 
+								
+	ocen obiekt L 
+return obiekt o najmniejzym koszcie
+```
 
+Algorytm może się zakończyć po określonej liczbie iteracji lub gdy funkcja kosztu (tzw. _fitness_) spadnie poniżej pewnej założonej wartości. 
 
+Krzyżowanie zależy od tego, co jest obiektem -- w klasycznym algorytmie obiektem jest tabela zer i jedynek. Mogą one oznaczać cokolwiek, np. każdy z bitów może odpowiadac bitom
 
+Istnieje wiele metod krzyżowania, np. tzw. **krzyżowanie dwupunktowe**: 
 
+* w genomie obu obiektów wyznaczamy 2 granice, np. 
 
+``obiekt I: [ 7, 6  |  5, 4, 3, 2  |  1 ]``
+``obiekt J: [ 1, 3  |  4, 5, 7, 6  |  2 ]``
+
+* elementy z krańcowych podzbiorów obiektu ">I<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= przepisujemy: 
+
+``obiekt I: [ 7, 6  |  *, *, *, *  |  1 ]``
+
+* a środkową część uzupełniamy elementami z obiektu ">J<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= w tej kolejności, w jakiej się pojawiają, z wykluczeniem elementów, które już są w ">L$:
+
+``obiekt I: [ 7, 6  |  3, 4, 5, 2  |  1 ]``
+
+**Mutację** wykonuje się z bardzo małym prawdopodobieństwem. W przypadku reprezentacji binarnej może to być zamiana zera na jedynkę lub odwrotnie. W przypadku większej liczby elementów -- może polegać na zamianie elementów miejscami . 
+
+## Zaokrąglanie randomizowane (algorytm aproksymacyjny) 
+
+Dlaczego jest aproksymacyjny? Bo dla niektórych problemów da się powiedzieć, że uzyskany wynik nie będzie się różnił od optymalnego o zadaną wartość. Można więc z góry oszacować, jak dobry/zły będzie wynik.
+
+### Algorytm
+
+* sformułuj rozwiązany problem jako zagadnienie ILP (programowanie całkowitoliczbowe) 
+* zmienne całkowite zamień na rzeczywiste (co nam da zadanie LP -- programowania liniowego)
+* rozwiąż zadanie (np. algorytmem ``simplex``)
+* zaokrąglij wyniki do liczb całkowitych 
+
+### Problemy
+
+Trudno może być zinterpretować rozwiązanie, np. jeśli na wejściu było 0 i 1 (wybierz, albo nie wybieraj), a wynik wynosi 0,75. Można taki wynik traktować jako prawdobieństwo, ale nie zawsze jest to możliwe. 
+
+Rozwiazanie jest przybliżone i nie zawsze poprawne. 
 
 
 > Written with [StackEdit](https://stackedit.io/).
