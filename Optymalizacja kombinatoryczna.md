@@ -1,122 +1,9 @@
-<!DOCTYPE html>
-<html>
+---
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optymalizacja kombinatoryczna</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
 
-<body class="stackedit">
-  <div class="stackedit__left">
-    <div class="stackedit__toc">
-      
-<ul>
-<li><a href="#wykład-1--laboratorium-1--11.10.2020--podstawowe-definicje-i-pojęcia">Wykład 1 + Laboratorium 1 | 11.10.2020 | Podstawowe definicje i pojęcia</a>
-<ul>
-<li><a href="#kontakt">Kontakt</a></li>
-<li><a href="#semestralny-plan-wykładu">Semestralny plan wykładu</a></li>
-<li><a href="#zaliczenie">Zaliczenie</a></li>
-<li><a href="#kategorie-problemów-optymalizacyjnych">Kategorie problemów optymalizacyjnych</a></li>
-<li><a href="#definicja-problemu-optymalizacyjnego">Definicja problemu optymalizacyjnego</a></li>
-<li><a href="#definicja-sąsiedztwa">Definicja sąsiedztwa</a></li>
-<li><a href="#definicja-optimum-lokalnego">Definicja optimum lokalnego</a></li>
-<li><a href="#terminy-z-algebry">Terminy z algebry</a></li>
-<li><a href="#definiowanie-zbiorów">Definiowanie zbiorów</a></li>
-<li><a href="#macierze">Macierze</a></li>
-<li><a href="#mnożenie-macierzy">Mnożenie macierzy</a></li>
-<li><a href="#układ-równać-w-postaci-macierzy">Układ równać w postaci macierzy</a></li>
-<li><a href="#terminologia-grafów">Terminologia grafów</a></li>
-<li><a href="#literatura">Literatura</a></li>
-</ul>
-</li>
-<li><a href="#wykład-2--24.10.2020--programowanie-liniowe----aspekty-praktyczne">Wykład 2 | 24.10.2020 | Programowanie liniowe – aspekty praktyczne</a>
-<ul>
-<li><a href="#definicja-problemu-optymalizacyjnego-1">Definicja problemu optymalizacyjnego</a></li>
-<li><a href="#standardowa-postać-problemu-programowania-liniowego">Standardowa postać problemu programowania liniowego</a></li>
-<li><a href="#inne-postaci-problemu-programowania-liniowego">Inne postaci problemu programowania liniowego</a></li>
-<li><a href="#użyteczne-przekształcenia-równań">Użyteczne przekształcenia równań</a></li>
-<li><a href="#zamiana-warunków-logicznych-na-równania-lub-nierówności">Zamiana warunków logicznych na równania lub nierówności</a></li>
-<li><a href="#popularne-solwery-liniowe">Popularne solwery liniowe</a></li>
-<li><a href="#przykłady-1">Przykłady</a></li>
-</ul>
-</li>
-<li><a href="#laboratorium-2...">Laboratorium 2…</a></li>
-<li><a href="#wykład-3--14.11.2020--algorytm-podziału-i-ograniczeń">Wykład 3 | 14.11.2020 | Algorytm podziału i ograniczeń</a>
-<ul>
-<li><a href="#algorytm">Algorytm</a></li>
-<li><a href="#przykłady-2">Przykłady</a></li>
-</ul>
-</li>
-<li><a href="#laboratorium-3">Laboratorium 3</a></li>
-<li><a href="#wykład-4--28.11.2020--programowanie-dynamiczne">Wykład 4 | 28.11.2020 | Programowanie dynamiczne</a>
-<ul>
-<li><a href="#ogólny-algorytm-programowania-dynamicznego">Ogólny algorytm programowania dynamicznego</a></li>
-<li><a href="#przykład-1-maksymalna-suma-spójnego-podciągu">Przykład 1: maksymalna suma spójnego podciągu</a></li>
-<li><a href="#przykład-2-liczba-jako-suma-malejących-liczb-dodatnich-dających-największy-iloczyn">Przykład 2: liczba jako suma malejących liczb dodatnich dających największy iloczyn</a></li>
-<li><a href="#przykład-3-znajdowanie-najkrótszej-drogi">Przykład 3: znajdowanie najkrótszej drogi</a></li>
-</ul>
-</li>
-<li><a href="#wykład-5--5.12.2020--answer-set-programming-1">Wykład 5 | 5.12.2020 | Answer Set Programming (1)</a>
-<ul>
-<li><a href="#podejścia-do-programowania">Podejścia do programowania</a></li>
-<li><a href="#answer-set-programming----definicje">Answer Set Programming – definicje</a></li>
-<li><a href="#model-stabilny-answer-set">Model Stabilny (Answer Set)</a></li>
-<li><a href="#przykłady-3">Przykłady</a></li>
-<li><a href="#przykłady-w-języku-ansprolog-w-clingo">Przykłady w języku ansprolog (w Clingo)</a></li>
-<li><a href="#więzy-ograniczenia">Więzy (ograniczenia)</a></li>
-</ul>
-</li>
-<li><a href="#laboratorium-5--6.12.2020">Laboratorium 5 | 6.12.2020</a>
-<ul>
-<li><a href="#zadanie-6.">Zadanie 6.</a></li>
-<li><a href="#zadanie-3">Zadanie 3</a></li>
-</ul>
-</li>
-<li><a href="#wykład-6--12.12.2020--metoda-generuj-ograniczaj">Wykład 6 | 12.12.2020 | Metoda generuj-ograniczaj</a>
-<ul>
-<li><a href="#zmienna-pomocnicza-a">Zmienna pomocnicza a′a'a′</a></li>
-<li><a href="#zapis-dodatkowych-warunków">Zapis dodatkowych warunków</a></li>
-<li><a href="#przykład-1-cykl-hamiltona-w-grafie">Przykład 1: Cykl Hamiltona w grafie</a></li>
-<li><a href="#przykład-2-kolorowanie-grafu-przy-użyciu-3-kolorów">Przykład 2: Kolorowanie grafu przy użyciu 3 kolorów</a></li>
-<li><a href="#grounding">Grounding</a></li>
-<li><a href="#formalna-definicja-stabilnego-modelu">Formalna definicja stabilnego modelu</a></li>
-</ul>
-</li>
-<li><a href="#laboratorium-6--13.12.2020--niestandardowe-konstrukcje-w-clingo">Laboratorium 6 | 13.12.2020 | Niestandardowe konstrukcje w Clingo</a>
-<ul>
-<li><a href="#określona-liczba-elementów">Określona liczba elementów</a></li>
-<li><a href="#skrótowy-zapis-4-faktów-p1..4">Skrótowy zapis 4 faktów: p(1..4)</a></li>
-<li><a href="#kolekcje-z-których-wybieramy-n-elementów">Kolekcje, z których wybieramy nnn elementów</a></li>
-<li><a href="#wzajemne-wykluczanie-predykatów-graf-hamiltona">Wzajemne wykluczanie predykatów (graf Hamiltona)</a></li>
-</ul>
-</li>
-<li><a href="#wykład-7--19.12.2020--answer-set-programming-2----przykłady">Wykład 7 | 19.12.2020 | Answer Set Programming (2) – przykłady</a>
-<ul>
-<li><a href="#agregacje-i-optymalizacja">Agregacje i optymalizacja</a></li>
-</ul>
-</li>
-<li><a href="#laboratorium-7--20.12.2020">Laboratorium 7 | 20.12.2020</a></li>
-<li><a href="#wykład-8--9.01.2020--smt-satisfiability-modulo-theories">Wykład 8 | 9.01.2020 | SMT (Satisfiability Modulo Theories)</a>
-<ul>
-<li><a href="#podstawowe-zadanie">Podstawowe zadanie</a></li>
-<li><a href="#programowanie-język-smt-biblioteka-z3">Programowanie: język SMT, biblioteka z3</a></li>
-<li><a href="#przykład-1-łamigłówka">Przykład 1: łamigłówka</a></li>
-<li><a href="#przykład-2-znajdowanie-przecięcia-2-wykresów">Przykład 2: znajdowanie przecięcia 2 wykresów</a></li>
-<li><a href="#przykład-3-obliczanie-sum-skończonych-na-podstawie-rachunku-różnicowego">Przykład 3: obliczanie sum skończonych na podstawie rachunku różnicowego</a></li>
-<li><a href="#zadanie">zadanie</a></li>
-</ul>
-</li>
-<li><a href="#laboratorium-8--10.01.2021">Laboratorium 8 | 10.01.2021</a></li>
-<li><a href="#laboratorium-8--09.01.2021">Laboratorium 8 | 09.01.2021</a></li>
-</ul>
+---
 
-    </div>
-  </div>
-  <div class="stackedit__right">
-    <div class="stackedit__html">
-      <h1 id="wykład-1--laboratorium-1--11.10.2020--podstawowe-definicje-i-pojęcia">Wykład 1 + Laboratorium 1 | 11.10.2020 | Podstawowe definicje i pojęcia</h1>
+<h1 id="wykład-1--laboratorium-1--11.10.2020--podstawowe-definicje-i-pojęcia">Wykład 1 + Laboratorium 1 | 11.10.2020 | Podstawowe definicje i pojęcia</h1>
 <h2 id="kontakt">Kontakt</h2>
 <ul>
 <li>Teams – czat, dzwonić, jeśli p. prof. jest dostępny, okno dialogowe przy zgłaszaniu zadania.</li>
@@ -2338,8 +2225,3 @@ s<span class="token punctuation">.</span><span class="token function">add</span>
 </ol>
 </section>
 
-    </div>
-  </div>
-</body>
-
-</html>
