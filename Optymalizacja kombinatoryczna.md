@@ -828,144 +828,123 @@ Rozmiar plecaka: ">L = 8<img style="min-width: 300px;" src="https://render.githu
 
 
 
-# Laboratorium 3
+# Laboratorium 3 | Przykłady zadań w języku ``GNU Math Prog``
 
-przykłady zadań w języku gnu math prog
+## Zadanie 1. Partition
 
-zad 1
+Na wejściu mamy pewien zbiór liczb ">Z<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= sumujący się do liczby parzystej, np. 
 
-partition
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=Z = \{2, 4, 5, 1, 6\}">
 
-na wejściu zbiór liczb Z sumujący się do parzystej, np. 
+Zadanie: czy z tego zbioru da się wybrać podzbór liczb sumujących się do ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=:
 
-Z = {2, 4, 5, 1, 6}
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=\sum_{i = 1}^n z_i = 2k">
 
-zadanie: czy z tego zbioru wybrać liczby sumującej się do k">\sum_{i = 1}^n z_i = 2k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=niech k = 9
+Niech ">k = 9<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=Rozwiązanie: 
 
-1 krok - ustalić zmienne
+1\. krok -- ustalić zmienne. Pytanie dot. podzbioru liczb -- tworzymy zatem drugi zbiór ">x_i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= taki, że ">x_i \in \{0,1\}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= oznacza, że liczba ">z_i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należy do rozwiązania, ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= -- że nie należy. 
 
-pytanie dot. podzbioru liczb - tworzymy drugi zbiór x_i taki, że x_i \in {0,1}
-0 oznacza, że liczba z_i należy do rozwiązania
+Suma wybranych liczb niech będzie ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. Suma niewybranych też będzie ">k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, skoro suma wybranych ma się równać ">2k<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-suma wybranych = k
-suma niewybranych też = k, skoro suma wybranych = 2k
+Wybieranie liczb można przedstawić tak:">\begin{array}{llllll} &2 (x_1) &+ 4 (x_2) &+ 5 (x_3) &+ 1 (x_4) &+ 6 (x_5) \\ =& 2(1-x_1) &+ 4(1-x_2) &+ 5(1-x_3) &+ 1(1-x_4) &+ 6(1-x_5)\end{array}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-- równanie po lewej oznacza wybrane liczby, a po prawej -- nie wybrane: jeśli ">x_i=1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, czyli ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-tą liczbę wybrano, to niewybranie ">i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-tej liczby oznaczymy przez ">1-x_i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=I mamy model gotowy (programowanie zero-jedynkowe). 
 
-wybieranie liczb można przedstawić tak: 
+Kod:
 
-suma wybranych ma się równać sumie niewybranych):
-2x_1 + 4x_2 + 5x_3 + 1x_4 + 6x_5 = 
-2(1-x_1) + 4(1-x_2) + 5(1-x_3) + 1(1-x_4) + 6(1-x_5)
+Plik: ``plecak.mod``
 
-i model gotowy (programowanie zero-jedynkowe)
+```
+param n >=1, integer; 					//ile liczb
+param wartosci {1..n} >= 0, integer; 	//ciag liczb
+var x {1..n}, binary; 					//szukane
 
-kod:
+//ograniczenie: suma iloczynow wart*x po i 
+//musi sie rownac sume iloczynow warto*(1-x) po i
+s.t. ogr1: sum{i in 1..n} wart[i] * x[i] == sum{i in 1..n} wart[i] * (1-x[i]); 
+//w mathprog tylko stala * zmienna
 
-plik: plecak.mod;
-
-param n >=1, integer; //ile liczb
-param wartosci {1..n} >= 0, integer; 
-var x {1..n}, binary; //szukane
-
-s.t. ogr1: sum{i in 1..n} wart[i] * x[i] == sum{i in 1..n} wart[i] * (1-x[i]); //tylko zmienna * stała
-
-//cel nie potrzebny, bo pytamy, cyz jest podzbiór
+//cel nie potrzebny, bo pytamy, czy jest podzbiór
 solve;
 display x;
 end;
+```
 
-plik: plecak.dat
+Plik: ``plecak.dat``  -- zbiór danych:
 
+```
 param n := 5;
 param wart := 1 2 2 4 3 5 4 1 5 6;
 end;
+```
 
+## Zadanie 2. Graf skierowany o ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wierzchołkach
 
+==Zadanie nr 1 z laboratorium==
 
-------
-zad 1 
-graf skierowany o n wierzchołkach
+Mamy graf skierowany o ">n<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wierzchołkach, np. 
 
-0 > 1
-1 > 4
-0 > 2
-3 > 0
-2 > 3
+![](https://www.evernote.com/shard/s443/res/0849b3f0-046d-5766-f73b-3a24d27505b1)
 
-największy podzbiór wierzchołków takich, że
-- nie są połączone
-- i jeśli wybierzemy jakiś, to musi się łączyć z innym niewybranym
+Trzeba znaleźć największy podzbiór wierzchołków spełniający warunki: 
+* wierzchołki należące do wybranego podzbioru nie są ze sobą połączone
+* gdy weźmiemy każdy inny (niewybrany) wierzchołek, to musi istnieć krawędź łącząca go z którymś wierzchołkiem wybranym.
 
-z wierzchołkami kojarzymy zmienne
-xi = {0, 1} (1 wybrane, 0 niewybrane)
+Włączanie wierzchołków do rozwiązania możemy modelować zmiennymi binarnymi: 
 
-x_0 - wierzchołek 0
-x_1 - wierzchołek 1
-itd.
+<img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=x_i, x_i \in \{0, 1\}, i \in [1, n]">
 
-generalnie mam n wierzchołków od 0 do n-1
+Mamy do zapisania 3 ograniczenia: 
+1. Mając wybrany zbiór wierzchołków, to żadna para w tym zbiorze nie może być połączona krawędzią, co można zamodelować: ">x_i + x_j \leq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-- czyli dla każdej krawędzi nie mogę wybrać obydwu wierzchołków tworzących tę krawędź.
 
-ogr. żadna para wierzchołków nie może być polączony krawędzią
+Warunek dla wszystkich wierzchołków połączonych krawędziami:">x_0 + x_1 \leq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x_1 + x_4 \leq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x_0 + x_2 \leq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x_0 + x_3 \leq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">x_2 + x_3 \leq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=2. Musi istnieć przynajmniej 1 krawędź łącząca niewybrany wierzchołek z wybranym wierzchołkiem. Np. dla wierzchołka ">v_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= zapiszemy to formułą: ">v_0: x_1 + x_2 \geq (1-x_0)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=-- jeśli ">v_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie weszło do rozwiązania, wówczas ">x_0=0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a zatem  ">1-x_0 = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. Zgodnie z zadaniem musi istnieć przynajmniej 1 wierzchołek należący do rozwiązania w krawędzi wychodzącej z ">v_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, więc albo ">x_1=1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, albo ">x_2=1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, innymi słowy ich suma musi wynosić co najmniej 1: ">x_1 + x_2 \geq 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. A skoro ">x_0=1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to trzeba po lewej wstawić ">1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-krawędź
-x_0 + x_1 <= 1
+-- jeśli ">v_1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= należy do rozwiązania, cyzli ">x_0=1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, to wówczas ">1-x_0=0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, a to będzie spełnione dla każdego wierzchołka połączonego z ">v_0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=, bo suma ">x_i<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= nie będzie mniejsze od ">0<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=. 
 
-krawędź
-x_1 + x_4 <= 1
-x_0 + x_2 <= 1
-x_0 + x_3 <= 1
-x_2 + x_3 <= 1
+Warunki dla pozostałych wierzchołków: ">v_1: x_4 \geq (1-x_1)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">v_2: x_3 \geq (1-x_2)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">v_3: x_0 \geq (1-x_3)<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=">v_4: \text{nie ma takiego wierzchołka}<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=3. Wierzchołki izolowane muszą wejść do rozwiązania, bo w zadaniu jest powiedziane, że od każdego niewybranego wierzchołka musi wychodzić krawędź do co najmniej 1 wybranego wierzchołka. Czyli odwracając to zdanie: do każdego wybranego musi wchodzić przynajmniej 1 krawędź. Do ">v_4<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= wchodzi właśnie 1 krawędź (żadna nie wychodzi), więc musi on wejść do rozwiązania. Dla każdego takiego wierzchołka musimy zapisać: ">v_4: x_4 = 1<img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math= 
 
-drugie ograniczenie
-jeśli nie wybiorę wierzchołku, to musi się on łączyć z jakimś wybranym
-dla x_0: x_1 + x_2 >= (1 - x_0)
-jeśli x_0 nie został wybrany, to musi istnieć przynajmniej 1 krawędź z rozwiązania
-dla x_1: x4 >= (1-x_1)
-dla x_2: x_3 >= (1-x_2)
-dla x_3: x_0 >= (1-x_3)
+Kod: 
 
-ogr trzecie: 
-x_4 = 1 // wszystkie wierzchołki izolowane wchodzą do rozwiązania
+Plik: ``plecak.mod``
 
-kod:
-param n, integer, >= 1; liczba grafów
-set V := 0..(n-1); //zbiór wierzchołków
-set E within V cross V; //zbiór krawędzi to iloczyn kartezjański
-param outdegree {i in V} := sum{(j,k) in E: i == j} 1;//krawędzie wychodzące z danego wierzchołka; i==j - to daje krawędzie wychodzące z wierzchołka i
+```
+param n, integer, >= 1; 		//liczba wierzcholkow
+set V := 0..(n-1); 				//zbior wierzcholkow
+set E within V cross V; 		//zbior krawedzi 
+								//to iloczyn kartez. indeksow wierzcholkow
 
+param outdegree {i in V} := sum{(j,k) in E: i == j} 1;
+								//krawadzie wychodzace z danego wierzcholka
+								//i==j daje krawedzie wychodzace z wierzcholka i
+								//sumujemy jedynki
 //zmienne
-var x {V}, binary; //wierzchołki
+var x {V}, binary; 				//czy wierzcholek wchodzi do rozwiazania 
 
 //ograniczenia 
-//no connection
 s.t. no_connection{(i,j) in E}: x[i] + x[j] <= 1;
+							//ogranicznie nr 1
 
-//has connection
-s.t. has_connection{i in V: outdegree[i] >= 1}: sum{(j,k) in E: i == j} x[k] >= 1 - x[i]; //outdegree[i] >= 1 bo mają być nieizolowane
+s.t. has_connection{i in V: outdegree[i] >= 1}: sum{(j,k) in E: i == j} x[k] >= 1 - x[i];
+			 				//ograniczenie nr 2 
+							//outdegree[i] >= 1 bo maja byc nieizolowane
 
-//isolated - musimy ustalić, czy ilozowany wchodzi do rozwiazania
 s.t. isolated{i in V: outdegree[i] == 0} x[i] == 1;
+							//ograniczenie nr 3
+							//musimy ustalic, czy izolowany jest w rozwiazaniu
 
-//jeśli chcemy, żeby liczba wierzchołków była największa:
+//jesli chcemy, zeby liczba wierzcholkow byla najwieksza:
 maximize size: sum{i in V} x[i];
 
 solve;
 display x;
 end;
+```
 
-plik z danymi: 
+Plik: ``.dat``  -- zbiór danych:
+
+```
 param n:= 20;
-set E := (1,2) (1,5) (1,10); //wierzchołek początkowy, końcowy 
+set E := (1,2) (1,5) (1,10); 		//wierzcholek poczatkowy, koncowy 
 end;
-
-ibm cplex
-gurodi
-- te solvery mogłoby szybciej znaleźć rozwiązanie
-
-cbc
-- ten solver jest gorszy
-- 
-
------
+```
 
 # Wykład 4 | 28.11.2020 | Programowanie dynamiczne
 
@@ -977,9 +956,9 @@ Nie ma precyzyjnego algorytmu jak w innych metoda: programowanie dynamiczne jest
 
 1. Sformułuj zadanie jako równanie rekurencyjne zależne od zadań mniejszych (jednego lub kilku). 
 
--- Żeby rozwiązać problem, rozwiązujemy zwykle zadania dla mniejszych danych i scalamy wyniki czastkowe. 
+-- Żeby rozwiązać problem, rozwiązujemy zwykle zadania dla mniejszych danych i scalamy wyniki cząstkowe. 
 
--- Istotne jest zauważenie możliwości podziału zadania na mniejsze elementy i zależności między nimi. Idealnie, gdy te zależnośc można zapisać w postaci równania rekurencyjnego. 
+-- Istotne jest zauważenie możliwości podziału zadania na mniejsze elementy i zależności między nimi. Idealnie, gdy te zależność można zapisać w postaci równania rekurencyjnego. 
 
 2. Zaimplementuj wymyśloną funkcję tak, by nie powtarzać obliczeń dla tych samych parametrów. 
 
@@ -1075,7 +1054,7 @@ Na wejściu mamy graf skierowany. Każdej krawędzi tego grafu przyporządkowano
 
 ![](https://www.evernote.com/shard/s443/res/409ac6bb-6fe5-08af-7191-ff119f25a163)
 
-Zadanie: wyznaczyć długość najkrótszej drogi między wierzcholkami *s* i *t*. 
+Zadanie: wyznaczyć długość najkrótszej drogi między wierzchołkami *s* i *t*. 
 
 Przyjmujemy oznaczenia: 
 
@@ -1217,11 +1196,11 @@ Stabilny model (odpowiedź, rozwiązanie) <img style="min-width: 300px;" src="ht
 	* tzn. dla każdego reguły <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=P"> postaci <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a \leftarrow b_1, \dots, b_m, \neg c_1, \dots, \neg c_n."> 
 	* jeśli każde <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b_j \in M"> -- należą do modelu [rozwiązania], 
 	* oraz jeśli każde <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_k \notin M"> -- nie należą do modemu [rozwiązania])
-	* to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> musi należeń do modelu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M">
+	* to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> musi należeć do modelu <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M">
 
 Słownie: 
 * jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b_1"> jest w rozwiązaniu oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b_2"> jest w rozwiązaniu... oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b_m"> jest w rozwiązaniu 
-* oraz jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_1"> NIE jest w rozwiążaniu oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_2"> NIE jest w rozwiązaniu... oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_k"> NIE  jest w rozwiązaniu
+* oraz jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_1"> NIE jest w rozwiązaniu oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_2"> NIE jest w rozwiązaniu... oraz <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_k"> NIE  jest w rozwiązaniu
 * to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> jest w rozwiązaniu
 
 Jeśli wszystkie <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b_j"> są w <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M"> i żadnego <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=c_k"> nie ma w <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M">, a <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> też nie jest w <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M">, to taki model <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=M"> nie jest stabilny. 
@@ -1262,7 +1241,7 @@ Program z dwiema regułami. Ma 2 stabilne modele:
 <img style="min-width: 400px; display: block; margin-left: auto; margin-right: auto;" src="https://render.githubusercontent.com/render/math?math=P_5 = \{ a \leftarrow \neg b. b \leftarrow \neg a. a \leftarrow \neg a. \}">
 
 -- <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=\{a\}"> jest jedynym stabilnym modelem 
-jeśli a w modelu to b nie ma w modelu (ok), a jest wyprowadzlane (ok) 
+jeśli <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=a"> jest w modelu, to <img style="min-width: 300px;" src="https://render.githubusercontent.com/render/math?math=b"> nie ma w modelu (OK), choć jest wyprowadzalne (OK) 
 
 ## Przykłady w języku ``ansprolog`` (w ``Clingo``)
 
@@ -1310,9 +1289,7 @@ Rozważmy pewną jednoosobową grę, w której rekwizytami są liczby całkowite
 
 Napisz program wyznaczający maksymalną możliwą do uzyskania sumę punktów. Zakładamy, że długość wejściowego ciągu nie przekroczy 200, a każdy jego element będzie zawierał się w przedziale [1, 100]. Limit czasowy = 10 sekund.
 
---------
-
-## Zadanie 3 
+## Zadanie 3.
 
 Ze zbioru https://gitlab.com/wojtek3dan/zadania-to/-/blob/master/zadania.md
 
